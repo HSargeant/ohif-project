@@ -7,8 +7,8 @@ const cors = require('cors');
 const PORT = 8000
 const passport = require("passport");
 const session = require("express-session");
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const mainRoutes = require('./routes/main');
+const dashboardRoutes = require('./routes/dashboard');
 const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
@@ -17,20 +17,20 @@ require('dotenv').config({path: './.env'})
 const app = express();
 
 app.use(logger('dev'));
-app.use(cors());
+app.use(cors({
+  origin: (origin, callback) => callback(null, true),
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 //Connect To Database
 connectDB();
 app.set("view engine", "ejs");
 //Static Folder
-app.use(express.static("public"));
+app.use(express.static("client/build"));
 
 // Setup Sessions - stored in MongoDB
 app.use(session({
@@ -57,6 +57,11 @@ app.use(methodOverride("_method"));
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
+app.use("/", mainRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+
 
 // error handler
 // app.use(function(err, req, res, next) {
