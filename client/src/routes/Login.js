@@ -1,6 +1,7 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 export default function Login() {
+	console.log(API_BASE,"--------asdf--------------asdf")
 	const { setUser, setMessages } = useOutletContext();
 	const navigate = useNavigate();
 	const handleSubmit = async (event) => {
@@ -11,10 +12,10 @@ export default function Login() {
 			body: new URLSearchParams(new FormData(form)),
 			credentials: "include"
 		});
-		const json = await response.json();
-		if (json.messages) setMessages(json.messages);
-		if (json.user) {
-			setUser(json.user);
+		const data = await response.json();
+		if (data.messages) setMessages(data.messages);
+		if (data.user) {
+			setUser(data.user);
 			navigate("/profile");
 		}
 	};

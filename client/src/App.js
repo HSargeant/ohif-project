@@ -1,19 +1,11 @@
-import './App.css';
-
-import { useApi } from './hooks/use-api';
-
 function App() {
-  const { response } = useApi();
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          sadfsfg
-          {response}
-        </p>
-      </header>
-    </div>
+    <main className="container">
+      <div className="row justify-content-around mt-5">
+        <a href="/login" className="col-3 btn btn-primary"> Login</a>
+        <a href="/signup" className="col-3 btn btn-primary"> Signup</a>
+      </div>
+    </main>
   );
 }
 

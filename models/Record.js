@@ -25,7 +25,11 @@ const RecordSchema = new mongoose.Schema({
 	},
 	zipCode: {
 		type: String
-	}
+	},
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 },{ timestamps: true })
 
 module.exports = mongoose.model('Record', RecordSchema)

@@ -1,8 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Root from './routes/Root';
+import ErrorPage from './routes/ErrorPage';
+import Login from './routes/Login';
+import Signup from './routes/Signup';
+import Index from './routes/Index';
+import Profile from './routes/Profile';
+import Logout from './routes/Logout';
+import Feed from './routes/Feed';
+import Record from './routes/Record';
 
 const router = createBrowserRouter([
   {
@@ -35,8 +49,8 @@ const router = createBrowserRouter([
         element: <Feed />,
       },
       {
-        path: "/post/:id",
-        element: <Post />,
+        path: "/record/:id",
+        element: <Record />,
       },
     ]
   },

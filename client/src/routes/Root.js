@@ -8,7 +8,7 @@ export default function Root() {
   const [messages, setMessages] = useState({});
 
   useEffect(() => {
-    fetch(API_BASE + '/api/user', { credentials: "include" })
+    fetch(API_BASE + '/user', { credentials: "include" })
       .then(res => res.json())
       .then(res => setUser(res.user));
   }, []);
@@ -28,7 +28,7 @@ export default function Root() {
     <>
       <header className="container">
         <div className="text-center">
-          <h1 className=""><Link to={user ? '/profile' : '/'}>Ohif Record Viewer</Link></h1>
+          <h1 className=""><Link to={user ? '/dashboard' : '/'}>Ohif Record Viewer</Link></h1>
           <span></span>
         </div>
       </header>

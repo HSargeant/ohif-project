@@ -1,14 +1,13 @@
 const User = require('../models/User')
+const Record = require("../models/Record");
 // module.exports = {
 //     getIndex: async (req, res, next)=>{
 //         res.send('API is working properly!');
 //     }
 // }
 
-const Record = require("../models/Record");
-
 module.exports = {
-  getDashboard: async (req, res) => {
+  getProfile: async (req, res) => {
     try {
       const records = await Record.find({ user: req.user.id }).lean();
       res.json(records);
@@ -18,7 +17,7 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const records = await Record.find().sort({ createdAt: "desc" }).lean();
+      const records = await Record.find().sort({ createdAt: "desc" }).populate("user").lean();
       res.json(records);
     } catch (err) {
       console.log(err);
@@ -41,7 +40,7 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         bmi: req.body.bmi,
-        brixiScores: 0,
+        brixiScores: req.body.brixiScores,
         keyFindings: req.user.keyFindings,
         patientId:req.user.patientId,
         sex:req.body.sex,
@@ -53,20 +52,8 @@ module.exports = {
       console.log(err);
     }
   },
-  likePost: async (req, res) => {
-    try {
-      const post = await Record.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 },
-        },
-        { new: true }
-      );
-      console.log("Likes +1");
-      res.json(post.likes);
-    } catch (err) {
-      console.log(err);
-    }
+  editRecord: async(req,res)=>{
+
   },
   deleteRecord: async (req, res) => {
     try {

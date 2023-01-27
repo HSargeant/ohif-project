@@ -1,5 +1,6 @@
-const createError = require('http-errors');
+// const createError = require('http-errors');
 const express = require('express');
+const app = express();
 const path = require('path');
 // const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -8,21 +9,20 @@ const PORT = 8000
 const passport = require("passport");
 const session = require("express-session");
 const mainRoutes = require('./routes/main');
-const dashboardRoutes = require('./routes/dashboard');
+const RecordRoutes = require('./routes/records');
 const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const connectDB = require("./config/database");
 require('dotenv').config({path: './.env'})
-const app = express();
 
 app.use(logger('dev'));
 app.use(cors({
   origin: (origin, callback) => callback(null, true),
   credentials: true
 }));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
@@ -54,13 +54,13 @@ app.use(methodOverride("_method"));
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 
 app.use("/", mainRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/records", RecordRoutes);
 
 
 // error handler
