@@ -10,7 +10,7 @@ export default function Record() {
 	const [record, setRecord] = useState();
 
 	useEffect(() => {
-		fetch(API_BASE + `/api/record/${recordId}`, { credentials: "include" })
+		fetch(API_BASE + `/api/records/${recordId}`, { credentials: "include" })
 			.then((res) => res.json())
 			.then(({ record }) => {
 				setRecord(record);

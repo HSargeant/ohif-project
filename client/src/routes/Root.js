@@ -8,7 +8,7 @@ export default function Root() {
   const [messages, setMessages] = useState({});
 
   useEffect(() => {
-    fetch(API_BASE + '/user', { credentials: "include" })
+    fetch(API_BASE + '/api/user', { credentials: "include" })
       .then(res => res.json())
       .then(res => setUser(res.user));
   }, []);

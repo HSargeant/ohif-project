@@ -2,7 +2,7 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import { redirect } from "react-router-dom";
 
-export default async function Login() {
+export default function Login() {
 
 // const loader = async () => {
 //   const user = await getUser();

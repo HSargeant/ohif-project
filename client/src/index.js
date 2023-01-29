@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: <Feed />,
       },
       {
-        path: "/record/:id",
+        path: "/records/:id",
         element: <Record />,
       },
     ]

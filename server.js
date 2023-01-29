@@ -53,23 +53,14 @@ app.use(flash());
 //Use forms for put / delete
 app.use(methodOverride("_method"));
 
-
-
-// catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
-
-
 app.use("/", mainRoutes);
 app.use("/api/records", RecordRoutes);
 
-app.use('*', (_, res) => {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+app.use('*', (req, res) => {
+  console.log(path.join(__dirname, 'client/build/index.html'),"====")
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 app.listen(process.env.PORT||PORT, ()=>{
   console.log(`running on port ${PORT}`)
 })
-
-module.exports = app;
