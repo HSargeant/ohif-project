@@ -2,7 +2,6 @@ const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
 
-
 module.exports = {
   getUser: (req, res) => {
     res.json({ user: req.user || null });

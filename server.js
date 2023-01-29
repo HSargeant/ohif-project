@@ -15,6 +15,8 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const connectDB = require("./config/database");
 require('dotenv').config({path: './.env'})
+// Passport config
+require("./config/passport")(passport);
 
 app.use(logger('dev'));
 app.use(cors({
@@ -62,17 +64,10 @@ app.use(methodOverride("_method"));
 app.use("/", mainRoutes);
 app.use("/api/records", RecordRoutes);
 
+app.use('*', (_, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
 
-// error handler
-// app.use(function(err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
 app.listen(process.env.PORT||PORT, ()=>{
   console.log(`running on port ${PORT}`)
 })

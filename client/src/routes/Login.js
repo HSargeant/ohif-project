@@ -1,7 +1,16 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
-export default function Login() {
-	console.log(API_BASE,"--------asdf--------------asdf")
+import { redirect } from "react-router-dom";
+
+export default async function Login() {
+
+// const loader = async () => {
+//   const user = await getUser();
+//   if (user) {
+//     return redirect("/profile");
+//   }
+// };
+
 	const { setUser, setMessages } = useOutletContext();
 	const navigate = useNavigate();
 	const handleSubmit = async (event) => {

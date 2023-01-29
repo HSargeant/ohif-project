@@ -9,7 +9,7 @@ export default function Profile() {
 	const [records, setRecords] = useState([]);
 
 	useEffect(() => {
-		fetch(API_BASE + "/profile", { credentials: "include" })
+		fetch(API_BASE + "/api/profile", { credentials: "include" })
 			.then((res) => res.json())
 			.then((data) => setRecords(data));
 	}, []);
@@ -31,7 +31,6 @@ export default function Profile() {
 			form.reset();
 		}
 	};
-
 	return (
 		<div className="container">
 			<div className="row mt-5">
@@ -43,14 +42,34 @@ export default function Profile() {
 					</div>
 					<div className="mt-5">
 						<h2>Add a record</h2>
-						<form action="/dashboard/createRecord" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
-							<div className="mb-3">s
-								<label htmlFor="title" className="form-label">Title</label>
-								<input type="text" className="form-control" id="title" name="title" />
+						<form action="/api/records/createRecord" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
+							<div className="mb-3">
+								<label htmlFor="title" className="form-label">Patient ID</label>
+								<input type="text" className="form-control" id="patientId" name="patientId" />
 							</div>
 							<div className="mb-3">
-								<label htmlFor="caption" className="form-label">Caption</label>
-								<textarea className="form-control" id="caption" name="caption"></textarea>
+								<label htmlFor="caption" className="form-label">Age</label>
+								<input type="text" className="form-control" id="age" name="age"/>
+							</div>
+							<div className="mb-3">
+								<label htmlFor="caption" className="form-label">ZIP Code</label>
+								<input type="text" className="form-control" id="zipCode" name="zipCode"/>
+							</div>
+							<div className="mb-3">
+								<label htmlFor="caption" className="form-label">Sex</label>
+								<input type="text" className="form-control" id="sex" name="sex"/>
+							</div>
+							<div className="mb-3">
+								<label htmlFor="caption" className="form-label">BMI</label>
+								<input type="text" className="form-control" id="bmi" name="bmi"/>
+							</div>
+							<div className="mb-3">
+								<label htmlFor="caption" className="form-label">Key Findings</label>
+								<textarea className="form-control" id="keyFindings" name="keyFindings"></textarea>
+							</div>
+							<div className="mb-3">
+								<label htmlFor="caption" className="form-label">Brixia Scores</label>
+								<textarea className="form-control" id="brixiaScores" name="brixiaScores"></textarea>
 							</div>
 							<div className="mb-3">
 								<label htmlFor="imgUpload" className="form-label">Image</label>

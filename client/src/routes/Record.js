@@ -20,17 +20,6 @@ export default function Record() {
 	if (record === undefined) return null;
 	else if (record === null) return <h2>Record not found</h2>;
 
-	const handleLike = async (event) => {
-		event.preventDefault();
-		const form = event.currentTarget;
-		const response = await fetch(API_BASE + form.getAttribute('action'), {
-			method: form.method,
-			credentials: "include"
-		});
-		const likes = await response.json();
-		setRecord({ ...record, likes });
-	};
-
 	const handleDelete = async (event) => {
 		event.preventDefault();
 		const form = event.currentTarget;
