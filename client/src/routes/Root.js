@@ -28,7 +28,7 @@ export default function Root() {
     <>
       <header className="container">
         <div className="text-center">
-          <h1 className=""><Link to={user ? '/dashboard' : '/'}>Ohif Record Viewer</Link></h1>
+          <h1 className=""><Link to={user ? '/profile' : '/'}>Ohif Record Viewer</Link></h1>
           <span></span>
         </div>
       </header>

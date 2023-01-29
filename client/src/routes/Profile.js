@@ -14,7 +14,7 @@ export default function Profile() {
 			.then((data) => setRecords(data));
 	}, []);
 
-	if (!user) return null;
+	if (!user) return null; //use navigate or redirect to send to login page
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
