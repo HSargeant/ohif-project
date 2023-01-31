@@ -3,16 +3,19 @@ import { API_BASE } from "../constants";
 import { redirect } from "react-router-dom";
 
 export default function Login() {
-
 // const loader = async () => {
 //   const user = await getUser();
 //   if (user) {
 //     return redirect("/profile");
 //   }
 // };
-
-	const { setUser, setMessages } = useOutletContext();
+	const { user,setUser, setMessages } = useOutletContext();
+	console.log(user)
 	const navigate = useNavigate();
+	if(user) {
+		 navigate("/profile")
+		 return
+	}
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const form = event.currentTarget;

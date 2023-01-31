@@ -2,8 +2,13 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 
 export default function Signup() {
-	const { setUser, setMessages } = useOutletContext();
+	const { setUser, setMessages,user } = useOutletContext();
 	const navigate = useNavigate();
+
+	if(user) {
+		 navigate("/profile")
+		 return
+	}
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();

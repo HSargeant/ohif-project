@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const RecordSchema = new mongoose.Schema({
+const ExamSchema = new mongoose.Schema({
   age: { 
     type: Number 
 	},
@@ -12,6 +12,9 @@ const RecordSchema = new mongoose.Schema({
   },
   imageURL: {
     type: String,
+  },
+  cloudinaryId:{
+    type:String
   },
   keyFindings: {
     type: String,
@@ -32,4 +35,4 @@ const RecordSchema = new mongoose.Schema({
   },
 },{ timestamps: true })
 
-module.exports = mongoose.model('Record', RecordSchema)
+module.exports = mongoose.model('Exam', ExamSchema)

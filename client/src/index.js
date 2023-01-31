@@ -7,16 +7,15 @@ import {
   Link,
 } from "react-router-dom";
 import App from './App';
-import Root from './routes/Root';
-import ErrorPage from './routes/ErrorPage';
-import Login from './routes/Login';
-import Signup from './routes/Signup';
-import Index from './routes/Index';
-import Profile from './routes/Profile';
-import Logout from './routes/Logout';
-import Feed from './routes/Feed';
-import Record from './routes/Record';
-
+import Root from './pages/Root';
+import ErrorPage from './pages/ErrorPage';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Index from './pages/Index';
+import Profile from './pages/Profile';
+import Logout from './pages/Logout';
+import Feed from './pages/Feed';
+import Exam from './pages/Exam';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,13 +47,12 @@ const router = createBrowserRouter([
         element: <Feed />,
       },
       {
-        path: "/records/:id",
-        element: <Record />,
+        path: "/exams/:id",
+        element: <Exam />,
       },
     ]
   },
 ]);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

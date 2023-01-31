@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
-import RecordList from "../components/RecordList";
+import ExamList from "../components/ExamList";
 import { API_BASE } from "../constants";
 
 export default function Profile() {
 	const { user, setMessages } = useOutletContext();
 
-	const [records, setRecords] = useState([]);
+	const [exams, setExams] = useState([]);
 
 	useEffect(() => {
 		fetch(API_BASE + "/api/profile", { credentials: "include" })
 			.then((res) => res.json())
-			.then((data) => setRecords(data));
+			.then((data) => setExams(data));
 	}, []);
 
 	if (!user) return null; //use navigate or redirect to send to login page
@@ -26,8 +26,8 @@ export default function Profile() {
 		});
 		const data = await response.json();
 		if (data.messages) setMessages(data.messages);
-		if (data.record) {
-			setRecords([...records, data.record]);
+		if (data.exam) {
+			setExams([...exams, data.exam]);
 			form.reset();
 		}
 	};
@@ -41,8 +41,8 @@ export default function Profile() {
 						<Link to="/logout" className="col-3 btn btn-primary">Logout</Link>
 					</div>
 					<div className="mt-5">
-						<h2>Add a record</h2>
-						<form action="/api/records/createRecord" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
+						<h2>Add a exam</h2>
+						<form action="/api/exams/createExam" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
 							<div className="mb-3">
 								<label htmlFor="title" className="form-label">Patient ID</label>
 								<input type="text" className="form-control" id="patientId" name="patientId" />
@@ -80,7 +80,7 @@ export default function Profile() {
 					</div>
 				</div>
 				<div className="col-6">
-					<RecordList records={records} />
+					<ExamList exams={exams} />
 					<div className="row justify-content-center mt-5">
 						<Link className="btn btn-primary" to="/feed">Return to Feed</Link>
 					</div>

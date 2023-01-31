@@ -1,15 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const recordsController = require("../controllers/recordsController")
+const recordsController = require("../controllers/examsController")
 const authController = require("../controllers/authController")
 const { ensureAuth, ensureGuest } = require("../middleware/auth")
 
-/* GET home page. */
-router.get('/api/user', authController.getUser)
-router.get('/api/profile', recordsController.getProfile)
-router.get("/api/feed",  recordsController.getFeed)
+router.get('/api/user', ensureAuth,authController.getUser)
+router.get('/api/profile', ensureAuth,recordsController.getProfile)
+router.get("/api/feed",  ensureAuth,recordsController.getFeed)
 router.post("/login", authController.postLogin)
-router.get("/logout", authController.logout)
+router.get("/logout",ensureAuth, authController.logout)
 router.post("/signup", authController.postSignup)
 
 module.exports = router
