@@ -1,12 +1,9 @@
-# Hack.Diversity Tech Dive Template
-
 ## Getting Started
 
 In order to make bothfront end and back end work together, you'll need to run both, but you can run just one or the other to start. As you begin working on this project, you'll first focus on the client, so you can more or less ignore the API portion of the code for now.
 
 ## Client
 In order to run the client, you'll run the following commands:
-
 ```bash
 cd client/
 npm i
@@ -17,7 +14,6 @@ You should then be able to visit `localhost:3000` in your browser and see the cl
 
 ## API
 In order to run the server, you'll run the following commands:
-
 ```bash
 cd api/
 npm i
@@ -28,7 +24,6 @@ npm run dev will start the server in development mode. Server will restart when 
 You should then be able to visit `localhost:8000/api` in your browser and see the server running.
 
 ## .env
-
 if you want to add test exams to the project
 create a .env file to hold your evironment varialbes and put in your api folder, 
 MONGO_URL =  " your mongodb connection string"
