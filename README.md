@@ -24,9 +24,9 @@ npm run dev will start the server in development mode. Server will restart when 
 You should then be able to visit `localhost:8000/api` in your browser and see the server running.
 
 ## .env
-if you want to add test exams to the project
-create a .env file to hold your evironment varialbes and put in your api folder, 
-MONGO_URL =  " your mongodb connection string"
-CLOUD_NAME =  "your cloudinary name"
-CLOUD_API_KEY = "your cloudinary api key"
-CLOUD_API_SECRET = "your cloudinary secret"
+if you want to add test exams to the project...
+- Create a `.env` file in api folder and add the following as `key = value`
+  - MONGO_URL =  " your mongodb connection string"
+  - CLOUD_NAME = `your cloudinary cloud name`
+  - CLOUD_API_KEY = `your cloudinary api key`
+  - CLOUD_API_SECRET = `your cloudinary api secret`
