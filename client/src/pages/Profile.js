@@ -82,7 +82,7 @@ export default function Profile() {
 				<div className="col-6">
 					<ExamList exams={exams} />
 					<div className="row justify-content-center mt-5">
-						<Link className="btn btn-primary" to="/feed">Return to Feed</Link>
+						<Link className="btn btn-primary" to="/exams">Return to Feed</Link>
 					</div>
 				</div>
 			</div>

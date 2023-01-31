@@ -14,7 +14,7 @@ import Signup from './pages/Signup';
 import Index from './pages/Index';
 import Profile from './pages/Profile';
 import Logout from './pages/Logout';
-import Feed from './pages/Feed';
+import Exams from './pages/Exams';
 import Exam from './pages/Exam';
 const router = createBrowserRouter([
   {
@@ -43,8 +43,8 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: "/feed",
-        element: <Feed />,
+        path: "/exams",
+        element: <Exams />,
       },
       {
         path: "/exams/:id",
