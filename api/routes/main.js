@@ -11,8 +11,9 @@ router.post("/login", authController.postLogin)
 router.get("/logout",ensureAuth, authController.logout)
 router.post("/signup", authController.postSignup)
 
+// api test route
 router.get('/api', (req,res)=>{
-    res.json("working")
+    res.json("Back end is running and can be reached at localhost:8000/api.  Look in the api/routes folder for more endpoints")
 })
 
 
