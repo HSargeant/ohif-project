@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 
-const API_ROOT = 'http://localhost:9000';
+const API_ROOT = 'http://localhost:8000';
 
 export function useApi({ path } = { path: '' }) {
+  console.log(path)
   const [response, setResponse] = useState();
 
   useEffect(() => {
