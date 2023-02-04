@@ -7,7 +7,7 @@ export default function Exam() {
 	console.log(user)
 	const examId = useParams().id;
 	const navigate = useNavigate();
-	const [exam, setExam] = useState({});
+	const [exam, setExam] = useState();
 	async function getData(){
 		const res1 = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
 		const data1= await res1.json()

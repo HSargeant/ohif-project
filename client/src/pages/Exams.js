@@ -10,13 +10,13 @@ export default function Exams() {
 		const getData= async ()=>{
 			const res1 = await fetch(API_BASE + "/api/exams", { credentials: "include" })
 			const data1= await res1.json()
-			const res2= await fetch("https://czi-covid-lypkrzry4q-uc.a.run.app/api/exams")
-			const data2= await res2.json()
-			setExams([...data1,...data2.exams])
+			// const res2= await fetch("https://czi-covid-lypkrzry4q-uc.a.run.app/api/exams") //took ouu temporarily because links was down
+
+			// const data2= await res2.json()
+			setExams([...data1])
 		}
 		getData()
 	},[])
-
 	return (
 		<div className="container">
 			<div className="row justify-content-center mt-5">
