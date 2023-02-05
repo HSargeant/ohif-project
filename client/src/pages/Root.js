@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet,useNavigate } from "react-router-dom";
+
 import Messages from '../components/Messages';
 import { API_BASE } from "../constants";
 
 export default function Root() {
   const [user, setUser] = useState();
   const [messages, setMessages] = useState({});
-
   useEffect(() => {
-    fetch(API_BASE + '/api/user', { credentials: "include" })
-      .then(res => res.json())
-      .then(res => setUser(res.user));
+    fetch(API_BASE + "/api/user",{ credentials: "include" })
+      .then(res=>res.json())
+      .then(data=>{
+          console.log(data.user)
+          setUser(data.user)  
+      })
   }, []);
 
   useEffect(() => {

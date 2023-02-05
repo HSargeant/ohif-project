@@ -8,7 +8,6 @@ export default function Index() {
 		 navigate("/profile")
 		 return
 	}
-
 	return <main className="container">
 		<div className="row justify-content-around mt-5">
 			<Link to="/login" className="col-3 btn btn-primary"> Login</Link>

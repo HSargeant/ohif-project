@@ -4,7 +4,7 @@ const recordsController = require("../controllers/examsController")
 const authController = require("../controllers/authController")
 const { ensureAuth, ensureGuest } = require("../middleware/auth")
 
-router.get('/api/user', ensureAuth,authController.getUser)
+router.get('/api/user',authController.getUser)
 router.get('/api/profile', ensureAuth,recordsController.getProfile)
 router.get("/api/exams",  ensureAuth,recordsController.getFeed)
 router.post("/login", authController.postLogin)
