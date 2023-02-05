@@ -12,7 +12,7 @@ const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const connectDB = require("./config/database");
-require('dotenv').config({path: './.env'})
+require('dotenv').config({path: '../.env'})
 
 // Passport config
 require("./config/passport")(passport);
@@ -53,9 +53,12 @@ app.use(methodOverride("_method"));
 app.use("/", mainRoutes);
 app.use("/api/exams", ExamRoutes);
 
-app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
+// app.use('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/client/build/index.html'));
+// });
+app.get("/api",(req,res)=>{
+  res.send("API WORKING")
+})
 
 app.listen(process.env.PORT||PORT, ()=>{
   console.log(`running on port ${PORT}`)
