@@ -23,12 +23,10 @@ code {
 }
 
 .LeftContent {
-  /* background-color: blueviolet; */
   padding: 5vh 0 15vh 0;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* background-color: #7996ec; */
 }
 
 .RightContent {
@@ -40,7 +38,6 @@ code {
   border-color: black;
   border-radius: 15px;
   overflow: hidden;
-  /* margin: 3%; */
   flex: 0 1 auto;
   font-size: small;
 }
@@ -65,10 +62,10 @@ code {
   border-width: 2px;
   border-radius: 15px;
   overflow: hidden;
-  margin: 4px;
-  margin-top: 10px;
   width: 40vw;
   height: auto;
+  margin: auto;
+  margin-top: 10px;
 }
 
 a {
@@ -83,7 +80,7 @@ a {
 .ButtonBundle {
   margin-left: 4%;
   background-color: #7996ec;
-  width: 22%;
+  width: fit-content;
   border-radius: 10px;
   box-shadow: 0 8px #6983d1;
   text-transform: uppercase;
@@ -97,29 +94,6 @@ a {
   box-shadow: 0 6px #6983d1;
   /* shifts button down so that it has the pressed effect */
   top: 2px;
-}
-
-.btn {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  background-color: #fcad26;
-  font-size: 15px;
-  font-weight: 300px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 10px;
-  margin: 0 50vw auto 0;
-  border-radius: 10px;
-  /* float: left; 
-  margin: 0 auto auto 4vw;
-  border-radius: 10px;
-  */
-  /* x-offset and yoffset then color  */
-  box-shadow: 0 8px #dd971d;
 }
 
 .ButtonRow {
