@@ -1,15 +1,33 @@
 import './App.css';
+import { useState, useEffect } from 'react';
+import { API_BASE } from "./constants";
+
 
 import { useApi } from './hooks/use-api';
 
 function App() {
-  const { response } = useApi();
+  const [data,setData]= useState("")
+  // const { response } = useApi();
+
+  useEffect(()=>{
+    console.log("call api")
+    fetch("http://localhost:8000/api")
+    .then(res=>res.json())
+    .then(data1=>{
+      setData(data1)
+    })
+    .catch(err=>console.log(err))
+
+  },[])
+  
+
+
 
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          {response}
+          {data}
         </p>
       </header>
     </div>
