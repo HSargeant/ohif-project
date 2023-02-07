@@ -11,3 +11,91 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Body {
+  /* background-color: #7ca4f5; */
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-gap: 5vw;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.LeftContent {
+  padding: 5vh 0 15vh 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.RightContent {
+  padding: 3vh 2vw 10vh 2vw;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 15px;
+  overflow: hidden;
+  flex: 0 1 auto;
+  font-size: small;
+}
+
+.Header {
+  display: flex;
+  margin-bottom: 2%;
+  align-items: center;
+  justify-content: center;
+}
+
+.XRayImage {
+  width: 90%;
+  height: auto;
+}
+
+.InfoBox {
+  font-size: medium;
+  border-color: black;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 40vw;
+  height: auto;
+  margin: auto;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  /* border: solid black 2px; */
+  padding: 4px;
+  color: black;
+}
+
+.ButtonBundle {
+  margin-left: 4%;
+  background-color: #7996ec;
+  width: fit-content;
+  border-radius: 10px;
+  box-shadow: 0 8px #6983d1;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+
+}
+
+.ButtonBundle:hover {
+  /* change box shadow */
+  box-shadow: 0 6px #6983d1;
+  /* shifts button down so that it has the pressed effect */
+  top: 2px;
+}
+
+.ButtonRow {
+  text-align: left;
+}
