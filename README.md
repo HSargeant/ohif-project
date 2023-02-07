@@ -1,4 +1,5 @@
 ## Getting Started
+# Getting Started
 
 In order to make bothfront end and back end work together, you'll need to run both, but you can run just one or the other to start. As you begin working on this project, you'll first focus on the client, so you can more or less ignore the API portion of the code for now.
 
@@ -30,3 +31,4 @@ if you want to add test exams to the project...
   - CLOUD_NAME = `your cloudinary cloud name`
   - CLOUD_API_KEY = `your cloudinary api key`
   - CLOUD_API_SECRET = `your cloudinary api secret`
+You should then be able to visit `localhost:9000` in your browser and see the server running.

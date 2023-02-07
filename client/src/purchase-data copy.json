@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Fire Red 4s",
+    "price": 250,
+    "image": "client/src/images/FROG.jpeg",
+    "type": "shoes"
+  },
+  {
+    "name": "HPY Dunks",
+    "price": 110,
+    "image": "client/src/images/dunks.jpeg",
+    "type": "shoes"
+  },
+  {
+    "name": "Cool Gray 4s",
+    "price": 180,
+    "image": "client/src/images/CG.jpeg",
+    "type": "shoes"
+  },
+  {
+    "name": "Mackage Coat",
+    "price": 500,
+    "image": "client/src/images/AcakageCoat.jpeg", 
+    "type": "Coat"
+  },
+  {
+    "name": "Patchwork Pants",
+    "price": 70,
+    "image": "./images/PatchPants.jpeg",
+    "type": "Pants"
+  },
+  {
+    "name": "Travis Dunks",
+    "price": 500,
+    "image": "client/src/images/TravisDunk.jpeg",
+    "type": "shoes"
+  },
+  {
+    "name": "RP Sweats",
+    "price": 60,
+    "image": "client/src/images/PoloPants.jpeg",
+    "type": "Pants"
+  },
+  {
+    "name": "Moncleezy",
+    "price": 600,
+    "image": "client/src/images/MCoat.jpeg",
+    "type": "Coat"
+  },
+  {
+    "name": "Infared 6",
+    "price": 230,
+    "image": "client/src/images/Infared.jpeg",
+    "type": "shoes"
+  },
+  {
+    "name": "Moosey",
+    "price": 600,
+    "image": "client/src/images/whiteCoat.jpeg",
+    "type": "Coat"
+  },
+  {
+    "name": "TH sweats",
+    "price": 80,
+    "image": "client/src/images/tommyPants.jpeg",
+    "type": "Pants"
+  },
+  {
+    "name": "Nike Coat",
+    "price": 120,
+    "image": "client/src/images/NikeCoat.jpeg",
+    "type": "Coat"
+  },
+  {
+    "name": "Kappa Pants",
+    "price": 270,
+    "image": "client/src/images/KappaPants.jpeg", 
+    "type": "Pants"
+  },
+  {
+    "name": "Fedni Pants",
+    "price": 100,
+    "image": "client/src/images/FendrPants.jpeg", 
+    "type": "Pants"
+  },
+  {
+    "name": "Travis 1s",
+    "price": 550,
+    "image": "client/src/images/Trav1Shoes.jpeg", 
+    "type": "shoes"
+  }
+]
