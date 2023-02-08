@@ -12,7 +12,7 @@ import App from './App';
 import Root from './pages/Root';
 import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Register from './pages/Register';
 import Index from './pages/Index';
 import Admin from './pages/Admin';
 import Logout from './pages/Logout';
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <Index />
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
@@ -38,8 +38,8 @@ const router = createBrowserRouter([
         element: <Logout />,
       },
       {
-        path: "/signup",
-        element: <Signup />,
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/admin",
