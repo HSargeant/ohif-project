@@ -4,7 +4,7 @@ import { API_BASE } from "../constants";
 
 export default function Root() {
     const [user,setUser]=useState({})
-  const [messages, setMessages] = useState({});
+  // const [messages, setMessages] = useState({});
 
 //   api call to get logged in user
 // useEffect(() => {
@@ -17,14 +17,13 @@ export default function Root() {
   return (
     <>
       Root / header
-      {/* temp header you can erase and enter the header component */}
+      {/* temp header you can erase and enter the header/sidebar component */}
       <header> 
         <ul>
         <Link to="/admin">Admin</Link>
         <Link to="/exams">All Exams</Link>
         <Link to="login">Login</Link>
         <Link to="/register">Create an Account</Link>
-        <Link to="/exams">Exams</Link>
         <Link to="/logout">Log Out</Link>
         </ul>
       </header>

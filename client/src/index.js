@@ -18,6 +18,7 @@ import Admin from './pages/Admin';
 import Logout from './pages/Logout';
 import Exams from './pages/Exams';
 import Exam from './pages/Exam';
+import EditExam from "./pages/EditExam.js"
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
         path: "/exam/:id",
         element: <Exam />,
       },
+      {
+        path: "/exam/:id",
+        element: <Exam />,
+      },
+      {
+        path: "/exam/edit/:id",
+        element: <EditExam />
+      }
     ]
   },
 ]);

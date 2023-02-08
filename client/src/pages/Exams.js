@@ -7,6 +7,7 @@ export default function Exams(){
 // use this temporarily to get the test data from the givin link
 
 const [exams,setExams] = useState([])
+const [loading,setLoading] = useState(true)
 
 useEffect(()=>{
     const getData= async()=>{
@@ -14,15 +15,16 @@ useEffect(()=>{
         const data = await response.json()
         console.log(data.exams)
         setExams(data.exams)
+        setLoading(false)
     }
     getData()
-},[])
+},[setExams])
 
 
     return(
         <>
             <h1>All exams page</h1>
-            <ul>
+            {loading ? <p>Loading...</p> : <ul>
             {exams.map(exam=>{
                 return(
                     <li key={exam._id}>{exam.patientId}</li>
@@ -30,7 +32,8 @@ useEffect(()=>{
                 )
 
             })}
-            </ul>
+            </ul> }
+           
         </>
 
     )
