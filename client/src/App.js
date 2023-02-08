@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
 import { API_BASE } from "./constants";
 
 
-import { useState } from "react";
 import SearchableItem from './medIndexs';
 import purchase from "./purchase-data copy.json";
 // import { useApi } from './hooks/use-api';
@@ -66,5 +65,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
