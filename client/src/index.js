@@ -1,12 +1,66 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
 import './index.css';
 import App from './App';
+
+import Root from './pages/Root';
+import ErrorPage from './pages/ErrorPage';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Index from './pages/Index';
+import Admin from './pages/Admin';
+import Logout from './pages/Logout';
+import Exams from './pages/Exams';
+import Exam from './pages/Exam';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Index />
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/logout",
+        element: <Logout />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/exams",
+        element: <Exams />,
+      },
+      {
+        path: "/exam/:id",
+        element: <Exam />,
+      },
+    ]
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
