@@ -99,3 +99,51 @@ a {
 .ButtonRow {
   text-align: left;
 }
+
+.ExamForm {
+  background-color: rgb(182, 182, 249);
+  align-content: center;
+  width: fit-content;
+  margin: 10%;
+  height: auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.row2,
+.row3,
+.row4 {
+  background-color: rgb(186, 186, 227);
+  display: block;
+}
+
+textarea {
+  width: 250px;
+  resize: vertical;
+}
+
+/* input[type=text] {
+  width: 100px;
+  height: auto;
+} */
+
+input {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 2%;
+}
+
+input[type=submit] {
+  background-color: rgb(105, 131, 209);
+  color: white;
+  padding: 2%;
+  width: 25vw;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px 4px rgba(61, 81, 142, 0.24);
+}
+
+.formFunction {
+  display: block;
+  text-align: right;
+}
