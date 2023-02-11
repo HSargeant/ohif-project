@@ -1,5 +1,6 @@
 import xray from './test.jpeg';
-const Image = () => {
+const Image = (props) => {
+    const {imageURL} = props
     return (
         <div>
             <h2> Exam ID: {"Exam-2"} </h2>

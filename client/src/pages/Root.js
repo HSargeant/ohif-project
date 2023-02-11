@@ -16,13 +16,13 @@ export default function Root() {
 
   return (
     <>
-      Root / header
+      Temporary header
       {/* temp header you can erase and enter the header/sidebar component */}
       <header> 
         <ul>
         <Link to="/admin">Admin</Link>
         <Link to="/exams">All Exams</Link>
-        <Link to="login">Login</Link>
+        <Link to="/exams/new">Add New Exam</Link>
         <Link to="/register">Create an Account</Link>
         <Link to="/logout">Log Out</Link>
         </ul>
