@@ -1,11 +1,12 @@
 import './App.css';
-import Header from './components/Header.js';
+import Header from './components/Header';
 import PatientInfo from './components/PatientInfo.js';
 import KeyFindings from './components/KeyFindings.js';
 import AllDataButton from './components/AllDataButton.js';
 import Image from './components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "./constants";
+
 
 
 import SearchableItem from './medIndexs';

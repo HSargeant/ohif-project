@@ -5,7 +5,7 @@ const AllDataButton = () => {
         <div className="ButtonRow">
             <div className="ButtonBundle">
                 <BiArrowBack />
-                <a href=""> Return to All Data </a>
+                <a href="/exams"> Return to All Data </a>
             </div>
             {/* <button class="btn"> Return to All Data </button> */}
             {/* <h2> wssjj</h2> */}
