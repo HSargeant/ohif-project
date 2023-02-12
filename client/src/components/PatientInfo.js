@@ -1,6 +1,5 @@
 const PatientInfo = (props) => {
     const {exam} = props
-    console.log("patient info: ",exam)
     return (
         <div className="PatientInfo">
             <h2> Patient ID: {exam.patientId}</h2>
