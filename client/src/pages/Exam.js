@@ -33,7 +33,7 @@ export default function Exam(){
         <AllDataButton />
         <div className="Body">
             <div className="LeftContent">
-            <Image imageURL={exam.cloudinaryId ? exam.imageURL: ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}/>
+            <Image imageURL={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}  examId={exam.examId}/>
             <KeyFindings keyFindings={exam.keyFindings} />
             </div>
             <div className="RightContent">
