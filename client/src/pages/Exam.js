@@ -13,17 +13,18 @@ import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom
 
 export default function Exam(){
     // const { user } = useOutletContext(); // we will use this to when we set up auth to check for which user is logged in
-    const  [exam,setExam] = useState()
+    const  [exam,setExam] = useState({})
     const examId = useParams().id // used to grab the id of the exam ---- /exams/:id
 	const navigate = useNavigate();
-
     useEffect(()=>{
         const getData = async()=>{
-            const res = await fetch(API_BASE + `/api/exams/{${examId}}`)
+            const res = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
             const data = await res.json()
+			console.log(data)
             setExam(data)
         }
-    })
+		getData()
+    },[])
 
 
     return(
@@ -32,11 +33,11 @@ export default function Exam(){
         <AllDataButton />
         <div className="Body">
             <div className="LeftContent">
-            <Image imageURL={exam.imageURL}/>
-            <KeyFindings />
+            <Image imageURL={exam.cloudinaryId ? exam.imageURL: ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}/>
+            <KeyFindings keyFindings={exam.keyFindings} />
             </div>
             <div className="RightContent">
-            <PatientInfo />
+            <PatientInfo exam={exam}/>
             </div>
         </div>
       </>
