@@ -71,6 +71,27 @@ module.exports = {
   },
   editExam: async(req,res)=>{
 
+    try{
+      let exam = await Exam.findOneAndUpdate({id: req.body.id},
+        {
+        age: req.body.age,
+        bmi: req.body.bmi,
+        brixiaScores: req.body.brixiaScores,
+        keyFindings: req.body.KeyFindings,
+        patienId: req.body.patientId,
+        sex: req.body.sex,
+        zipCode: req.body.zipCode,
+        user: req.user.id
+      },
+      {new: true,
+      rawResult:true
+      }
+
+      )
+      console.log("edit successful")
+}catch(err){
+  res.redirect("/profile")
+    }
   },
   deleteExam: async (req, res) => {
     try {
