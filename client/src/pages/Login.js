@@ -127,7 +127,7 @@ export default function Login() {
             >
               Don&apos;t have an account?
               {' '}
-                <Link href="/signup"
+                <Link href="/register"
                      variant="subtitle2"
                      underline="hover"
                      sx={{
@@ -141,7 +141,7 @@ export default function Login() {
                     cursor: 'pointer'
                   }}
                 > */}
-                  Sign Up
+                  Register
                 {/* </Link> */}
                 </Link>
               
