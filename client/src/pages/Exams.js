@@ -4,7 +4,6 @@ import purchase from "../purchase-data copy.json";
 import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { API_BASE } from "../constants";
 
-
 // list of all the exams
 export default function Exams(){
     const [items, setItems] = useState(purchase)
