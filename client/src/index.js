@@ -28,12 +28,12 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Index />
+        element: <Login /> //users will land at the login page
       },
-      {
-        path: "login",
-        element: <Login />,
-      },
+      // {
+      //   path: "login",
+      //   element: <Login />,
+      // },
       {
         path: "/logout",
         element: <Logout />,
@@ -51,15 +51,15 @@ const router = createBrowserRouter([
         element: <Exams />,
       },
       {
-        path: "/exam/:id",
+        path: "/exams/:id",
         element: <Exam />,
       },
       {
-        path: "/exam/:id",
-        element: <Exam />,
+        path: "/exams/new",
+        element: <><h1>add new entry form file here</h1></>,
       },
       {
-        path: "/exam/edit/:id",
+        path: "/exams/edit/:id",
         element: <EditExam />
       }
     ]

@@ -56,9 +56,9 @@ app.use("/api/exams", ExamRoutes);
 // app.use('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '/client/build/index.html'));
 // });
-app.get("/api",(req,res)=>{
-  res.send("API WORKING")
-})
+// app.get("/api",(req,res)=>{
+//   res.send("API WORKING")
+// })
 
 app.listen(process.env.PORT||PORT, ()=>{
   console.log(`running on port ${PORT}`)

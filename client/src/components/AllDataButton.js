@@ -1,11 +1,13 @@
 import { BiArrowBack } from "react-icons/bi";
+import { Link, useNavigate} from "react-router-dom";
+
 const AllDataButton = () => {
     return (
 
         <div className="ButtonRow">
             <div className="ButtonBundle">
                 <BiArrowBack />
-                <a href="/exams"> Return to All Data </a>
+                <Link to="/exams"> Return to All Data </Link>
             </div>
             {/* <button class="btn"> Return to All Data </button> */}
             {/* <h2> wssjj</h2> */}
