@@ -1,6 +1,5 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
-
 import { Box, Button, Container, Grid, TextField, Typography,Link } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 
@@ -89,16 +88,12 @@ export default function Login() {
               </Typography>
             </Box>
             <TextField
-            //   error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
-            //   helperText={formik.touched.email && formik.errors.email}
               label="Email Address"
               margin="normal"
               name="email"
-            //   onBlur={formik.handleBlur}
-            //   onChange={formik.handleChange}
+
               type="email"
-            //   value={formik.values.email}
               variant="outlined"
               className="form-label"
             />
@@ -134,15 +129,7 @@ export default function Login() {
                        cursor: 'pointer'
                      }}
                 >
-                {/* <Link
-                  variant="subtitle2"
-                  underline="hover"
-                  sx={{
-                    cursor: 'pointer'
-                  }}
-                > */}
                   Register
-                {/* </Link> */}
                 </Link>
               
             </Typography>
