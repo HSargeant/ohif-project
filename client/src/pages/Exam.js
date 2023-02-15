@@ -7,13 +7,14 @@ import AllDataButton from '../components/AllDataButton';
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
-
+import EditButton from "../component/EditButton";
 
 export default function Exam(){
     return(
         <>
         <Header />
-        <AllDataButton />
+        <AllDataButton /> 
+        <EditButton />
         <div className="Body">
             <div className="LeftContent">
             <Image />
