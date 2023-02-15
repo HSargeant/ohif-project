@@ -1,7 +1,8 @@
-import { useState } from "react";
+// page to add new exam
 
-// user page where they will see all of their created exams
-export default function Admin() {
+import { API_BASE } from "../constants";
+
+export default function AddExam() {
     const [patientId, setPatientId] = useState("");
     const [ExamID, setExam] = useState("");
     const [age, setAge] = useState("");
@@ -17,8 +18,9 @@ export default function Admin() {
         e.preventDefault();
         try {
 
-            let res = await fetch("https://httpbin.org/post", {
+            let res = await fetch(API_BASE + '/api/Exams/createExam', {
                 method: "POST",
+                // remove body: JSON.stringify
                 body: JSON.stringify({
                     patientId: patientId,
                     exam: ExamID,
@@ -35,8 +37,6 @@ export default function Admin() {
             if (res.status === 200) {
                 //setPatientId("");
                 setExam("");
-
-                // setEmail("");
                 setMessage("User created successfully");
             } else {
                 setMessage("Some error occured");
@@ -102,10 +102,3 @@ export default function Admin() {
         </div >
     )
 }
-
-// function handleSubmit() {
-
-//     alert("hi");
-//     // on sucess let user know that exam was submited right
-// } 
-
