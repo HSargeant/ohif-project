@@ -7,7 +7,7 @@ import AllDataButton from '../components/AllDataButton';
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
-import EditButton from "../component/EditButton";
+import EditButton from "../components/EditButton";
 import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
 
 export default function Exam(){
