@@ -1,7 +1,9 @@
+// page to add new exam
+
+import { API_BASE } from "../constants";
 import { useState } from "react";
 
-// user page where they will see all of their created exams
-export default function Admin() {
+export default function AddExam() {
     const [patientId, setPatientId] = useState("");
     const [ExamID, setExam] = useState("");
     const [age, setAge] = useState("");
@@ -16,12 +18,12 @@ export default function Admin() {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try {
-
-            let res = await fetch("https://httpbin.org/post", {
+            let res = await fetch(API_BASE + '/api/Exams/createExam', {
                 method: "POST",
+                // remove body: JSON.stringify
                 body: JSON.stringify({
                     patientId: patientId,
-                    exam: ExamID,
+                    // exam: ExamID,
                     age: age,
                     bmi: BMI,
                     brixiaScores: brixiaScores,
@@ -33,10 +35,8 @@ export default function Admin() {
             });
             let resJson = await res.json();
             if (res.status === 200) {
-                //setPatientId("");
+                setPatientId("");
                 setExam("");
-
-                // setEmail("");
                 setMessage("User created successfully");
             } else {
                 setMessage("Some error occured");
@@ -45,25 +45,20 @@ export default function Admin() {
             console.log(err);
         }
     };
+    console.log(message);
     return (
         <div className="ExamForm">
             <form action="/api/exams/createExam" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
                 <div className="formFunction">
                     <input type="reset" placeholder="RESET" />
-                    {/* <input onclick="google.com" type="reset" value="CANCEL" /> */}
                     <a href="/"> CANCEL </a>
                 </div>
-
-
-                {/* value={patientId} */}
 
                 <label> Patient ID</label>
                 <input type="text" placeholder="Patient ID..." />
 
                 <label> Exam ID</label>
                 <input type="text" placeholder="Exam ID..." />
-
-
 
                 <div className="row2">
                     <label> Patient's Age</label>
@@ -83,7 +78,6 @@ export default function Admin() {
 
                     <label> Patient's ZipCode </label>
                     <input type="text" placeholder="zip code" />
-
                 </div>
 
                 <div className="row4">
@@ -98,14 +92,8 @@ export default function Admin() {
 
                 <input type="submit" value="Create Exam" />
                 <div className="message">{message ? <p>{message}</p> : null}</div>
+                {/* <div className="message">{console.log("hhhnnnnnnehe")}</div> */}
             </form>
         </div >
     )
 }
-
-// function handleSubmit() {
-
-//     alert("hi");
-//     // on sucess let user know that exam was submited right
-// } 
-
