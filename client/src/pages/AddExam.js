@@ -92,7 +92,7 @@ export default function AddExam() {
 
                 <input type="submit" value="Create Exam" />
                 <div className="message">{message ? <p>{message}</p> : null}</div>
-                {/* <div className="message">{console.log("hhhehe")}</div> */}
+                {/* <div className="message">{console.log("hhhnnnnnnehe")}</div> */}
             </form>
         </div >
     )
