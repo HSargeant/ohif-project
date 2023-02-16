@@ -16,6 +16,7 @@ module.exports = {
     }
   },
   getFeed: async (req, res) => {
+    console.log('getting feed')
     try {
       const exams = await Exam.find().sort({ createdAt: "desc" }).populate("user").lean();
       res.json(exams);
