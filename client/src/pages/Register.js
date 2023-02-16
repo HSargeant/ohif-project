@@ -46,7 +46,7 @@ export default function Signup() {
 	// 	}
 	};
 
-//   console.log(errorMsg)
+  console.log(errorMsg)
 	return (
 		<Box
         component="main"
