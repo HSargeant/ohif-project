@@ -19,6 +19,7 @@ import Logout from './pages/Logout';
 import Exams from './pages/Exams';
 import Exam from './pages/Exam';
 import EditExam from "./pages/EditExam.js"
+import AddExam from './pages/AddExam';
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/exams/new",
-        element: <><h1>add new entry form file here</h1></>,
+        element: <AddExam />
       },
       {
         path: "/exams/edit/:id",

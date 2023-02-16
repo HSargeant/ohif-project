@@ -1,6 +1,7 @@
 // page to add new exam
 
 import { API_BASE } from "../constants";
+import { useState } from "react";
 
 export default function AddExam() {
     const [patientId, setPatientId] = useState("");
@@ -17,13 +18,12 @@ export default function AddExam() {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try {
-
             let res = await fetch(API_BASE + '/api/Exams/createExam', {
                 method: "POST",
                 // remove body: JSON.stringify
                 body: JSON.stringify({
                     patientId: patientId,
-                    exam: ExamID,
+                    // exam: ExamID,
                     age: age,
                     bmi: BMI,
                     brixiaScores: brixiaScores,
@@ -35,7 +35,7 @@ export default function AddExam() {
             });
             let resJson = await res.json();
             if (res.status === 200) {
-                //setPatientId("");
+                setPatientId("");
                 setExam("");
                 setMessage("User created successfully");
             } else {
@@ -45,25 +45,20 @@ export default function AddExam() {
             console.log(err);
         }
     };
+    console.log(message);
     return (
         <div className="ExamForm">
             <form action="/api/exams/createExam" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
                 <div className="formFunction">
                     <input type="reset" placeholder="RESET" />
-                    {/* <input onclick="google.com" type="reset" value="CANCEL" /> */}
                     <a href="/"> CANCEL </a>
                 </div>
-
-
-                {/* value={patientId} */}
 
                 <label> Patient ID</label>
                 <input type="text" placeholder="Patient ID..." />
 
                 <label> Exam ID</label>
                 <input type="text" placeholder="Exam ID..." />
-
-
 
                 <div className="row2">
                     <label> Patient's Age</label>
@@ -83,7 +78,6 @@ export default function AddExam() {
 
                     <label> Patient's ZipCode </label>
                     <input type="text" placeholder="zip code" />
-
                 </div>
 
                 <div className="row4">
@@ -98,6 +92,7 @@ export default function AddExam() {
 
                 <input type="submit" value="Create Exam" />
                 <div className="message">{message ? <p>{message}</p> : null}</div>
+                {/* <div className="message">{console.log("hhhehe")}</div> */}
             </form>
         </div >
     )
