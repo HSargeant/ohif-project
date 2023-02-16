@@ -3,8 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import { API_BASE } from "../constants";
 
 export default function Root() {
-    const [user,setUser]=useState({})
-  // const [messages, setMessages] = useState({});
+    const [user,setUser]=useState(null)
+  const [messages, setMessages] = useState({});
 
 //   api call to get logged in user
 // useEffect(() => {
@@ -28,8 +28,8 @@ export default function Root() {
         </ul>
       </header>
       {/* Do not touch. Outlet context is used to render the child routes. we will use this to keep track of the logged in user across the application  */}
-      <Outlet  />
-      {/* <Outlet context={{ user, setUser, setMessages }} />  */}
+      {/* <Outlet  /> */}
+      <Outlet context={{ user, setUser, setMessages }} /> 
       {/*  */}
     </>
   );
