@@ -6,7 +6,7 @@ const { ensureAuth } = require("../middleware/auth");
 
 router.get("/:id",examsController.getExam); 
 router.put("/edit/:id",examsController.editExam); 
-router.post("/createExam",upload.single("file"), examsController.createExam);
+router.post("/new",upload.single("file"), examsController.createExam);
 router.delete("/deleteExam/:id", ensureAuth,examsController.deleteExam);
 
 module.exports = router;

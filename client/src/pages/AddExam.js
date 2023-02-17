@@ -2,6 +2,7 @@
 
 import { API_BASE } from "../constants";
 import { useState } from "react";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 
 export default function AddExam() {
     const [patientId, setPatientId] = useState("");
@@ -15,40 +16,25 @@ export default function AddExam() {
     const [zipCode, setZipCode] = useState("");
     const [message, setMessage] = useState("");
 
-    let handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            let res = await fetch(API_BASE + '/api/Exams/createExam', {
-                method: "POST",
-                // remove body: JSON.stringify
-                body: JSON.stringify({
-                    patientId: patientId,
-                    // exam: ExamID,
-                    age: age,
-                    bmi: BMI,
-                    brixiaScores: brixiaScores,
-                    imageURL: imageURL,
-                    keyFindings: keyFindings,
-                    sex: sex,
-                    zipCode: zipCode,
-                }),
-            });
-            let resJson = await res.json();
-            if (res.status === 200) {
-                setPatientId("");
-                setExam("");
-                setMessage("User created successfully");
-            } else {
-                setMessage("Some error occured");
-            }
-        } catch (err) {
-            console.log(err);
-        }
+    let handleSubmit = async (event) => {
+        event.preventDefault();
+		const form = event.currentTarget;
+		const response = await fetch(API_BASE + form.getAttribute('action'), {
+			method: form.method,
+			body: new FormData(form),
+			credentials: "include"
+		});
+		const json = await response.json();
+		if (json.messages) setMessages(json.messages);
+		if (json.post) {
+			setPosts([...posts, json.post]);
+			form.reset();
+		}
     };
     console.log(message);
     return (
         <div className="ExamForm">
-            <form action="/api/exams/createExam" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
+            <form action="/api/exams/new" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
                 <div className="formFunction">
                     <input type="reset" placeholder="RESET" />
                     <a href="/"> CANCEL </a>
