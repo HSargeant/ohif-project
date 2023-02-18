@@ -5,25 +5,26 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 export default function Login() {
   const { user,setUser, setMessages } = useOutletContext();
+  console.log(user)
 	const navigate = useNavigate();
 	if(user) {
-		 navigate("/profile")
+		 navigate("/exams")
 		 return
 	}
 	const handleSubmit = async (event) => {
-		// event.preventDefault();
-		// const form = event.currentTarget;
-		// const response = await fetch(API_BASE + form.getAttribute('action'), {
-		// 	method: form.method,
-		// 	body: new URLSearchParams(new FormData(form)),
-		// 	credentials: "include"
-		// });
-		// const data = await response.json();
-		// if (data.messages) setMessages(data.messages);
-		// if (data.user) {
-		// 	setUser(data.user);
-		// 	navigate("/profile");
-		// }
+		event.preventDefault();
+		const form = event.currentTarget;
+		const response = await fetch(API_BASE + form.getAttribute('action'), {
+			method: form.method,
+			body: new URLSearchParams(new FormData(form)),
+			credentials: "include"
+		});
+		const data = await response.json();
+		if (data.messages) setMessages(data.messages);
+		if (data.user) {
+			setUser(data.user);
+			navigate("/exams");
+		}
 	};
   // login page
 	return (
