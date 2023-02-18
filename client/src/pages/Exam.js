@@ -30,7 +30,7 @@ export default function Exam(){
         <>
         <Header />
         <AllDataButton /> 
-        <EditButton />
+        <EditButton examId={examId}/>
         <div className="Body">
             <div className="LeftContent">
             <Image imageURL={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}  examId={exam.examId}/> 
