@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 
 export default function AddExam() {
-    // const { user, setMessages } = useOutletContext();
+    const { user, setMessages } = useOutletContext();
     const navigate = useNavigate()
 
 
@@ -15,6 +15,8 @@ export default function AddExam() {
         try{
             event.preventDefault();
             const form = event.currentTarget;
+            console.log(new FormData(form))
+
             const response = await fetch(API_BASE + form.getAttribute('action'), {
                 method: form.method,
                 body: new FormData(form),

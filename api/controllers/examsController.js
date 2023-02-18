@@ -64,7 +64,8 @@ module.exports = {
         icu:req.body.icu,
         icuAdmits:req.body.icuAdmits,
         examId:req.body.examId,
-        weight:req.body.weight
+        weight:req.body.weight,
+        mortality:req.body.mortality
 
 
       });
@@ -74,28 +75,36 @@ module.exports = {
       console.log(err);
     }
   },
-  editExam: async(req,res)=>{
-
+  editExam: async (req,res)=>{
+      console.log(req.body)
     try{
-      let exam = await Exam.findOneAndUpdate({id: req.body.id},
+      const exam = await Exam.findOneAndUpdate({_id: req.params.id},
         {
-        age: req.body.age,
-        bmi: req.body.bmi,
-        brixiaScores: req.body.brixiaScores,
-        keyFindings: req.body.KeyFindings,
-        patienId: req.body.patientId,
-        sex: req.body.sex,
-        zipCode: req.body.zipCode,
-        user: req.user.id
+          age: req.body.age,
+          bmi: req.body.bmi,
+          brixiaScores: req.body.brixiaScores,
+          keyFindings: req.body.keyFindings,
+          patientId:req.body.patientId,
+          sex:req.body.sex,
+          zipCode:req.body.zipCode,
+          icu:req.body.icu,
+          icuAdmits:req.body.icuAdmits,
+          examId:req.body.examId,
+          weight:req.body.weight,
+          mortality:req.body.mortality
+
       },
-      {new: true,
-      rawResult:true
+      {
+        new: true,
       }
 
       )
-      console.log("edit successful")
+      // res.json(exam)
+      // console.log("edit successful")
+      res.redirect("/exams")
 }catch(err){
-  res.redirect("/profile")
+  console.log(err)
+  
     }
   },
   deleteExam: async (req, res) => {
