@@ -45,13 +45,12 @@ module.exports = {
     }
   },
   createExam: async (req, res) => {
-    console.log(req)
+    // console.log(req)
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-
+      const userID= req.user ? req.user.id : "63e174edb2d3100b58d5a0ad"
       const exam = await Exam.create({
-
         age: req.body.age,
         imageURL: result.secure_url,
         cloudinaryId: result.public_id,
@@ -61,7 +60,12 @@ module.exports = {
         patientId:req.body.patientId,
         sex:req.body.sex,
         zipCode:req.body.zipCode,
-        user:req.user.id
+        user:userID,
+        icu:req.body.icu,
+        icuAdmits:req.body.icuAdmits,
+        examId:req.body.examId,
+        weight:req.body.weight
+
 
       });
       console.log("Exam has been created");
