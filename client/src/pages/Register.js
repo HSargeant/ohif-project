@@ -1,5 +1,5 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import { API_BASE } from "../constants";
 
 import {
@@ -10,19 +10,20 @@ import {
 	TextField,
 	Typography
   } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import GoogleIcon from '@mui/icons-material/Google';
 
-export default function Signup() {
+export default function Register() {
 	const { setUser,messages, setMessages,user } = useOutletContext();
   const [errorMsg,setErrorMsg] = useState("")
 	const navigate = useNavigate();
+  useEffect(()=>{
+      if(user) {
+        navigate("/exams")
+        return
+      }
 
-	if(user) {
-		 navigate("/profile")
-		 return
-	}
-
+  },[])
+  
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const form = event.currentTarget;
@@ -47,7 +48,7 @@ export default function Signup() {
 		}
 	};
 
-  console.log(errorMsg)
+  console.log(errorMsg,user)
 	return (
 		<Box
         component="main"
