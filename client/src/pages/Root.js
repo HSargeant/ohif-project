@@ -16,7 +16,7 @@ export default function Root() {
 
   return (
     <>
-      Root / header
+      {/* Root / header */}
       {/* temp header you can erase and enter the header/sidebar component */}
       <header> 
         <ul>

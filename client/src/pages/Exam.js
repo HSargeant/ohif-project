@@ -7,12 +7,12 @@ import AllDataButton from '../components/AllDataButton';
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
-
+import '../pages/Exams.css';
 
 export default function Exam(){
     return(
         <>
-        <Header />
+        <Header /> 
         <AllDataButton />
         <div className="Body">
             <div className="LeftContent">

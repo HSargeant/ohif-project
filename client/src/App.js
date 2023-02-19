@@ -23,13 +23,15 @@ function App() {
     <div className="App">
       <Header />
       <AllDataButton />
-      <div className="Body">
-        <div className="LeftContent">
-          <Image />
-          <KeyFindings />
-        </div>
-        <div className="RightContent">
-          <PatientInfo />
+      <div class="flex-container">
+        <div className="Body">
+          <div className="LeftContent">
+            <Image />
+           <KeyFindings />
+          </div>
+          <div className="RightContent">
+            <PatientInfo />
+          </div>
         </div>
       </div>
       <header className="App-header">

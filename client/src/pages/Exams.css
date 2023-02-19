@@ -1,0 +1,67 @@
+body {
+background-color:
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Times New Roman', Times, serif
+}
+
+p {
+    font-size: x-large;
+}
+
+.Header {
+    color: rgb(21, 127, 193);
+    font-weight:bold;
+    border: 10px;
+    border-color: blue;
+    background-color: antiquewhite;
+    outline: 5px solid rgb(68, 137, 239)
+}
+
+.InfoBox {
+    color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    
+    margin-top: 20px;
+    border: 10px;
+    outline: 5px solid rgb(68, 137, 239);
+}
+
+.PatientInfo {
+    color: rgb(0, 0, 0);
+    background-color: antiquewhite;
+    padding: 10px;
+    float: left;
+    border-radius: 15px;
+    border: 10px;
+    outline: 5px solid rgb(68, 137, 239);
+
+}
+#exam-id {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    font-size: 40px;
+    color: rgb(21, 127, 193);
+    background-color: antiquewhite;
+    border: 10px;
+    border-radius: 15px;
+    outline: 5px solid rgb(68, 137, 239);
+}
+
+.XRayImage {
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 15px;
+    border: 10px;
+    outline: 5px solid rgb(68, 137, 239);
+}
+
