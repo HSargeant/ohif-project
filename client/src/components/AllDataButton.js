@@ -5,7 +5,7 @@ const AllDataButton = () => {
     return (
         <div className="ButtonRow">
             <div className="ButtonBundle">
-                <BiArrowBack />
+                {/* <BiArrowBack /> */}
                 <Link to="/exams"> Return to All Data </Link>
             </div>
             {/* <button className="btn"> Return to All Data </button> */}

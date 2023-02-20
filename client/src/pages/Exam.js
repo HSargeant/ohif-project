@@ -1,5 +1,6 @@
 // page to display one exam
 import '../App.css';
+import '../pages/Exams.css';
 import Header from '../components/Header';
 import PatientInfo from '../components/PatientInfo';
 import KeyFindings from '../components/KeyFindings';
