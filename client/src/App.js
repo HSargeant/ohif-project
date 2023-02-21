@@ -1,6 +1,15 @@
-import "./App.css";
-import { useState } from "react";
-// import SearchableItem from "./medIndexs";
+import './App.css';
+import Header from './components/Header';
+import PatientInfo from './components/PatientInfo.js';
+import KeyFindings from './components/KeyFindings.js';
+import AllDataButton from './components/AllDataButton.js';
+import Image from './components/Image.js';
+import { useState, useEffect } from 'react';
+import { API_BASE } from "./constants";
+
+
+
+import SearchableItem from './medIndexs';
 import purchase from "./purchase-data copy.json";
 import ItemAndInfo from "./medIndexs";
 import NavBarSide from "./NavBarSide/navbarside";
@@ -22,6 +31,17 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
+      <AllDataButton />
+      <div className="Body">
+        <div className="LeftContent">
+          <Image />
+          <KeyFindings />
+        </div>
+        <div className="RightContent">
+          <PatientInfo />
+        </div>
+      </div>
       <header className="App-header">
         <nav id="topsec">
           {/* <img src="images/exaLog.png" class="logo"> */}
@@ -46,6 +66,34 @@ function App() {
           type="text"
           onChange={(e) => setMedQuery(e.target.value)}
         ></input>
+        <nav id="topsec">
+          {/* <img src="images/exaLog.png" className="logo"> */}
+          <ul id="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Exams</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        {/* <p>
+          {response}
+        </p> */}
+        <div id="shopping">
+          {
+            items.map((item) => {
+              // var purchItem
+              return (
+                <div>
+                  <SearchableItem name={item.name} image={item.image} price={item.price} type={item.type}></SearchableItem>
+                  {/* <button id = "butt" onClick = {() => {itemCart(<PurchableItem name ={item.name} image = {item.image} price = {item.price} 
+                    type = {item.type}></PurchableItem>);
+                    totalSum(sum + item.price)}}>Add to Cart</button> */}
+                </div>
+
+              )
+            })
+          }
+        </div>
       </header>
 
       <body id="holding">
@@ -69,5 +117,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
