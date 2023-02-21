@@ -45,7 +45,6 @@ module.exports = {
     }
   },
   createExam: async (req, res) => {
-    // console.log(req)
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
@@ -66,8 +65,6 @@ module.exports = {
         examId:req.body.examId,
         weight:req.body.weight,
         mortality:req.body.mortality
-
-
       });
       console.log("Exam has been created");
       res.json({ exam });
@@ -76,32 +73,29 @@ module.exports = {
     }
   },
   editExam: async (req,res)=>{
-      console.log(req.body)
+    console.log("--------hitting route")
+      console.log(req.body.age)
     try{
-      const exam = await Exam.findOneAndUpdate({_id: req.params.id},
+      const exam = await Exam.findOneAndUpdate({_id: req.body.id},
         {
           age: req.body.age,
           bmi: req.body.bmi,
           brixiaScores: req.body.brixiaScores,
           keyFindings: req.body.keyFindings,
-          patientId:req.body.patientId,
-          sex:req.body.sex,
-          zipCode:req.body.zipCode,
-          icu:req.body.icu,
-          icuAdmits:req.body.icuAdmits,
-          examId:req.body.examId,
-          weight:req.body.weight,
-          mortality:req.body.mortality
-
-      },
-      {
+          patientId: req.body.patientId,
+          sex: req.body.sex,
+          zipCode: req.body.zipCode,
+          icu: req.body.icu,
+          icuAdmits: req.body.icuAdmits,
+          examId: req.body.examId,
+          weight: req.body.weight,
+          mortality: req.body.mortality
+      }, {
         new: true,
-      }
-
-      )
-      // res.json(exam)
-      // console.log("edit successful")
-      res.redirect("/exams")
+        runValidators: true
+    })
+      res.json(exam)
+      console.log("edit successful")
 }catch(err){
   console.log(err)
   

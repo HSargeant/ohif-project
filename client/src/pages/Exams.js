@@ -23,6 +23,7 @@ export default function Exams(){
       getData()
   },[setExams])
 
+  console.log("logged in: ",user)
   return(
         <div id = "shopping">
             {
