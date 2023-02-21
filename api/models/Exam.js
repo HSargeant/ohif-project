@@ -2,10 +2,13 @@ const mongoose = require('mongoose')
 
 const ExamSchema = new mongoose.Schema({
   age: { 
-    type: Number 
+    type: String 
 	},
   bmi: { 
-		type: Number 
+		type: String 
+	},
+  weight: { 
+		type: String 
 	},
   brixiaScores: {
     type: String,
@@ -29,9 +32,21 @@ const ExamSchema = new mongoose.Schema({
 	zipCode: {
 		type: String
 	},
+	mortality: {
+		type: String
+	},
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  icu: {
+    type: String,
+  },
+  icuAdmits: {
+    type: String,
+  },
+  examId: {
+    type: String,
   },
 },{ timestamps: true })
 

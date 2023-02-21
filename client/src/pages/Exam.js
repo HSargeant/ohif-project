@@ -1,5 +1,6 @@
 // page to display one exam
 import '../App.css';
+import '../pages/Exams.css';
 import Header from '../components/Header';
 import PatientInfo from '../components/PatientInfo';
 import KeyFindings from '../components/KeyFindings';
@@ -7,8 +8,8 @@ import AllDataButton from '../components/AllDataButton';
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
+import EditButton from "../components/EditButton";
 import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
-
 
 export default function Exam(){
     // const { user } = useOutletContext(); // we will use this to when we set up auth to check for which user is logged in
@@ -29,10 +30,11 @@ export default function Exam(){
     return(
         <>
         <Header />
-        <AllDataButton />
+        <AllDataButton /> 
+        <EditButton examId={examId}/>
         <div className="Body">
             <div className="LeftContent">
-            <Image imageURL={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}  examId={exam.examId}/> 
+            <a href={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`} target="_blank"><Image imageURL={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}  examId={exam.examId}/> </a>
             <KeyFindings keyFindings={exam.keyFindings} />
             </div>
             <div className="RightContent">
