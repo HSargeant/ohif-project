@@ -14,7 +14,7 @@ function App() {
   function filterMedItems() {
     let currDisplay = [...items];
     let changeDisplay = currDisplay.filter((eachInd) =>
-      eachInd.nameCop.includes(medQuery)
+      eachInd.nameCop.includes(medQuery.toUpperCase())
     );
 
     return changeDisplay;
@@ -23,6 +23,24 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <nav id="topsec">
+          {/* <img src="images/exaLog.png" class="logo"> */}
+          <ul id="sidemenu">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Exams</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
         <label>Search: </label>
         <input
           type="text"

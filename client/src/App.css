@@ -160,6 +160,44 @@ nav ul li a:hover::after {
   /* white-space: break-spaces; */
   word-wrap: break-word;
 }
+
+#topsec {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+  /* position: relative; */
+}
+/* 
+@media only screen and (max-width: 500px) {
+  nav .fas {
+    display: block;
+    font-size: 25px;
+  }
+
+  nav ul {
+    background: #7895e6;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  } */
+  
 /* #sep {
   display: flex;
   height: 100vh;
