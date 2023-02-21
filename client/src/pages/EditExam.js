@@ -67,7 +67,7 @@ export default function EditExam(){
                     zipCode: zipCode,
                     mortality: mortality,
                     keyFindings: keyFindings,
-                    id: examId
+                    _id: examId
                 }),
                 credentials: "include"
               })

@@ -76,7 +76,7 @@ module.exports = {
     console.log("--------hitting route")
       console.log(req.body.age)
     try{
-      const exam = await Exam.findOneAndUpdate({_id: req.body.id},
+      const exam = await Exam.findOneAndUpdate({_id: req.body._id},
         {
           age: req.body.age,
           bmi: req.body.bmi,
@@ -87,7 +87,7 @@ module.exports = {
           zipCode: req.body.zipCode,
           icu: req.body.icu,
           icuAdmits: req.body.icuAdmits,
-          examId: req.body.examId,
+          examId: req.body.id,
           weight: req.body.weight,
           mortality: req.body.mortality
       }, {
