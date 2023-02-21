@@ -21,14 +21,18 @@
 }
 
 #shopping {
-  display: grid;
+  /* display: grid;
+  grid-template-columns: 33% 33% 33%; */
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 33% 33% 33%;
+  justify-content: center;
 }
 
 .contain {
-  border: 5px solid #000000af;
+  border: 2px solid #000000af;
   border-radius: 10px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   background-color: rgb(210, 215, 224);
   align-items: center;
   margin: 10px;
@@ -116,8 +120,46 @@ nav ul li a:hover::after {
 
 #holding {
   display: flex;
+  padding-top: 60px;
 }
 
+.infoplace {
+  border: 5px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* .infoplace p {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.eachBox {
+  margin: 10px;
+  border-radius: 10px;
+  margin-right: 90px;
+  margin-bottom: 90px;
+}
+
+#specInfo {
+  /* display: flex; */
+  flex-wrap: wrap;
+  display: flex;
+  max-width: 300px;
+  max-width: 350px;
+  /* max-height: 300px; */
+  overflow: auto;
+  /* max-width: 500px; */
+}
+
+#specInfo p {
+  max-width: 100px;
+  /* white-space: break-spaces; */
+  word-wrap: break-word;
+}
 /* #sep {
   display: flex;
   height: 100vh;

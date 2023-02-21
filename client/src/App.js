@@ -1,8 +1,8 @@
 import "./App.css";
-
 import { useState } from "react";
-import SearchableItem from "./medIndexs";
+// import SearchableItem from "./medIndexs";
 import purchase from "./purchase-data copy.json";
+import ItemAndInfo from "./medIndexs";
 import NavBarSide from "./NavBarSide/navbarside";
 // import { useApi } from './hooks/use-api';
 
@@ -14,7 +14,7 @@ function App() {
   function filterMedItems() {
     let currDisplay = [...items];
     let changeDisplay = currDisplay.filter((eachInd) =>
-      eachInd.name.includes(medQuery)
+      eachInd.nameCop.includes(medQuery)
     );
 
     return changeDisplay;
@@ -36,13 +36,13 @@ function App() {
           {filterMedItems().map((item) => {
             // var purchItem
             return (
-              <div>
-                <SearchableItem
-                  name={item.name}
-                  image={item.image}
-                  price={item.price}
-                  type={item.type}
-                ></SearchableItem>
+              <div className="eachBox">
+                <ItemAndInfo
+                  nameCop={item.nameCop}
+                  imageCop={item.imageCop}
+                  priceCop={item.priceCop}
+                  typeCop={item.type}
+                ></ItemAndInfo>
               </div>
             );
           })}

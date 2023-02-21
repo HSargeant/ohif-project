@@ -1,92 +1,92 @@
 [
   {
-    "name": "Fire Red 4s",
-    "price": 250,
-    "image": "client/src/images/FROG.jpeg",
-    "type": "shoes"
+    "nameCop": "Fire Red 4s",
+    "priceCop": 250,
+    "imageCop": "client/src/imageCops/FROG.jpeg",
+    "typeCop": "shoes"
   },
   {
-    "name": "HPY Dunks",
-    "price": 110,
-    "image": "client/src/images/dunks.jpeg",
-    "type": "shoes"
+    "nameCop": "HPY Dunks",
+    "priceCop": 110,
+    "imageCop": "client/src/imageCops/dunks.jpeg",
+    "typeCop": "shoes"
   },
   {
-    "name": "Cool Gray 4s",
-    "price": 180,
-    "image": "client/src/images/CG.jpeg",
-    "type": "shoes"
+    "nameCop": "Cool Gray 4s",
+    "priceCop": 180,
+    "imageCop": "client/src/imageCops/CG.jpeg",
+    "typeCop": "shoes"
   },
   {
-    "name": "Mackage Coat",
-    "price": 500,
-    "image": "client/src/images/AcakageCoat.jpeg", 
-    "type": "Coat"
+    "nameCop": "Mackage Coat",
+    "priceCop": 500,
+    "imageCop": "client/src/imageCops/AcakageCoat.jpeg",
+    "typeCop": "Coat"
   },
   {
-    "name": "Patchwork Pants",
-    "price": 70,
-    "image": "./images/PatchPants.jpeg",
-    "type": "Pants"
+    "nameCop": "Patchwork Pants",
+    "priceCop": 70,
+    "imageCop": "./imageCops/PatchPants.jpeg",
+    "typeCop": "Pants"
   },
   {
-    "name": "Travis Dunks",
-    "price": 500,
-    "image": "client/src/images/TravisDunk.jpeg",
-    "type": "shoes"
+    "nameCop": "Travis Dunks",
+    "priceCop": 500,
+    "imageCop": "client/src/imageCops/TravisDunk.jpeg",
+    "typeCop": "shoes"
   },
   {
-    "name": "RP Sweats",
-    "price": 60,
-    "image": "client/src/images/PoloPants.jpeg",
-    "type": "Pants"
+    "nameCop": "RP Sweats",
+    "priceCop": 60,
+    "imageCop": "client/src/imageCops/PoloPants.jpeg",
+    "typeCop": "Pants"
   },
   {
-    "name": "Moncleezy",
-    "price": 600,
-    "image": "client/src/images/MCoat.jpeg",
-    "type": "Coat"
+    "nameCop": "Moncleezy",
+    "priceCop": 600,
+    "imageCop": "client/src/imageCops/MCoat.jpeg",
+    "typeCop": "Coat"
   },
   {
-    "name": "Infared 6",
-    "price": 230,
-    "image": "client/src/images/Infared.jpeg",
-    "type": "shoes"
+    "nameCop": "Infared 6",
+    "priceCop": 230,
+    "imageCop": "client/src/imageCops/Infared.jpeg",
+    "typeCop": "shoes"
   },
   {
-    "name": "Moosey",
-    "price": 600,
-    "image": "client/src/images/whiteCoat.jpeg",
-    "type": "Coat"
+    "nameCop": "Moosey",
+    "priceCop": 600,
+    "imageCop": "client/src/imageCops/whiteCoat.jpeg",
+    "typeCop": "Coat"
   },
   {
-    "name": "TH sweats",
-    "price": 80,
-    "image": "client/src/images/tommyPants.jpeg",
-    "type": "Pants"
+    "nameCop": "TH sweats",
+    "priceCop": 80,
+    "imageCop": "client/src/imageCops/tommyPants.jpeg",
+    "typeCop": "Pants"
   },
   {
-    "name": "Nike Coat",
-    "price": 120,
-    "image": "client/src/images/NikeCoat.jpeg",
-    "type": "Coat"
+    "nameCop": "Nike Coat",
+    "priceCop": 120,
+    "imageCop": "client/src/imageCops/NikeCoat.jpeg",
+    "typeCop": "Coat"
   },
   {
-    "name": "Kappa Pants",
-    "price": 270,
-    "image": "client/src/images/KappaPants.jpeg", 
-    "type": "Pants"
+    "nameCop": "Kappa Pants",
+    "priceCop": 270,
+    "imageCop": "client/src/imageCops/KappaPants.jpeg",
+    "typeCop": "Pants"
   },
   {
-    "name": "Fedni Pants",
-    "price": 100,
-    "image": "client/src/images/FendrPants.jpeg", 
-    "type": "Pants"
+    "nameCop": "Fedni Pants",
+    "priceCop": 100,
+    "imageCop": "client/src/imageCops/FendrPants.jpeg",
+    "typeCop": "Pants"
   },
   {
-    "name": "Travis 1s",
-    "price": 550,
-    "image": "client/src/images/Trav1Shoes.jpeg", 
-    "type": "shoes"
+    "nameCop": "Travis 1s",
+    "priceCop": 550,
+    "imageCop": "client/src/imageCops/Trav1Shoes.jpeg",
+    "typeCop": "shoes"
   }
 ]
