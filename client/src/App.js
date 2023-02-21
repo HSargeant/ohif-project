@@ -14,7 +14,7 @@ function App() {
   function filterMedItems() {
     let currDisplay = [...items];
     let changeDisplay = currDisplay.filter((eachInd) =>
-      eachInd.nameCop.includes(medQuery.toUpperCase())
+      eachInd.nameCop.toLowerCase().includes(medQuery.toLowerCase())
     );
 
     return changeDisplay;
