@@ -34,7 +34,7 @@ export default function Exam(){
         <EditButton examId={examId}/>
         <div className="Body">
             <div className="LeftContent">
-            <Image imageURL={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}  examId={exam.examId}/> 
+            <a href={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`} target="_blank"><Image imageURL={exam.cloudinaryId ? exam.imageURL: `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`}  examId={exam.examId}/> </a>
             <KeyFindings keyFindings={exam.keyFindings} />
             </div>
             <div className="RightContent">
