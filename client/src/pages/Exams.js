@@ -35,7 +35,9 @@ export default function Exams() {
       <label>Search: </label>
       <input type="text" onChange={(e) => examNames(e.target.value)}></input>
       {/* </header> */}
+      {/* <NavBarSide /> */}
       <div className="centerPage">
+        {/* <NavBarSide /> */}
         <NavBarSide />
         <div id="shopping">
           {exams.map((exam) => {

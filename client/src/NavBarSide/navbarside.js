@@ -1,24 +1,35 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbarside.css";
 
 export default function NavBarSide() {
   const [expansion, setExpansion] = useState(false);
+  const [frozen, setFreeze] = useState(false);
   const menuItems = [
     {
       text: "Home",
       icon: "#",
+      link: "/admin",
     },
     {
-      text: "Services",
+      text: "All Exams",
       icon: "#",
+      link: "/exams",
     },
     {
-      text: "Exams",
+      text: "Add New Exam",
       icon: "#",
+      link: "/exams/new",
     },
     {
-      text: "Contact",
+      text: "Create and Account",
       icon: "#",
+      link: "/register",
+    },
+    {
+      text: "Log Out",
+      icon: "#",
+      link: "/logout",
     },
   ];
   return (
@@ -43,9 +54,9 @@ export default function NavBarSide() {
           </button>
         </div>
         <div class="menu">
-          {menuItems.map(({ text, icon }) => (
+          {menuItems.map(({ text, icon, link }) => (
             <a
-              href="#"
+              href={link}
               className={expansion ? "items-menu" : "items-menu items-menu-NX"}
             >
               <img src="#" alt="" srcSet="" />

@@ -27,6 +27,8 @@
   /* display: grid;
   grid-template-columns: 33% 33% 33%; */
   display: flex;
+  /* position: absolute;
+  z-index: 2; */
   flex-wrap: wrap;
   grid-template-columns: 33% 33% 33%;
   justify-content: center;
@@ -181,3 +183,7 @@ nav ul li a:hover::after {
     display: none;
   }
 }
+
+/* body {
+  overflow: hidden;
+} */

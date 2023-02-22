@@ -2,14 +2,16 @@
   background-color: gray;
   width: 300px;
   height: 100vh;
-  position: relative;
+  position: fixed;
   color: oldlace;
-
+  z-index: 1;
   transition: 0.4s;
 }
 
 .contain-side-NX {
   width: 85px;
+  position: fixed;
+  z-index: 1;
 }
 .nav-up,
 .nav-head,
@@ -153,4 +155,16 @@ item-menu img {
   .contain-side-NX {
     display: none;
   }
+
+  .contain-side {
+    display: none;
+    /* position: absolute;
+    z-index: 1; */
+  }
 }
+
+/* @media only screen and (max-width: 900px) {
+  .contain-side {
+    /* position: absolute; */
+/* }
+} */

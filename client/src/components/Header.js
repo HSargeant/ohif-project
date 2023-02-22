@@ -10,7 +10,7 @@ const Header = () => {
           <a href="/exams">All Exams</a>
         </li>
         <li>
-          <a href="#exams/new">Add New Exam</a>
+          <a href="exams/new">Add New Exam</a>
         </li>
         <li>
           <a href="/register">Create and Account</a>
