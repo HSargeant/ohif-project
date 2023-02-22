@@ -1,53 +1,26 @@
-// export default function SearchableItem({
-//   name,
-//   image,
-//   price,
-//   type,
-//   currentCart,
-// }) {
-//   return (
-//     <div className="contain">
-//       <img src={image} id="pics"></img>
-//       <div class="layer">
-//         <p>{name}</p>
-//         <p>{[price]}</p>
-//         <p>{type}</p>
-//         {/* <button id = "butt"> Add to Cart</button> */}
-//       </div>
-//     </div>
-//   );
-// }
-
-export default function ItemAndInfo({ nameCop, imageCop, priceCop, typeCop }) {
+export default function ItemAndInfo({ nameCop, imageCop }) {
   return (
     <div className="infoplace">
       <div className="contain">
-        <img src={imageCop} alt={nameCop} />
+        <img src={imageCop} alt={nameCop} id="pics" />
         <p>{nameCop}</p>
-        <p>{priceCop}</p>
+        {/* <p>{priceCop}</p> */}
       </div>
-      <p id="specInfo">
-        QRUEBH IVBA Ihkjghv giuyvuygvouygvuy giugboiuglihkjbhkweri
-        caishuoiuesBVEW\ CEUBEONCweiq eowvhoi ewoivwehj vewojeacijcqipj
-      </p>
-      `
+      <p id="specifInfo">{nameCop}</p>
     </div>
   );
 }
-export default function SearchableItem({name, image, price, type, currentCart}) {
-    return (
-        <div className = "contain">
-            <img src={image} id="pics" width="300px"></img>
-                <div  class = "layer">
-                    <p>{name}</p>
-                    {/* <p>{[price]}</p>
-                    <p>{type}</p> */}
-                    {/* <button id = "butt"> Add to Cart</button> */}
-                </div>
-            </div>
-    )
+export function SearchableItem({ name, image }) {
+  return (
+    <div className="contain">
+      <img src={image} id="pics" width="300px"></img>
+      <div class="layer">
+        <p>{name}</p>
+      </div>
+    </div>
+  );
 }
 
 // export function ListCart(params) {
-    
+
 // }
