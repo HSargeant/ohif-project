@@ -10,17 +10,6 @@ export default function ItemAndInfo({ nameCop, imageCop }) {
     </div>
   );
 }
-export function SearchableItem({ name, image }) {
-  return (
-    <div className="contain">
-      <img src={image} id="pics" width="300px"></img>
-      <div class="layer">
-        <p>{name}</p>
-      </div>
-    </div>
-  );
-}
-
 // export function ListCart(params) {
 
 // }
