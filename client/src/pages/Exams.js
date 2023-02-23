@@ -6,7 +6,6 @@ import { API_BASE } from "../constants";
 // list of all the exams
 export default function Exams(){
   const { user,setUser, setMessages } = useOutletContext();
-  console.log(user)
   const navigate = useNavigate() // will use for redirecting and protecting route
   const [exams,setExams] = useState([])
   const [loading,setLoading] = useState(true) // can use this state variable to load spinner while data is loading.
@@ -16,7 +15,7 @@ export default function Exams(){
       const getData= async()=>{
           const response = await fetch(API_BASE+ '/api/exams', { credentials: "include" })
           const data = await response.json()
-          console.log(data)
+          // console.log(data)
           setExams(data)
           setLoading(false)
       }
