@@ -73,8 +73,6 @@ module.exports = {
     }
   },
   editExam: async (req,res)=>{
-    console.log("--------hitting route")
-      console.log(req.body.age)
     try{
       const exam = await Exam.findOneAndUpdate({_id: req.body._id},
         {
@@ -104,15 +102,18 @@ module.exports = {
   deleteExam: async (req, res) => {
     try {
       // Find post by id
-      let exam = await Exam.findById({ _id: req.params.id });
+      const exam = await Exam.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(exam.cloudinaryId);
+      if(exam.cloudinaryId){
+        await cloudinary.uploader.destroy(exam.cloudinaryId);
+      }
       // Delete post from db
       await Exam.deleteOne({ _id: req.params.id });
       console.log("Deleted Exam");
-      res.redirect("/profile");
+      res.json(exam);
     } catch (err) {
-      res.redirect("/profile");
+      console.log(err)
+      res.json({err:err})
     }
   },
 };

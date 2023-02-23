@@ -46,6 +46,7 @@ export default function Register() {
     }
   };
 
+
   console.log(errorMsg, user);
   return (
     <div>
