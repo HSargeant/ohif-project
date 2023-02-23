@@ -48,7 +48,6 @@ export default function Register() {
 		}
 	};
 
-  console.log(errorMsg,user)
 	return (
 		<Box
         component="main"

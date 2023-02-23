@@ -102,17 +102,18 @@ module.exports = {
     }
   },
   deleteExam: async (req, res) => {
-    try {
-      // Find post by id
-      let exam = await Exam.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      await cloudinary.uploader.destroy(exam.cloudinaryId);
-      // Delete post from db
-      await Exam.deleteOne({ _id: req.params.id });
-      console.log("Deleted Exam");
-      res.redirect("/profile");
-    } catch (err) {
-      res.redirect("/profile");
-    }
+    console.log("deleteing")
+  //   try {
+  //     // Find post by id
+  //     let exam = await Exam.findById({ _id: req.params.id });
+  //     // Delete image from cloudinary
+  //     await cloudinary.uploader.destroy(exam.cloudinaryId);
+  //     // Delete post from db
+  //     await Exam.deleteOne({ _id: req.params.id });
+  //     console.log("Deleted Exam");
+  //     res.redirect("/profile");
+  //   } catch (err) {
+  //     res.redirect("/profile");
+  //   }
   },
 };
