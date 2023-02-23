@@ -12,7 +12,16 @@ export default function Exams() {
   const navigate = useNavigate(); // will use for redirecting and protecting route
   const [exams, setExams] = useState([]);
   const [examName, examNames] = useState("");
+  const [inputs, setInputs] = useState("");
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
+
+  function filterData() {
+    // const filteredExams = exams.filter((exam) =>
+    //   exam.nameCop.toLowerCase().includes(inputs.toLowerCase())
+    // );
+    // setExams(filteredExams);
+    // console.log(filteredExams);
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -30,14 +39,25 @@ export default function Exams() {
   console.log("logged in: ", user);
   return (
     <div>
-      {/* <header className="App-header"> */}
-      <Header />
-      <label>Search: </label>
-      <input type="text" onChange={(e) => examNames(e.target.value)}></input>
-      {/* </header> */}
-      {/* <NavBarSide /> */}
+      <div>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <form className="example" action="action_page.php">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            onChange={((e) => setInputs(e.target.value), console.log(inputs))}
+          />
+          <button type="submit" onClick={filterData()}>
+            <i className="fa fa-search" />
+          </button>
+        </form>
+      </div>
+
       <div className="centerPage">
-        {/* <NavBarSide /> */}
         <NavBarSide />
         <div id="shopping">
           {exams.map((exam) => {

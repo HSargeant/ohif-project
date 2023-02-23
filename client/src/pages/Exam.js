@@ -1,10 +1,10 @@
 // page to display one exam
 import "../App.css";
 import "../pages/Exams.css";
-import Header from "../components/Header";
 import PatientInfo from "../components/PatientInfo";
 import KeyFindings from "../components/KeyFindings";
 import AllDataButton from "../components/AllDataButton";
+import NavBarSide from "/Users/kristopheyen/Desktop/Hack Proj/client/src/NavBarSide/navbarside.js";
 import Image from "../components/Image.js";
 import { useState, useEffect } from "react";
 import { API_BASE } from "../constants";
@@ -35,35 +35,38 @@ export default function Exam() {
   }, []);
 
   return (
-    <>
-      <Header />
+    <div>
+      <NavBarSide />
       <AllDataButton />
       <EditButton examId={examId} />
-      <div className="Body">
-        <div className="LeftContent">
-          <a
-            href={
-              exam.cloudinaryId
-                ? exam.imageURL
-                : `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
-            }
-            target="_blank"
-          >
-            <Image
-              imageURL={
+      <>
+        <div className="Body">
+          <div className="LeftContent">
+            <a
+              href={
                 exam.cloudinaryId
                   ? exam.imageURL
                   : `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
               }
-              examId={exam.examId}
-            />{" "}
-          </a>
-          <KeyFindings keyFindings={exam.keyFindings} />
+              target="_blank"
+            >
+              <Image
+                imageURL={
+                  exam.cloudinaryId
+                    ? exam.imageURL
+                    : `https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
+                }
+                examId={exam.examId}
+              />{" "}
+            </a>
+            <KeyFindings keyFindings={exam.keyFindings} />
+          </div>
+          <div className="RightContent">
+            <PatientInfo exam={exam} />
+          </div>
         </div>
-        <div className="RightContent">
-          <PatientInfo exam={exam} />
-        </div>
-      </div>
-    </>
+      </>
+      );
+    </div>
   );
 }
