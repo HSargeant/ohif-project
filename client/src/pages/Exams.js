@@ -15,13 +15,14 @@ export default function Exams() {
   const [inputs, setInputs] = useState("");
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
-  function filterData() {
-    // const filteredExams = exams.filter((exam) =>
-    //   exam.nameCop.toLowerCase().includes(inputs.toLowerCase())
-    // );
-    // setExams(filteredExams);
-    // console.log(filteredExams);
-  }
+  // function filterData() {
+  //   const examSample = { ...exams };
+  //   const filteredExams = examSample.filter((exam) =>
+  //     exam.nameCop.toLowerCase().includes(inputs.toLowerCase())
+  //   );
+  //   setExams(filteredExams);
+  //   console.log(filteredExams);
+  // }
 
   useEffect(() => {
     const getData = async () => {
