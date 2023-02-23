@@ -1,7 +1,7 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API_BASE } from "../constants";
-import NavBarSide from "/Users/kristopheyen/Desktop/Hack Proj/client/src/NavBarSide/navbarside.js";
+import NavBarSide from "../NavBarSide/navbarside";
 import {
   Box,
   Button,

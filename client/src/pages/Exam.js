@@ -4,7 +4,7 @@ import "../pages/Exams.css";
 import PatientInfo from "../components/PatientInfo";
 import KeyFindings from "../components/KeyFindings";
 import AllDataButton from "../components/AllDataButton";
-import NavBarSide from "/Users/kristopheyen/Desktop/Hack Proj/client/src/NavBarSide/navbarside.js";
+import NavBarSide from "../NavBarSide/navbarside.js";
 import Image from "../components/Image.js";
 import { useState, useEffect } from "react";
 import { API_BASE } from "../constants";

@@ -3,7 +3,7 @@
 import { API_BASE } from "../constants";
 import { useState } from "react";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
-import NavBarSide from "/Users/kristopheyen/Desktop/Hack Proj/client/src/NavBarSide/navbarside.js";
+import NavBarSide from "../NavBarSide/navbarside";
 export default function AddExam() {
   const { user, setMessages } = useOutletContext();
   const navigate = useNavigate();

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import ItemAndInfo from "../medIndexs";
-import NavBarSide from "/Users/kristopheyen/Desktop/Hack Proj/client/src/NavBarSide/navbarside.js";
-import Header from "/Users/kristopheyen/Desktop/Hack Proj/client/src/components/Header.js";
+import NavBarSide from "../NavBarSide/navbarside";
+import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
+import {FaSearch} from "react-icons/fa"
 
 // list of all the exams
 export default function Exams() {
@@ -37,15 +38,18 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
+  console.log(exams)
+
   console.log("logged in: ", user);
   return (
+
     <div>
       <div>
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <form className="example" action="action_page.php">
+        /> */}
+        {/* <form className="example" action="action_page.php">
           <input
             type="text"
             placeholder="Search.."
@@ -53,9 +57,9 @@ export default function Exams() {
             onChange={((e) => setInputs(e.target.value), console.log(inputs))}
           />
           <button type="submit" onClick={filterData()}>
-            <i className="fa fa-search" />
+            <FaSearch/>
           </button>
-        </form>
+        </form> */}
       </div>
 
       <div className="centerPage">
@@ -78,7 +82,6 @@ export default function Exams() {
             );
           })}
         </div>
-        );
       </div>
     </div>
   );

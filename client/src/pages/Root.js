@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { API_BASE } from "../constants";
-import Header from "/Users/kristopheyen/Desktop/Hack Proj/client/src/components/Header.js";
+import Header from "../components/Header";
 export default function Root() {
   const [user, setUser] = useState();
   const [messages, setMessages] = useState({});
