@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import PatientInfo from '../components/PatientInfo';
 import KeyFindings from '../components/KeyFindings';
 import AllDataButton from '../components/AllDataButton';
+import NavBarSide from "../NavBarSide/navbarside.js";
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
@@ -28,7 +29,7 @@ export default function Exam(){
 
   return(
     <>
-      <Header />
+      <NavBarSide />
       <AllDataButton /> 
       <EditButton examId={examId}/>
       <DeleteButton examId={examId}/>

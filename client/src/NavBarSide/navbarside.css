@@ -1,0 +1,170 @@
+.contain-side {
+  background-color: gray;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  color: oldlace;
+  z-index: 1;
+  transition: 0.4s;
+}
+
+.contain-side-NX {
+  width: 85px;
+  position: fixed;
+  z-index: 1;
+}
+.nav-up,
+.nav-head,
+menu,
+items-menu {
+  display: grid;
+}
+
+.nav-head {
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.nav-heading {
+  grid-template-columns: 2fr, 1fr;
+  grid-template-rows: 1fr;
+  height: 75px;
+}
+
+.comp-brand {
+  display: flex;
+}
+
+.nav-brand img {
+  width: 40px;
+  padding: 0 10px;
+}
+
+.hamburger {
+  position: absolute;
+  left: 0;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  margin: auto -35px;
+  background-color: gray;
+  border: 2px solid aliceblue;
+  padding: 20px;
+  border-radius: 90px;
+  height: 71px;
+  width: 74px;
+}
+
+.hamburger span {
+  display: block;
+  margin-top: 5px;
+  background-color: aliceblue;
+  border-radius: 15px;
+  height: 4px;
+  width: 30px;
+
+  transition: 0.4s;
+}
+
+.hamburger:hover span {
+  margin: auto;
+}
+
+.hamburger-in:hover span:nth-child(1) {
+  width: 25px;
+  transform: translate(-3px, 8px) rotate(360deg);
+}
+
+.hamburger-in:hover span:nth-child(2) {
+  display: none;
+}
+
+.hamburger-in:hover span:nth-child(3) {
+  width: 25px;
+  transform: translate(-3px, 8px) rotate(-360deg);
+}
+
+.hamburger-out:hover span:nth-child(1) {
+  width: 25px;
+  transform: translate(0px, 8px) rotate(360deg);
+}
+
+.hamburger-out:hover span:nth-child(2) {
+  display: none;
+}
+
+.hamburger-out:hover span:nth-child(3) {
+  width: 25px;
+  transform: translate(0px, 8px) rotate(-360deg);
+}
+
+menu {
+  grid-template-rows: repeat(7, 1fr);
+}
+
+items-menu {
+  height: 57px;
+  width: 1;
+  display: flex;
+  color: aliceblue;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: auto 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+items-menu-NX {
+  margin: auto;
+  width: 4.5em;
+}
+
+items-menu:hover {
+  background-color: gray;
+}
+
+item-menu img {
+  width: 30px;
+  padding: 0 20px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  left: 99%;
+  bottom: 80%;
+
+  width: auto;
+  padding: 4px 8px;
+
+  border-radius: 15px 15px 15px 0;
+  white-space: nowrap;
+  border: 2px solid aliceblue;
+  background-color: gray;
+}
+
+@media (max-width: 100px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .contain-side-NX {
+    display: none;
+  }
+
+  .contain-side {
+    display: none;
+    /* position: absolute;
+    z-index: 1; */
+  }
+}
+
+/* @media only screen and (max-width: 900px) {
+  .contain-side {
+    /* position: absolute; */
+/* }
+} */
