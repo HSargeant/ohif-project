@@ -30,16 +30,23 @@ export default function Exam(){
   return(
     <>
       <NavBarSide />
-      <AllDataButton /> 
-      <EditButton examId={examId}/>
-      <DeleteButton examId={examId}/>
+      <div className="manipulateDataRow">
+      
+        <AllDataButton /> 
+        <div className="EditDelete">
+          <EditButton examId={examId}/>
+          <DeleteButton examId={examId}/>
+        </div>
+        
+      </div>
+      
       <div className="Body">
         <div className="LeftContent">
         <Image exam={exam}/>
-        <KeyFindings keyFindings={exam.keyFindings} />
         </div>
         <div className="RightContent">
         <PatientInfo exam={exam}/>
+        <KeyFindings keyFindings={exam.keyFindings} />
         </div>
       </div>
     </>

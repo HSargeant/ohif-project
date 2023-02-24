@@ -43,9 +43,6 @@ export default function EditExam(){
         
     },[])
 
-
-
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         try{
