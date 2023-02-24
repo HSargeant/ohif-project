@@ -161,6 +161,10 @@ nav ul li a:hover::after {
   #topsec {
     display: none;
   }
+  /* input[name="patientId"],
+  input[name="examId"]{
+    width: 70%;
+  } */
 }
 
 * {

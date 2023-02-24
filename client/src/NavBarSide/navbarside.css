@@ -1,5 +1,5 @@
 .contain-side {
-  background-color: gray;
+  background-color: #5a91c5;
   width: 300px;
   height: 100vh;
   position: fixed;
@@ -13,6 +13,7 @@
   position: fixed;
   z-index: 1;
 }
+
 .nav-up,
 .nav-head,
 menu,
@@ -42,19 +43,20 @@ items-menu {
 
 .hamburger {
   position: absolute;
-  left: 0;
+  left: 13%;
 
   background: none;
   border: none;
   cursor: pointer;
 
   margin: auto -35px;
-  background-color: gray;
+  background-color: #A7BED4;
   border: 2px solid aliceblue;
   padding: 20px;
   border-radius: 90px;
   height: 71px;
   width: 74px;
+  
 }
 
 .hamburger span {
