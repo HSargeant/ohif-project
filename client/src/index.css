@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E7F3FF;
 }
 
 code {
@@ -12,16 +13,7 @@ code {
     monospace;
 }
 
-.Body {
-  /* background-color: #7ca4f5; */
-  display: grid;
-  grid-template-columns: 45% 45%;
-  grid-gap: 5vw;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
+/* Detail page layout */
 .LeftContent {
   padding: 5vh 0 15vh 0;
   align-items: center;
@@ -30,28 +22,29 @@ code {
 }
 
 .RightContent {
-  padding: 3vh 2vw 10vh 2vw;
+  padding: 5vh 2vw 10vh 2vw;
   align-items: center;
   justify-content: center;
-  /* border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  border-radius: 15px; */
   overflow: hidden;
   flex: 0 1 auto;
   font-size: small;
-  height: auto;
+  height: 100%;
+  margin: auto;
 }
 
-.Header {
-  display: flex;
-  margin-bottom: 2%;
+.Body {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-gap: 5vw;
   align-items: center;
   justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+/* Edit buttons */
 .EditButton {
   transition-duration: 0.4s;
-  background-color: rgb(68, 137, 239); 
+  background-color: #3B788A; 
   border: none;
   border-radius: 15px;
   margin-left: 2%;
@@ -62,27 +55,25 @@ code {
   display: inline-block;
   font-weight: bold;
 }
+
 .EditButton:hover{
-  background-color: blue;
+  background-color: #8b89eb;
 }
 
+.manipulateDataRow{
+  background-color: red;
+  display: inline-flex;
+  width: 100%;
+}
+.EditDelete{
+  background-color: #8b89eb;
+  width: 100%;
+  align-content: right;
+}
+/* Info box details */
 .XRayImage {
   width: 100%;
   height: auto;
-}
-
-.InfoBox {
-  font-size: medium;
-  border-color: black;
-  align-items: center;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 15px;
-  overflow: hidden;
-  width: 40vw;
-  height: auto;
-  margin: auto;
-  margin-top: 10px;
 }
 
 a {
@@ -96,8 +87,6 @@ a {
 }
 
 .ButtonBundle {
-  font-weight: bold;
-  
   margin-left: 2%;
   margin-bottom: 2%;
   background-color: rgb(68, 137, 239);
@@ -114,16 +103,7 @@ a {
 }
 
 .ButtonBundle:hover {
-  /* change box shadow */
-  /* box-shadow: 0 6px #6983d1; */
-  background-color: blue;
-  /* shifts button down so that it has the pressed effect */
-  /* top: 2px; */
-}
-
-.ButtonRow {
-  text-align: left;
-
+  background-color: #8b89eb;
 }
 
 .ExamForm {
