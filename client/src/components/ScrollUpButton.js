@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 export default function ScrollUpButton() {
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(false);
   
     const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
