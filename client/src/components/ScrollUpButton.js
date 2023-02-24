@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import {MdKeyboardArrowUp} from "react-icons/md"
+import {IconButton} from "@mui/material"
+import { IconContext } from "react-icons";
 
 export default function ScrollUpButton() {
     const [visible, setVisible] = useState(false);
@@ -23,12 +26,12 @@ export default function ScrollUpButton() {
     window.addEventListener('scroll', toggleVisible);
     return (
         <div className="UpBottonDiv">
-            <button className="UpBotton" onClick={scrollToTop} style={{width:"50px",height:"30px"}}> up </button>
-            {/* <IconButton type="submit">  
-            <IconContext.Provider value={{ color: "black"}}>
-                <FaTrash />
+
+            <IconButton onClick={scrollToTop} >  
+                <IconContext.Provider value={{ color: "black",size: 40}}>
+                    <MdKeyboardArrowUp  />
                 </IconContext.Provider>
-            </IconButton> */}
+            </IconButton> 
         </div>
   );
 }
