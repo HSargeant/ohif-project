@@ -1,22 +1,23 @@
+import {Link} from 'react-router-dom'
 const Header = () => {
   return (
     <nav id="topsec">
       {/* <img src="images/exaLog.png" class="logo"> */}
       <ul id="sidemenu">
         <li>
-          <a href="/admin">Admin</a>
+          <Link to="/admin">Admin</Link>
         </li>
         <li>
-          <a href="/exams">All Exams</a>
+          <Link to="/exams">All Exams</Link>
         </li>
         <li>
-          <a href="exams/new">Add New Exam</a>
+          <Link to="exams/new">Add New Exam</Link>
         </li>
         <li>
-          <a href="/register">Create and Account</a>
+          <Link to="/register">Create and Account</Link>
         </li>
         <li>
-          <a href="/logout">Log Out</a>
+          <Link to="/logout">Log Out</Link>
         </li>
       </ul>
     </nav>
