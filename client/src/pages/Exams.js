@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import ItemAndInfo from "../medIndexs";
-import NavBarSide from "/Users/kristopheyen/Desktop/Hack Proj/client/src/NavBarSide/navbarside.js";
-import Header from "/Users/kristopheyen/Desktop/Hack Proj/client/src/components/Header.js";
+import NavBarSide from "../NavBarSide/navbarside";
+import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
+import {FaSearch} from "react-icons/fa"
+import ScrollUpButton from "../components/ScrollUpButton";
 
 // list of all the exams
 export default function Exams() {
@@ -37,15 +39,15 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
+  console.log(exams)
+
   console.log("logged in: ", user);
   return (
+
     <div>
       <div>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <form className="example" action="action_page.php">
+
+        {/* <form className="example" action="action_page.php">
           <input
             type="text"
             placeholder="Search.."
@@ -53,13 +55,15 @@ export default function Exams() {
             onChange={((e) => setInputs(e.target.value), console.log(inputs))}
           />
           <button type="submit" onClick={filterData()}>
-            <i className="fa fa-search" />
+            <FaSearch/>
+            <i className="fa-fasearch></i>"
           </button>
-        </form>
+        </form> */}
       </div>
 
       <div className="centerPage">
         <NavBarSide />
+         <ScrollUpButton/>
         <div id="shopping">
           {exams.map((exam) => {
             return (
@@ -67,6 +71,8 @@ export default function Exams() {
                 <Link to={`/exams/${exam._id}`}>
                   <ItemAndInfo
                     nameCop={exam.patientId}
+                    ageCop={exam.age}
+                    sexCop={exam.sex}
                     imageCop={
                       exam.cloudinaryId
                         ? exam.imageURL
@@ -78,7 +84,6 @@ export default function Exams() {
             );
           })}
         </div>
-        );
       </div>
     </div>
   );
