@@ -167,6 +167,7 @@ nav ul li a:hover::after {
 
   #shopping {
     width: 800px;
+    margin-top: 0px;
   }
 
   /* input[name="patientId"],
