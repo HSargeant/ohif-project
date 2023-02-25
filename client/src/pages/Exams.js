@@ -4,7 +4,7 @@ import NavBarSide from "../NavBarSide/navbarside";
 import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
-import {FaSearch} from "react-icons/fa"
+import { FaSearch } from "react-icons/fa";
 import ScrollUpButton from "../components/ScrollUpButton";
 
 // list of all the exams
@@ -39,14 +39,13 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
-  console.log(exams)
+  console.log(exams);
 
   console.log("logged in: ", user);
   return (
-
     <div>
+      <NavBarSide />
       <div>
-
         {/* <form className="example" action="action_page.php">
           <input
             type="text"
@@ -62,8 +61,7 @@ export default function Exams() {
       </div>
 
       <div className="centerPage">
-        <NavBarSide />
-         <ScrollUpButton/>
+        <ScrollUpButton />
         <div id="shopping">
           {exams.map((exam) => {
             return (
