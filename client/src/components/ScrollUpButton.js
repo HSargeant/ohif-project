@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {MdKeyboardArrowUp} from "react-icons/md"
-import {IconButton} from "@mui/material"
+import {IconButton,Tooltip} from "@mui/material"
 import { IconContext } from "react-icons";
 
 export default function ScrollUpButton() {
     const [visible, setVisible] = useState(false);
   
     const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
+    const scrolled = window.document.documentElement.scrollTop;
     if (scrolled > 300){
         setVisible(true)
     } 
@@ -25,15 +25,18 @@ export default function ScrollUpButton() {
   
     window.addEventListener('scroll', toggleVisible);
     return (
-        <div className="UpBottonDiv">
-
-            <IconButton onClick={scrollToTop} >  
-                <IconContext.Provider value={{ color: "black",size: 40}}>
-                    <MdKeyboardArrowUp  />
-                </IconContext.Provider>
-            </IconButton> 
-        </div>
-  );
+        <>
+            {visible && <div className="UpBottonDiv">
+                <Tooltip title="Back to Top">
+                    <IconButton onClick={scrollToTop} aria-label="Back To Top" >  
+                        <IconContext.Provider value={{ color: "black",size: 40}}>
+                            <MdKeyboardArrowUp  />
+                        </IconContext.Provider>
+                    </IconButton> 
+                </Tooltip>
+            </div>}
+        </>
+    );
 }
 
 // <Button>
