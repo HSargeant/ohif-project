@@ -55,14 +55,14 @@ export default function NavBarSide() {
         </div>
         <div class="menu">
           {menuItems.map(({ text, icon, link }) => (
-            <a
-              href={link}
+            <Link
+              to={link}
               className={expansion ? "items-menu" : "items-menu items-menu-NX"}
             >
               <img src="#" alt="" srcSet="" />
               {expansion && <p>{text}</p>}
               {!expansion && <div class="tooltip">{text}</div>}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

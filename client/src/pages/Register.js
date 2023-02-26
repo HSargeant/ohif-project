@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
+import ErrorIcon from '@mui/icons-material/Error';
 
 export default function Register() {
   const { setUser, messages, setMessages, user } = useOutletContext();
@@ -49,7 +50,7 @@ export default function Register() {
 
   console.log(errorMsg, user);
   return (
-    <div>
+    <>
       <NavBarSide />
       <Box
         component="main"
@@ -131,7 +132,7 @@ export default function Register() {
                 ml: -1,
               }}
             ></Box>
-            {errorMsg ? <div> {errorMsg}</div> : ""}
+            {errorMsg ? <div style={{color:"darkred"}}><ErrorIcon fontSize="small" /> {errorMsg}</div> : ""}
             <Box sx={{ py: 2 }}>
               <Button
                 color="primary"
@@ -152,7 +153,6 @@ export default function Register() {
           </form>
         </Container>
       </Box>
-      );
-    </div>
+    </>
   );
 }
