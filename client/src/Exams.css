@@ -20,15 +20,17 @@
         outline: 5px solid rgb(68, 137, 239)
     }
     
-    .InfoBox {
+    .KeyFindingsBox {
         color: rgb(0, 0, 0);
         flex-wrap: wrap;
         float: left;
         background-color: antiquewhite;
         font-family: 'Times New Roman', Times, serif;
         padding: 30px;
-        margin-top: 20px;
+        margin-top: 35px;
+        max-height: 653px;
         border: 10px;
+        border-radius: 15px;
         outline: 5px solid rgb(68, 137, 239);
     }
     
@@ -36,13 +38,17 @@
         color: rgb(0, 0, 0);
         height: auto;
         background-color: antiquewhite;
-        padding: 60px;
+        padding: 50px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         float: auto;
         border-radius: 15px;
         border: 10px;
+        margin-top: 2%;
         outline: 5px solid rgb(68, 137, 239);
     
     }
+
     .exam-id {
     width: 40vw;
     display: flex;
@@ -54,7 +60,8 @@
     border: 10px;
     border-radius: 15px;
     outline: 5px solid rgb(68, 137, 239); 
-       
+    margin: auto;
+    margin-bottom: 5%;
     }
     
     .XRayImage {

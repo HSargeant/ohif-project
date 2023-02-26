@@ -1,17 +1,17 @@
-export default function SearchableItem({name, image, price, type, currentCart}) {
-    return (
-        <div className = "contain">
-            <img src={image} id="pics" width="300px"></img>
-                <div  class = "layer">
-                    <p>{name}</p>
-                    {/* <p>{[price]}</p>
-                    <p>{type}</p> */}
-                    {/* <button id = "butt"> Add to Cart</button> */}
-                </div>
-            </div>
-    )
+export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop }) {
+  return (
+    <div className="infoplace">
+      <div className="contain">
+        <img src={imageCop} alt={nameCop} id="pics" />
+        {/* <p>{nameCop}</p> */}
+      </div>
+      
+      <div style={{display:"inline-block"}}>
+        <p id="specifInfo">{nameCop}</p>
+        <p id="specifInfo">{"Age: " + ageCop}</p>
+        <p id="specifInfo">{"Sex: " +sexCop}</p>
+      </div>
+      
+    </div>
+  );
 }
-
-// export function ListCart(params) {
-    
-// }
