@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 
+import { FontAwesome } from "react-icons/fa";
+import {FaAngleUp} from "react-icons/fa";
+import {IconContext} from "react-icons";
+import {IconButton} from "@mui/material";
+
 export default function ScrollUpButton() {
-    const [visible, setVisible] = useState(false)
-  
+    const [visible, setVisible] = useState(false);
     const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
+
     if (scrolled > 300){
         setVisible(true)
     } 
@@ -22,18 +27,12 @@ export default function ScrollUpButton() {
   
     window.addEventListener('scroll', toggleVisible);
     return (
-        <div className="UpBottonDiv">
-            <button className="UpBotton" onClick={scrollToTop} style={{width:"50px",height:"30px"}}> up </button>
-            {/* <IconButton type="submit">  
-            <IconContext.Provider value={{ color: "black"}}>
-                <FaTrash />
-                </IconContext.Provider>
-            </IconButton> */}
+        <div>
+            <IconContext.Provider value={{ className:"UpBotton"}}>
+            <div>
+                <FaAngleUp/>
+            </div>
+            </IconContext.Provider>
         </div>
   );
 }
-
-// <Button>
-//  <FaArrowCircleUp onClick={scrollToTop} 
-//  style={{display: visible ? 'inline' : 'none'}} />
-// </Button>
