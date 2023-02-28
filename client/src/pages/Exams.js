@@ -10,7 +10,6 @@ import {FaSearch} from "react-icons/fa"
 // list of all the exams
 export default function Exams() {
   const { user, setUser, setMessages } = useOutletContext();
-  console.log(user);
   const navigate = useNavigate(); // will use for redirecting and protecting route
   const [exams, setExams] = useState([]);
   const [examName, examNames] = useState("");
@@ -38,9 +37,6 @@ export default function Exams() {
     };
     getData();
   }, [setExams]);
-
-  console.log(exams)
-
   console.log("logged in: ", user);
   return (
 

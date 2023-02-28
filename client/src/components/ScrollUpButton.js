@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import {MdKeyboardArrowUp} from "react-icons/md"
+import {IconButton,Tooltip} from "@mui/material"
+import { IconContext } from "react-icons";
 
 import { FontAwesome } from "react-icons/fa";
 import {FaAngleUp} from "react-icons/fa";
@@ -7,9 +10,9 @@ import {IconButton} from "@mui/material";
 
 export default function ScrollUpButton() {
     const [visible, setVisible] = useState(false);
-    const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
 
+    const toggleVisible = () => {
+    const scrolled = window.document.documentElement.scrollTop;
     if (scrolled > 300){
         setVisible(true)
     } 
@@ -27,12 +30,16 @@ export default function ScrollUpButton() {
   
     window.addEventListener('scroll', toggleVisible);
     return (
-        <div>
-            <IconContext.Provider value={{ className:"UpBotton"}}>
-            <div>
-                <FaAngleUp/>
-            </div>
-            </IconContext.Provider>
-        </div>
-  );
+        <>
+            {visible && <div className="UpBottonDiv">
+                <Tooltip title="Back to Top">
+                    <IconButton onClick={scrollToTop} aria-label="Back To Top" >  
+                        <IconContext.Provider value={{ color: "black",size: 40}}>
+                            <MdKeyboardArrowUp  />
+                        </IconContext.Provider>
+                    </IconButton> 
+                </Tooltip>
+            </div>}
+        </>
+    );
 }
