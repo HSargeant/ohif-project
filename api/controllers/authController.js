@@ -46,7 +46,8 @@ module.exports = {
         req.session.destroy((err) => {
           if (err) console.log('Error : Failed to destroy the session during logout.', err)
           req.user = null
-          res.redirect('/')
+          // res.redirect('/')
+          res.send({success:true})
         })
     });
   },
@@ -70,7 +71,8 @@ module.exports = {
     });
   
     const user = new User({
-      userName: req.body.userName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
     });

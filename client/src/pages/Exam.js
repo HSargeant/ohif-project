@@ -44,8 +44,8 @@ export default function Exam(){
         </div>
 
         <div className="RightContent">
-          <PatientInfo exam={exam}/>
-          <KeyFindings keyFindings={exam.keyFindings} />
+        <PatientInfo exam={exam}/>
+        <KeyFindings keyFindings={exam.keyFindings||"No releveant findings"} />
         </div>
       </div>
     </>
