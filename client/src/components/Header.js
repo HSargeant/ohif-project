@@ -1,25 +1,30 @@
+import NavBarSide from "../NavBarSide/navbarside";
+
 const Header = () => {
   return (
-    <nav id="topsec">
-      {/* <img src="images/exaLog.png" class="logo"> */}
-      <ul id="sidemenu">
-        <li>
-          <a href="/admin">Admin</a>
-        </li>
-        <li>
-          <a href="/exams">All Exams</a>
-        </li>
-        <li>
-          <a href="exams/new">Add New Exam</a>
-        </li>
-        <li>
-          <a href="/register">Create and Account</a>
-        </li>
-        <li>
-          <a href="/logout">Log Out</a>
-        </li>
-      </ul>
-    </nav>
+    <div>
+      <nav id="topsec">
+        {/* <img src="images/exaLog.png" class="logo"> */}
+        <ul id="sidemenu">
+          <li>
+            <a href="/admin">Admin</a>
+          </li>
+          <li>
+            <a href="/exams">All Exams</a>
+          </li>
+          <li>
+            <a href="exams/new">Add New Exam</a>
+          </li>
+          <li>
+            <a href="/register">Create and Account</a>
+          </li>
+          <li>
+            <a href="/logout">Log Out</a>
+          </li>
+        </ul>
+      </nav>
+      {/* <NavBarSide /> */}
+    </div>
   );
 };
 

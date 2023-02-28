@@ -17,14 +17,18 @@ export default function Exams() {
   const [inputs, setInputs] = useState("");
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
-  // function filterData() {
-  //   const examSample = { ...exams };
-  //   const filteredExams = examSample.filter((exam) =>
-  //     exam.nameCop.toLowerCase().includes(inputs.toLowerCase())
-  //   );
-  //   setExams(filteredExams);
-  //   console.log(filteredExams);
-  // }
+  function filterData() {
+    const examSample = [...exams];
+    // console.log(exams);
+    // const filteredExams = examSample.filter(
+    //   (exam) =>
+    //     typeof exam.nameCop === "string" &&
+    //     exam.nameCop.toLowerCase() === inputs.toLowerCase()
+    // );
+
+    // console.log(filteredExams);
+    // return filteredExams;
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -45,20 +49,20 @@ export default function Exams() {
   return (
     <div>
       <NavBarSide />
-      <div>
-        {/* <form className="example" action="action_page.php">
-          <input
-            type="text"
-            placeholder="Search.."
-            name="search"
-            onChange={((e) => setInputs(e.target.value), console.log(inputs))}
-          />
-          <button type="submit" onClick={filterData()}>
-            <FaSearch/>
-            <i className="fa-fasearch></i>"
-          </button>
-        </form> */}
-      </div>
+
+      <form className="example" action="action_page.php">
+        <input
+          type="text"
+          placeholder="Search.."
+          name="search"
+          onChange={((e) => setInputs(e.target.value), console.log(inputs))}
+          // onChange={(e) => filterData(e.target.value)}
+        />
+        {/* <button type="submit" onClick={setExams(filterData())}>
+          <FaSearch />
+          <i className="fa-fasearch>" />
+        </button> */}
+      </form>
 
       <div className="centerPage">
         <ScrollUpButton />

@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #E7F3FF;
+  background-color: #e7f3ff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -38,13 +38,14 @@ code {
   grid-gap: 5vw;
   align-items: center;
   justify-content: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 /* Edit buttons */
 .EditButton {
   transition-duration: 0.4s;
-  background-color: #3B788A; 
+  background-color: #3b788a;
   border: none;
   border-radius: 15px;
   margin-left: 2%;
@@ -56,16 +57,16 @@ code {
   font-weight: bold;
 }
 
-.EditButton:hover{
+.EditButton:hover {
   background-color: #8b89eb;
 }
 
-.manipulateDataRow{
+.manipulateDataRow {
   background-color: red;
   display: inline-flex;
   width: 100%;
 }
-.EditDelete{
+.EditDelete {
   background-color: #8b89eb;
   width: 100%;
   align-content: right;
@@ -78,7 +79,7 @@ code {
 
 a {
   text-decoration: none;
-  
+
   display: inline-block;
   position: relative;
   /* border: solid black 2px; */
@@ -99,7 +100,6 @@ a {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-
 }
 
 .ButtonBundle:hover {
@@ -109,24 +109,35 @@ a {
 .ExamForm {
   align-content: center;
   width: fit-content;
-  margin: 1% 10% 2% 12%;
+  margin: 1% 10% 2% 25%;
   padding: 2%;
   padding-left: 4%;
   border: 20px;
   border-radius: 50px;
-  outline: 3px solid black;
+  /* outline: 3px solid black; */
   height: auto;
   display: inline-block;
   text-align: left;
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+.ExamForm input {
+  border-bottom: 2px solid rgb(104, 126, 155);
+}
+
+.ExamForm label {
+  font-weight: 300;
 }
 
 input[name="patientId"],
-input[name="examId"]
-{
+input[name="examId"] {
   width: 35%;
   height: 32px;
 }
 
+.row1,
 .row2,
 .row3,
 .row4,
@@ -136,24 +147,24 @@ input[name="examId"]
 }
 
 .row2 {
-  width: 90%;
+  width: 100%;
+  display: contents;
 }
 
-.UpBottonDiv{
+.UpBottonDiv {
   position: fixed;
   margin-left: 96%;
   bottom: 0;
   margin-bottom: 10px;
-
 }
 
-.UpBotton:hover{
+.UpBotton:hover {
   background-color: #8b89eb;
   cursor: pointer;
 }
 
-.UpBotton{
-  background-color: #3B788A;
+.UpBotton {
+  background-color: #3b788a;
   height: 250px;
   width: 250px;
   border: none;
@@ -171,8 +182,9 @@ input {
   margin: 2%;
 }
 
-input[type=submit] {
-  background-color: rgb(105, 131, 209);
+input[type="submit"] {
+  /* background-color: rgb(105, 131, 209); */
+  background-color: rgb(240, 129, 95);
   color: white;
   padding: 2%;
   width: 25vw;
@@ -183,4 +195,17 @@ input[type=submit] {
 .formFunction {
   display: block;
   text-align: right;
+}
+
+/* #rowCell {
+} */
+
+.csForm {
+  height: 1000px;
+  display: grid;
+  width: 900px;
+}
+
+#createButt {
+  margin-left: 25%;
 }
