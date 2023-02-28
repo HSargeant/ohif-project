@@ -3,9 +3,14 @@ import {MdKeyboardArrowUp} from "react-icons/md"
 import {IconButton,Tooltip} from "@mui/material"
 import { IconContext } from "react-icons";
 
+import { FontAwesome } from "react-icons/fa";
+import {FaAngleUp} from "react-icons/fa";
+import {IconContext} from "react-icons";
+import {IconButton} from "@mui/material";
+
 export default function ScrollUpButton() {
     const [visible, setVisible] = useState(false);
-  
+
     const toggleVisible = () => {
     const scrolled = window.document.documentElement.scrollTop;
     if (scrolled > 300){
@@ -38,8 +43,3 @@ export default function ScrollUpButton() {
         </>
     );
 }
-
-// <Button>
-//  <FaArrowCircleUp onClick={scrollToTop} 
-//  style={{display: visible ? 'inline' : 'none'}} />
-// </Button>
