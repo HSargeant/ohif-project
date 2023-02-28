@@ -12,34 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* Detail page layout */
-.LeftContent {
-  padding: 0 0 15vh 0;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-  background-color: #8b89eb;
-}
-
-.RightContent {
-  padding: 0 2vw 10vh 2vw;
-  align-items: center;
-  overflow: hidden;
-  flex: 0 1 auto;
-  font-size: medium;
-  height: 100%;
-  margin: auto;
-}
-
-/* row of buttons on details page */
-.manipulateDataRow {
-  display: inline-flex;
-  width: 100%;
-}
-
-
-
 /* Info box details */
 .XRayImage {
   width: 100%;
@@ -48,10 +20,8 @@ code {
 
 a {
   text-decoration: none;
-  
   display: inline-block;
   position: relative;
-  /* border: solid black 2px; */
   padding: 4px;
   color: rgb(0, 0, 0);
 }
@@ -109,12 +79,6 @@ input[name="examId"]
   width: 90%;
 }
 
-.UpBotton:hover{
-  color: #8b89eb;
-  cursor: pointer;
-    border: 4px solid #8b89eb;
-}
-
 .UpBotton{
   color: #3B788A;
   border: 4px solid #3B788A;
@@ -127,7 +91,11 @@ input[name="examId"]
   margin-bottom: 10px;
   margin-right: 12px;
 }
-
+.UpBotton:hover {
+  color: #8b89eb;
+  cursor: pointer;
+  border: 4px solid #8b89eb;
+}
 textarea {
   width: 350px;
   resize: vertical;

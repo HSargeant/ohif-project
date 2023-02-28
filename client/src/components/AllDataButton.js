@@ -9,7 +9,7 @@ const AllDataButton = () => {
     const navigate = useNavigate()
     const handleClick=()=>navigate("/exams")
     return (
-        <div onClick={handleClick} style={{cursor:"pointer"}}>
+        <div type="submit" onClick={handleClick} style={{cursor:"pointer"}}>
             <IconContext.Provider value={{ className:"backButton"}}>
             <div>
                 <BiArrowBack/>
