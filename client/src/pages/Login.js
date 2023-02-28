@@ -66,7 +66,6 @@ export default function Login() {
                 <Button
                   color="error"
                   fullWidth
-                  // onClick=""
                   size="large"
                   startIcon={<GoogleIcon />}
                   variant="contained"

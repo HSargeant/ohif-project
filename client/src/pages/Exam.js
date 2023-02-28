@@ -30,18 +30,17 @@ export default function Exam(){
   return(
     <>
       <NavBarSide />
-
       <div className="manipulateDataRow">
-        <AllDataButton /> 
-        <div className="EditPlacement">
-          <EditButton examId={examId}/>
-        </div>
-        <DeleteButton examId={examId}/>
+        <div className="gridItem"> <AllDataButton /> </div>
+        <div className="gridItem"> <h2 className='exam-id' style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2> </div>
+        <div className="gridItem"> <EditButton examId={examId}/> </div>
+        <div className="gridItem"> <DeleteButton examId={examId}/> </div>
+        <div className="gridItem"> </div>
       </div>
       
-      <div className='exam-id'>
+      {/* <div className='exam-id'>
         <h2 style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2>
-      </div>
+      </div> */}
       <div className="Body">
         <div className="LeftContent">
           <Image exam={exam}/>
