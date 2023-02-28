@@ -167,7 +167,7 @@ export default function Register() {
               {' '}
          
                 <Link
-                href="/login"
+                href="/"
                   variant="subtitle2"
                   underline="hover"
                 >
