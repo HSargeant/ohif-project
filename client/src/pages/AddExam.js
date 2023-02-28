@@ -2,11 +2,12 @@
 
 import { API_BASE } from "../constants";
 import { useState } from "react";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useNavigate, useOutletContext,useLocation} from "react-router-dom";
 import NavBarSide from "../NavBarSide/navbarside";
 export default function AddExam() {
   const { user, setMessages } = useOutletContext();
   const navigate = useNavigate();
+  const location =useLocation()
 
   let handleSubmit = async (event) => {
     try {
@@ -40,7 +41,9 @@ export default function AddExam() {
         >
           <div className="formFunction">
             <input type="reset" placeholder="RESET" />
-            <a href="/"> CANCEL </a>
+            {location.key !== "default" && (
+    <button onClick={() => navigate(-1)} type="button">Back</button>
+  )}
           </div>
 
           <label> Patient ID</label>

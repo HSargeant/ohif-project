@@ -55,84 +55,99 @@ export default function Register() {
       <Box
         component="main"
         sx={{
-          alignItems: "center",
-          display: "flex",
+          alignItems: 'center',
+          display: 'flex',
           flexGrow: 1,
-          minHeight: "100%",
+          minHeight: '100%'
         }}
       >
         <Container maxWidth="sm">
           <form action="/signup" method="POST" onSubmit={handleSubmit}>
             <Box sx={{ my: 3 }}>
-              <Typography color="textPrimary" variant="h4">
+              <Typography
+                color="textPrimary"
+                variant="h4"
+              >
                 Create a new account
               </Typography>
-              <Typography color="textSecondary" gutterBottom variant="body2">
+              <Typography
+                color="textSecondary"
+                gutterBottom
+                variant="body2"
+              >
                 Use your email to create a new account
               </Typography>
+			  
             </Box>
             <TextField
-              required={true}
+            required={true}
               fullWidth
               label="First Name"
-              id="firstName"
+			  id="firstName"
               margin="normal"
               name="firstName"
               variant="outlined"
-              type="text"
+			  type="text"
             />
             <TextField
-              required={true}
+            required={true}
               fullWidth
               label="Last Name"
-              id="lastName"
+			  id="lastName"
               margin="normal"
               name="lastName"
               variant="outlined"
-              type="text"
+			  type="text"
             />
             <TextField
-              required={true}
+            required={true}
               fullWidth
               label="Email Address"
               margin="normal"
               name="email"
               type="email"
-              id="exampleInputEmail1"
+			  id="exampleInputEmail1"
               variant="outlined"
-              aria-describedby="emailHelp"
+			  aria-describedby="emailHelp"
             />
-            <Typography color="textSecondary" gutterBottom variant="body2">
-              We'll never share your email address.
-            </Typography>
+			<Typography
+                color="textSecondary"
+                gutterBottom
+                variant="body2"
+              >
+                We'll never share your email address.
+              </Typography>
             <TextField
-              required={true}
+            required={true}
               fullWidth
               label="Password"
               margin="normal"
               name="password"
               type="password"
-              id="password"
+			  id="password"
               variant="outlined"
             />
             <TextField
-              required={true}
+            required={true}
               fullWidth
               label="Confirm Password"
               margin="normal"
-              id="confirmPassword"
+			  id="confirmPassword"
               name="confirmPassword"
               type="password"
               variant="outlined"
             />
             <Box
               sx={{
-                alignItems: "center",
-                display: "flex",
-                ml: -1,
+                alignItems: 'center',
+                display: 'flex',
+                ml: -1
               }}
-            ></Box>
-            {errorMsg ? <div style={{color:"darkred"}}><ErrorIcon fontSize="small" /> {errorMsg}</div> : ""}
+            >
+
+              
+            </Box>
+            {errorMsg ? <div> {errorMsg}</div>:""}
             <Box sx={{ py: 2 }}>
               <Button
                 color="primary"
@@ -144,11 +159,20 @@ export default function Register() {
                 Sign Up Now
               </Button>
             </Box>
-            <Typography color="textSecondary" variant="body2">
-              Have an account?{" "}
-              <Link href="/" variant="subtitle2" underline="hover">
-                Sign In
-              </Link>
+            <Typography
+              color="textSecondary"
+              variant="body2"
+            >
+              Have an account?
+              {' '}
+         
+                <Link
+                href="/login"
+                  variant="subtitle2"
+                  underline="hover"
+                >
+                  Sign In
+                </Link>
             </Typography>
           </form>
         </Container>

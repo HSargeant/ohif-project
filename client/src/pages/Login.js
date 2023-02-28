@@ -26,6 +26,7 @@ export default function Login() {
 			navigate("/exams");
 		}
 	};
+
   // login page
 	return (
       <Box
@@ -63,16 +64,17 @@ export default function Login() {
                 xs={12}
                 md={6}
               >
+                <a href={API_BASE+"/auth/google"} style={{width:'100%'}}>
                 <Button
                   color="error"
                   fullWidth
-                  // onClick=""
                   size="large"
                   startIcon={<GoogleIcon />}
                   variant="contained"
                 >
                   Login with Google
                 </Button>
+                </a>
               </Grid>
             {/* </Grid> */}
             <Box
