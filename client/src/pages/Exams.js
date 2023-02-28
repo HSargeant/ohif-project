@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import {FaSearch} from "react-icons/fa"
-import ScrollUpButton from "../components/ScrollUpButton";
+// import ScrollUpButton from "../components/ScrollUpButton";
 
 // list of all the exams
 export default function Exams() {
@@ -63,7 +63,7 @@ export default function Exams() {
 
       <div className="centerPage">
         <NavBarSide />
-         <ScrollUpButton/>
+        {/* <ScrollUpButton/> */}
         <div id="shopping">
           {exams.map((exam) => {
             return (

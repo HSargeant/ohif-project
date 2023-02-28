@@ -34,24 +34,24 @@
         flex-wrap: wrap;
         float: left;
         font-family: 'Times New Roman', Times, serif;
-        padding: 20px;
+        padding-left: 20px;
         margin-top: 25px;
-        max-height: 653px;
+        /* max-height: 653px; */
+        height: fit-content;
         border-radius: 15px;
         border: 3px solid #3B788A;
         box-shadow: 5px 5px 2px #3B788A;
     }
     
     .PatientInfo {
-        height: auto;
-        padding: 50px;
-        padding-top: 20px;
-        padding-bottom: 40px;
-        padding-right: 20px;
-        float: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 50px;
+        margin-top: 50px;
         border-radius: 15px;
         border: 3px solid #3B788A;
         box-shadow: 5px 5px 2px #3B788A;
+        height: fit-content;
     }
 
     .exam-id {
@@ -82,7 +82,7 @@
 
     .XRayImage {
         font-family: 'Times New Roman', Times, serif;
-        transform: scale(1.1, 1.1);
+        transform: scale(1.15, 1.1);
     }
    .imageBorder{
         border: 1px solid black;
