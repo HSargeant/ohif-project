@@ -2,9 +2,13 @@ const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-  userName: { type: String, unique: true },
-  email: { type: String, unique: true },
-  password: String,
+  email: { 
+    type: String, 
+    unique: true 
+  },
+  password:{ 
+    type: String,
+  },
   googleId: {
     type: String,
   },
@@ -17,6 +21,9 @@ const UserSchema = new mongoose.Schema({
   image: {
     type: String,
   },
+  userName:{
+    type: String,
+  }
 },{ timestamps: true })
 
 // Password hash middleware.
@@ -33,7 +40,6 @@ const UserSchema = new mongoose.Schema({
     })
   })
 })
-
 
 // Helper method for validating user's password.
 

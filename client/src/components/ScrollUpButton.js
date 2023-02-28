@@ -5,14 +5,14 @@ import { IconContext } from "react-icons";
 
 export default function ScrollUpButton() {
     const [visible, setVisible] = useState(false);
-  
+
     const toggleVisible = () => {
     const scrolled = window.document.documentElement.scrollTop;
     if (scrolled > 300){
-        setVisible(true)
+        setVisible(true);
     } 
     else if (scrolled <= 300){
-        setVisible(false)
+        setVisible(false);
     }
     };
   
@@ -29,7 +29,7 @@ export default function ScrollUpButton() {
             {visible && <div className="UpBottonDiv">
                 <Tooltip title="Back to Top">
                     <IconButton onClick={scrollToTop} aria-label="Back To Top" >  
-                        <IconContext.Provider value={{ color: "black",size: 40}}>
+                        <IconContext.Provider value={{ className:'UpBotton'}}>
                             <MdKeyboardArrowUp  />
                         </IconContext.Provider>
                     </IconButton> 
@@ -38,8 +38,3 @@ export default function ScrollUpButton() {
         </>
     );
 }
-
-// <Button>
-//  <FaArrowCircleUp onClick={scrollToTop} 
-//  style={{display: visible ? 'inline' : 'none'}} />
-// </Button>

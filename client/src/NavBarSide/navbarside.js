@@ -33,17 +33,17 @@ export default function NavBarSide() {
     },
   ];
   return (
-    <div class={expansion ? "contain-side" : "contain-side-NX"}>
-      <div class="nav-up">
-        <div class="nav-head">
+    <div className={expansion ? "contain-side" : "contain-side-NX"}>
+      <div className="nav-up">
+        <div className="nav-head">
           {expansion && (
-            <div class="comp-brand">
+            <div className="comp-brand">
               <img src="#" alt=""></img>
               <h2>Hack Diversity</h2>
             </div>
           )}
           <button
-            class={
+            className={
               expansion ? "hamburger hamburger-in" : "hamburger hamburger-out"
             }
             onClick={() => setExpansion(!expansion)}
@@ -53,7 +53,7 @@ export default function NavBarSide() {
             <span></span>
           </button>
         </div>
-        <div class="menu">
+        <div className="menu">
           {menuItems.map(({ text, icon, link }) => (
             <Link
               to={link}
@@ -61,16 +61,16 @@ export default function NavBarSide() {
             >
               <img src="#" alt="" srcSet="" />
               {expansion && <p>{text}</p>}
-              {!expansion && <div class="tooltip">{text}</div>}
+              {!expansion && <div className="tooltip">{text}</div>}
             </Link>
           ))}
         </div>
       </div>
-      <div class="nav-foot">
-        <div class="nav-det">
+      <div className="nav-foot">
+        <div className="nav-det">
           <img src="uiviouqwbioe" alt="" srcSet="" />
-          <div class="nav-foot-info">
-            <p class="nav-foot"></p>
+          <div className="nav-foot-info">
+            <p className="nav-foot"></p>
           </div>
         </div>
       </div>
