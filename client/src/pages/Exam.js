@@ -38,9 +38,6 @@ export default function Exam(){
         <div className="gridItem"> </div>
       </div>
       
-      {/* <div className='exam-id'>
-        <h2 style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2>
-      </div> */}
       <div className="Body">
         <div className="LeftContent">
           <Image exam={exam}/>
