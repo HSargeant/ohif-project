@@ -26,7 +26,7 @@ const navigate = useNavigate()
         onSubmit={handleDelete}
       >
         <IconButton type="submit">  
-          <IconContext.Provider value={{ color: "black"}}>
+          <IconContext.Provider value={{ className:"DeleteButton"}}>
             <FaTrash />
           </IconContext.Provider>
         </IconButton>

@@ -19,56 +19,122 @@
         background-color: antiquewhite;
         outline: 5px solid rgb(68, 137, 239)
     }
-    
+
+    .Body {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        grid-gap: 3vw;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
     .KeyFindingsBox {
-        color: rgb(0, 0, 0);
+        /* color: rgb(0, 0, 0); */
         flex-wrap: wrap;
         float: left;
-        background-color: antiquewhite;
         font-family: 'Times New Roman', Times, serif;
-        padding: 30px;
-        margin-top: 35px;
-        max-height: 653px;
-        border: 10px;
+        padding-left: 20px;
+        margin-top: 25px;
+        /* max-height: 653px; */
+        height: fit-content;
         border-radius: 15px;
-        outline: 5px solid rgb(68, 137, 239);
+        border: 3px solid #3B788A;
+        box-shadow: 5px 5px 2px #3B788A;
     }
     
     .PatientInfo {
-        color: rgb(0, 0, 0);
-        height: auto;
-        background-color: antiquewhite;
-        padding: 50px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        float: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 50px;
+        margin-top: 50px;
         border-radius: 15px;
-        border: 10px;
-        margin-top: 2%;
-        outline: 5px solid rgb(68, 137, 239);
-    
+        border: 3px solid #3B788A;
+        box-shadow: 5px 5px 2px #3B788A;
+        height: fit-content;
     }
 
     .exam-id {
-    width: 40vw;
-    display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-        /* font-size: 10px; */
-    color: rgb(21, 127, 193);
-    background-color: antiquewhite;
-    border: 10px;
-    border-radius: 15px;
-    outline: 5px solid rgb(68, 137, 239); 
-    margin: auto;
-    margin-bottom: 5%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 3.4vw;
     }
-    
+
+    /* Detail page layout */
+    .LeftContent {
+        padding: 0 0 15vh 0;
+        justify-content: center;
+        height: 100%;
+        flex: 0 1 auto;
+        margin-top: 10%;
+    }
+
+    .RightContent {
+        padding: 0 2vw 10vh 2vw;
+        align-items: center;
+        overflow: hidden;
+        flex: 0 1 auto;
+        font-size: medium;
+        height: 100%;
+        margin: auto;
+    }
+
     .XRayImage {
         font-family: 'Times New Roman', Times, serif;
-        border-radius: 15px;
-        border: 10px;
-        outline: 5px solid rgb(68, 137, 239);
+        transform: scale(1.15, 1.1);
     }
-    
+   .imageBorder{
+        border: 1px solid black;
+        overflow: hidden;
+        box-shadow: 5px 4px 5px #1d2122;
+    } 
+
+    /* row of buttons on details page */
+    .manipulateDataRow {
+        display: grid;
+        grid-template-columns: 5% 75% 10% 5% auto;
+        width: 100%;
+        text-align: right;  
+    }
+    .backButton{
+        color: #3B788A;
+        border: 4px solid #3B788A;
+        border-radius: 50%;
+        height: 38px;
+        width: 38px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .backButton:hover{
+        color: #8b89eb;
+        border-color: #8b89eb;
+    }
+    .EditButton{
+        color: #3B788A;
+        height: 40px;
+        width: 40px;
+    } 
+
+    .EditButton:hover {
+        color: #8b89eb;
+    }
+    .DeleteButton {
+        color: #3B788A;
+        height: 35px;
+        width: 35px;
+        padding-top: 3.3px;
+    }
+    .DeleteButton:hover{
+        color: #8b89eb;
+    }
+    /* TODO make right side content snap under the image at half screen */
+    /* @media screen {
+        .RightContent{
+            background-color: red;
+        }
+        .EditPlacement {
+            padding-left: 70%;
+        }
+    } */
     
