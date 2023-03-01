@@ -83,7 +83,7 @@ export default function EditExam(){
             <form action="/api/exams/edit" onSubmit={handleSubmit}>
                 <div className="formFunction">
                     <input type="reset" placeholder="RESET" />
-                    <button onClick={() => navigate(-1)} type="button">CANCEL</button>
+                    <a onClick={() => navigate(-1)} style={{cursor:"pointer"}} type="button">CANCEL</a>
                 </div>
 
                 <label> Patient ID</label>
