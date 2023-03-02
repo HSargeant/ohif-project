@@ -22,7 +22,7 @@ export default function NavBarSide() {
       link: "/exams/new",
     },
     {
-      text: "Create and Account",
+      text: "Create an Account",
       icon: "#",
       link: "/register",
     },

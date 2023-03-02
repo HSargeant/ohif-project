@@ -32,7 +32,7 @@ export default function Exam(){
       <NavBarSide />
       <div className="manipulateDataRow">
         <div className="gridItem"> <AllDataButton /> </div>
-        <div className="gridItem"> <h2 className='exam-id' style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2> </div>
+        <div className="gridItem"> <h1 className='exam-id' style={{marginTop:'10px', marginBottom:'10px',fontWeight:"normal"}}> Exam ID: {exam.examId} </h1> </div>
         <div className="gridItem"> <EditButton examId={examId}/> </div>
         <div className="gridItem"> <DeleteButton examId={examId}/> </div>
         <div className="gridItem"> </div>

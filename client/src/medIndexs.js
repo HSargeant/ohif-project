@@ -7,7 +7,7 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop }) {
       </div>
       
       <div style={{display:"inline-block"}}>
-        <p className="specifInfo">{nameCop}</p>
+        <p className="specifInfo">{"Patient ID: "+ nameCop}</p>
         <p className="specifInfo1">{"Age: " + ageCop}</p>
         <p className="specifInfo2">{"Sex: " +sexCop}</p>
       </div>
