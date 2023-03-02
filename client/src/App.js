@@ -52,7 +52,7 @@ function App() {
               <a href="#">Add New Exam</a>
             </li>
             <li>
-              <a href="#">Create and Account</a>
+              <a href="#">Create an Account</a>
             </li>
             <li>
               <a href="#">Log out</a>

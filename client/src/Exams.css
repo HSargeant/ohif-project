@@ -11,14 +11,14 @@
         font-size: x-large;
     }
     
-    .Header {
+    /* .Header {
         color: rgb(21, 127, 193);
         font-weight:bold;
         border: 10px;
         border-color: blue;
         background-color: antiquewhite;
         outline: 5px solid rgb(68, 137, 239)
-    }
+    } */
 
     .Body {
         display: grid;
@@ -27,30 +27,30 @@
         align-items: center;
         justify-content: center;
         margin-top: 1%;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
-    .KeyFindingsBox {
-        /* color: rgb(0, 0, 0); */
+    .KeyFindingsBox { /* FIX this font*/
         flex-wrap: wrap;
         float: left;
-        font-family: 'Times New Roman', Times, serif;
-        padding-left: 20px;
+        /* font-family: 'Times New Roman', Times, serif; */
+        font-weight: lighter;
+        padding: 0 20px 0 20px;
         margin-top: 25px;
-        /* max-height: 653px; */
         height: fit-content;
+        width: 100%;
         border-radius: 15px;
-        border: 3px solid #3B788A;
-        box-shadow: 5px 5px 2px #3B788A;
+        border: 3px solid #F4B941;
+        border-left: 15px solid #F4B941;
+        box-shadow: 8px 8px 2px #ebeeef;
     }
     
     .PatientInfo {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 50px;
-        margin-top: 50px;
-        border-radius: 15px;
-        border: 3px solid #3B788A;
-        box-shadow: 5px 5px 2px #3B788A;
+        /* font-family: 'Times New Roman', Times, serif; */
+        padding: 10px 20px 10px 20px;
+        margin-top: 30px;
+        border-radius: 10px;
+        border: 3px solid #F4B941;
+        border-left: 15px solid #F4B941;
+        box-shadow: 8px 8px 2px #ebeeef;
         height: fit-content;
     }
 
@@ -58,7 +58,8 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        font-size: 3.4vw;
+        font-size: 3vw;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     /* Detail page layout */
@@ -81,9 +82,11 @@
     }
 
     .XRayImage {
-        font-family: 'Times New Roman', Times, serif;
         transform: scale(1.15, 1.1);
+        width: 100%;
+        height: auto;
     }
+    
    .imageBorder{
         border: 1px solid black;
         overflow: hidden;
@@ -96,10 +99,12 @@
         grid-template-columns: 5% 75% 10% 5% auto;
         width: 100%;
         text-align: right;  
+        margin-top: 1.5%;
     }
     .backButton{
-        color: #3B788A;
-        border: 4px solid #3B788A;
+        color: #0D2E5E;
+        /* #3B788A; */
+        border: 4px solid #0D2E5E;
         border-radius: 50%;
         height: 38px;
         width: 38px;
@@ -107,26 +112,26 @@
         margin-top: 10px;
     }
     .backButton:hover{
-        color: #8b89eb;
-        border-color: #8b89eb;
+        color: #F4B941;
+        border-color: #F4B941;
     }
     .EditButton{
-        color: #3B788A;
+        color: #0D2E5E;
         height: 40px;
         width: 40px;
     } 
 
     .EditButton:hover {
-        color: #8b89eb;
+        color: #F4B941;
     }
     .DeleteButton {
-        color: #3B788A;
+        color: #0D2E5E;
         height: 35px;
         width: 35px;
         padding-top: 3.3px;
     }
     .DeleteButton:hover{
-        color: #8b89eb;
+        color: #F4B941;
     }
     /* TODO make right side content snap under the image at half screen */
     /* @media screen {

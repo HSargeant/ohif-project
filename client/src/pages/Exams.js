@@ -2,10 +2,8 @@ import { useEffect, useState,lazy } from "react";
 import ItemAndInfo from "../medIndexs";
 
 import NavBarSide from "../NavBarSide/navbarside";
-// import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
-// import {FaSearch} from "react-icons/fa"
 import ScrollUpButton from "../components/ScrollUpButton";
 
 // list of all the exams
@@ -56,14 +54,13 @@ export default function Exams() {
   return (
 
     <div>
-
       <div className="centerPage">
         <NavBarSide />
-         <ScrollUpButton/>
-      <div style={{justifyContent:"center",display:"flex"}}>
-      <input id="search" type="text"  placeholder="filter Exams" onKeyUp={filterCards}/>
-
-      </div>
+        <ScrollUpButton/>
+        <div className="SearchBar">
+          <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>
+        </div>
+    
         <div id="shopping">
           {exams.map((exam) => {
             return (
