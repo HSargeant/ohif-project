@@ -110,6 +110,7 @@
         width: 38px;
         margin-left: 10px;
         margin-top: 10px;
+        cursor: pointer;
     }
     .backButton:hover{
         color: #F4B941;
@@ -119,6 +120,7 @@
         color: #0D2E5E;
         height: 40px;
         width: 40px;
+        cursor: pointer;
     } 
 
     .EditButton:hover {
