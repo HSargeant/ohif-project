@@ -28,18 +28,18 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        index: true,
-        element: <Login /> //users will land at the login page
-      },
       // {
-      //   path: "login",
-      //   element: <Login />,
-      // },
-      {
-        path: "/logout",
-        element: <Logout />,
-      },
+        //   path: "login",
+        //   element: <Login />,
+        // },
+        {
+          path: "/logout",
+          element: <Logout />,
+        },
+        {
+          index: true,
+          element: <Login /> //users will land at the login page
+        },
       {
         path: "/register",
         element: <Register />,

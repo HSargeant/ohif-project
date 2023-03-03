@@ -67,7 +67,7 @@ export default function Exams() {
           {exams.map((exam) => {
             return (
               <div key={exam._id} className="card">
-                <Link to={`/exams/${exam._id}`}>
+                {/* <Link to={`/exams/${exam._id}`}> */}
                   <ItemAndInfo
                     nameCop={exam.patientId}
                     ageCop={exam.age}
@@ -77,8 +77,10 @@ export default function Exams() {
                         ? exam.imageURL
                         : ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
                     }
+                    id={exam._id}
+                    examUser={exam.user}
                   ></ItemAndInfo>
-                </Link>
+                {/* </Link> */}
               </div>
             );
           })}

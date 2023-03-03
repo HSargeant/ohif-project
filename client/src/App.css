@@ -118,6 +118,7 @@ nav ul li a:hover::after {
   margin-right: 60px;
   margin-bottom: 30px;
   box-shadow: 10px 8px 5px #3B788A;
+  justify-content: space-around;
 }
 
 .infoplace p {
