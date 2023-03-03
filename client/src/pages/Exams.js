@@ -1,6 +1,5 @@
 import { useEffect, useState,lazy } from "react";
 import ItemAndInfo from "../medIndexs";
-
 import NavBarSide from "../NavBarSide/navbarside";
 // import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
@@ -24,6 +23,7 @@ export default function Exams() {
     let patientId = window.document.querySelectorAll('.specifInfo')
     let age = window.document.querySelectorAll('.specifInfo1')
     let sex = window.document.querySelectorAll('.specifInfo2')
+    
     for (let i = 0; i < cards.length; i++) {
       let patientVal=patientId[i].innerText.toUpperCase().indexOf(filter)>-1
       let ageVal=age[i].innerText.toUpperCase().indexOf(filter)>-1
@@ -43,15 +43,14 @@ export default function Exams() {
         credentials: "include",
       });
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setExams(data);
       setLoading(false);
     };
     getData();
   }, [setExams]);
 
-  console.log(exams)
-
+  // console.log(exams)
   console.log("logged in: ", user);
   return (
 
