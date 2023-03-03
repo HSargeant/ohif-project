@@ -170,10 +170,6 @@ nav ul li a:hover::after {
     margin-top: 0px;
   }
 
-  /* input[name="patientId"],
-  input[name="examId"]{
-    width: 70%;
-  } */
 }
 
 * {

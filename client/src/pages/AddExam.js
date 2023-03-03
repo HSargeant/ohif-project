@@ -71,9 +71,7 @@ export default function AddExam() {
                 max="112"
                 name="age"
               />
-            </div>
 
-            <div id="rowCell">
               <label> Patient's Sex </label>
               <select name="sex">
                 <option disabled selected>
