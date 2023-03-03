@@ -148,7 +148,7 @@ export default function Register() {
             </Box>
             {errorMsg ? <div> {errorMsg}</div>:""}
             <Box sx={{ py: 2 }}>
-              <Button
+              <Button style={{ backgroundColor:"#0D2E5E"}}
                 color="primary"
                 fullWidth
                 size="large"

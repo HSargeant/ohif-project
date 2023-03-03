@@ -14,7 +14,7 @@ const Header = () => {
           <Link to="exams/new">Add New Exam</Link>
         </li>
         <li>
-          <Link to="/register">Create and Account</Link>
+          <Link to="/register">Create an Account</Link>
         </li>
         <li>
           <Link to="/logout">Log Out</Link>
