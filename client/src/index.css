@@ -108,7 +108,7 @@ a {
 
 .ExamForm {
   align-content: center;
-  width: fit-content;
+  /* width: fit-content; */
   margin: 1% 10% 2% 25%;
   padding: 2%;
   padding-left: 4%;
@@ -121,6 +121,7 @@ a {
   background-color: white;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
+  width: 50%;
 }
 
 .ExamForm input {
@@ -203,9 +204,27 @@ input[type="submit"] {
 .csForm {
   height: 1000px;
   display: grid;
-  width: 900px;
+  width: 90%;
 }
 
 #createButt {
   margin-left: 25%;
+}
+
+.resetButt {
+  margin-right: 50px;
+  width: 150px;
+  height: 41px;
+}
+
+.resetButt:hover {
+  background-color: rgb(111, 111, 192);
+}
+
+.cancelCLick {
+  text-decoration: underline;
+}
+
+.cancelCLick:hover {
+  text-decoration: none;
 }

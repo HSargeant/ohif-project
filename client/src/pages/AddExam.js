@@ -43,8 +43,11 @@ export default function AddExam() {
           onSubmit={handleSubmit}
         >
           <div className="formFunction">
-            <input type="reset" placeholder="RESET" />
-            <a href="/"> CANCEL </a>
+            <input className="resetButt" type="reset" placeholder="RESET" />
+            <a className="cancelCLick" href="/">
+              {" "}
+              CANCEL{" "}
+            </a>
           </div>
 
           <div className="row1">
@@ -137,7 +140,7 @@ export default function AddExam() {
             <input accept="image/*" type="file" name="file" />
           </div>
 
-          <input id = "createButt" type="submit" value="Create Exam" />
+          <input id="createButt" type="submit" value="Create Exam" />
         </form>
       </div>
     </div>
