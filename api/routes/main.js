@@ -8,9 +8,9 @@ const passport = require('passport')
 //  removing ensureAuth (protected endpoints) until I link auth to front end
 
 router.get('/api/user',authController.getUser)
-router.get('/api/profile',examsController.getProfile)
-router.get("/api/exams",examsController.getFeed)
-router.post("/login", authController.postLogin)
+router.get('/api/profile',ensureAuth,examsController.getProfile)
+router.get("/api/exams",ensureAuth,examsController.getFeed)
+router.post("/login",authController.postLogin)
 router.get("/logout",ensureAuth, authController.logout)
 router.post("/signup", authController.postSignup)
 // google auth

@@ -2,21 +2,35 @@ import {Link,useNavigate} from "react-router-dom"
 
 import { FontAwesome } from "react-icons/fa";
 import {IconContext} from "react-icons";
-import {IconButton, Tooltip} from "@mui/material";
+import {IconButton} from "@mui/material";
 import {FaPenSquare} from "react-icons/fa";
 
-export default function EditButton({examId}){
-
+export default function EditButton({examId,fromExamsPage}){
   const navigate=useNavigate()
   const handleClick=()=>navigate(`/exams/edit/${examId}`)
-    return (
-      <Tooltip title="Edit Exam">
-        <IconButton type="submit" onClick={handleClick}>  
+    return (fromExamsPage ? (
+      <IconButton disableElevation
+      disableRipple
+      size="small"
+      sx={{
+        ml: 1,
+        "&.MuiButtonBase-root:hover": {
+          bgcolor: "transparent"
+        }
+      }}
+      style={{width:"30%"}} >  
           <IconContext.Provider value={{className:"EditButton"}}>
-            <FaPenSquare/>
+            <FaPenSquare type="submit" onClick={handleClick} style={{cursor:"pointer"}} />
           </IconContext.Provider>
         </IconButton>
-      </Tooltip>
-      
-    );
+    ) : (
+      <IconButton type="submit" onClick={handleClick} style={{cursor:"pointer"}} >  
+      <IconContext.Provider value={{className:"EditButton"}}>
+        <FaPenSquare/>
+      </IconContext.Provider>
+    </IconButton>
+
+    )
+
+    )
  }

@@ -1,6 +1,5 @@
 import { useEffect, useState,lazy } from "react";
 import ItemAndInfo from "../medIndexs";
-
 import NavBarSide from "../NavBarSide/navbarside";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
@@ -22,6 +21,7 @@ export default function Exams() {
     let patientId = window.document.querySelectorAll('.specifInfo')
     let age = window.document.querySelectorAll('.specifInfo1')
     let sex = window.document.querySelectorAll('.specifInfo2')
+    
     for (let i = 0; i < cards.length; i++) {
       let patientVal=patientId[i].innerText.toUpperCase().indexOf(filter)>-1
       let ageVal=age[i].innerText.toUpperCase().indexOf(filter)>-1
@@ -41,15 +41,14 @@ export default function Exams() {
         credentials: "include",
       });
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setExams(data);
       setLoading(false);
     };
     getData();
   }, [setExams]);
 
-  console.log(exams)
-
+  // console.log(exams)
   console.log("logged in: ", user);
   return (
  
@@ -65,7 +64,7 @@ export default function Exams() {
           {exams.map((exam) => {
             return (
               <div key={exam._id} className="card">
-                <Link to={`/exams/${exam._id}`}>
+                {/* <Link to={`/exams/${exam._id}`}> */}
                   <ItemAndInfo
                     nameCop={exam.patientId}
                     ageCop={exam.age}
@@ -75,8 +74,10 @@ export default function Exams() {
                         ? exam.imageURL
                         : ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
                     }
+                    id={exam._id}
+                    examUser={exam.user}
                   ></ItemAndInfo>
-                </Link>
+                {/* </Link> */}
               </div>
             );
           })}
