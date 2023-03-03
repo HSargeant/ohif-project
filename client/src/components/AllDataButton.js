@@ -1,19 +1,21 @@
-import { BiArrowBack } from "react-icons/bi";
+import { BiArrowBack } from "react-icons/bi"; 
 import { Link, useNavigate} from "react-router-dom";
+
+import { FontAwesome } from "react-icons/fa";
+import {IconContext} from "react-icons";
+import {IconButton, Tooltip} from "@mui/material";
 
 const AllDataButton = () => {
     const navigate = useNavigate()
     const handleClick=()=>navigate("/exams")
     return (
-        <div onClick={handleClick} style={{cursor:"pointer"}}>
-            <div className="ButtonBundle">
-                <a> Return to All Data </a>
-            </div>
-        </div >
+        <Tooltip title="Back to All Datta" placement="right">
+            <IconButton type="submit" onClick={handleClick}>  
+                <IconContext.Provider value={{ className:"backButton"}}>
+                    <BiArrowBack/>
+                </IconContext.Provider>
+            </IconButton>
+        </Tooltip>
     );
 }
 export default AllDataButton
-
-// I added edits so that the whole return to all exams button is clickable. 
-// left the a tag around return to all data becuase mucteba styled the tags to 
-// be black and i didnt want to channge css file. we can clean up later.  - HS

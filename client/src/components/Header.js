@@ -1,30 +1,26 @@
-import NavBarSide from "../NavBarSide/navbarside";
-
+import {Link} from 'react-router-dom'
 const Header = () => {
   return (
-    <div>
-      <nav id="topsec">
-        {/* <img src="images/exaLog.png" class="logo"> */}
-        <ul id="sidemenu">
-          <li>
-            <a href="/admin">Admin</a>
-          </li>
-          <li>
-            <a href="/exams">All Exams</a>
-          </li>
-          <li>
-            <a href="exams/new">Add New Exam</a>
-          </li>
-          <li>
-            <a href="/register">Create and Account</a>
-          </li>
-          <li>
-            <a href="/logout">Log Out</a>
-          </li>
-        </ul>
-      </nav>
-      {/* <NavBarSide /> */}
-    </div>
+    <nav id="topsec">
+      {/* <img src="images/exaLog.png" className="logo"> */}
+      <ul id="sidemenu">
+        <li>
+          <Link to="/admin">Admin</Link>
+        </li>
+        <li>
+          <Link to="/exams">All Exams</Link>
+        </li>
+        <li>
+          <Link to="exams/new">Add New Exam</Link>
+        </li>
+        <li>
+          <Link to="/register">Create an Account</Link>
+        </li>
+        <li>
+          <Link to="/logout">Log Out</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

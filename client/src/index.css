@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e7f3ff;
+  background-color: white;
+  /* #ebf2f8; */
 }
 
 code {
@@ -13,76 +12,10 @@ code {
     monospace;
 }
 
-/* Detail page layout */
-.LeftContent {
-  padding: 5vh 0 15vh 0;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.RightContent {
-  padding: 5vh 2vw 10vh 2vw;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex: 0 1 auto;
-  font-size: small;
-  height: 100%;
-  margin: auto;
-}
-
-.Body {
-  display: grid;
-  grid-template-columns: 45% 45%;
-  grid-gap: 5vw;
-  align-items: center;
-  justify-content: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-/* Edit buttons */
-.EditButton {
-  transition-duration: 0.4s;
-  background-color: #3b788a;
-  border: none;
-  border-radius: 15px;
-  margin-left: 2%;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-}
-
-.EditButton:hover {
-  background-color: #8b89eb;
-}
-
-.manipulateDataRow {
-  background-color: red;
-  display: inline-flex;
-  width: 100%;
-}
-.EditDelete {
-  background-color: #8b89eb;
-  width: 100%;
-  align-content: right;
-}
-/* Info box details */
-.XRayImage {
-  width: 100%;
-  height: auto;
-}
-
 a {
   text-decoration: none;
-
   display: inline-block;
   position: relative;
-  /* border: solid black 2px; */
   padding: 4px;
   color: rgb(0, 0, 0);
 }
@@ -101,7 +34,6 @@ a {
   display: inline-block;
   font-size: 16px;
 }
-
 .ButtonBundle:hover {
   background-color: #8b89eb;
 }
@@ -154,23 +86,28 @@ input[name="examId"] {
 
 .UpBottonDiv {
   position: fixed;
-  margin-left: 96%;
+  margin-left: 95%;
+  margin-right: 4%;
   bottom: 0;
   margin-bottom: 10px;
 }
-
+.UpBotton{
+  color: #0C2B59;
+  border: 4px solid #0C2B59;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 12px;
+}
 .UpBotton:hover {
-  background-color: #8b89eb;
+  color: #F4B941;
   cursor: pointer;
+  border: 4px solid #F4B941;
 }
-
-.UpBotton {
-  background-color: #3b788a;
-  height: 250px;
-  width: 250px;
-  border: none;
-}
-
 textarea {
   width: 350px;
   resize: vertical;
@@ -198,34 +135,16 @@ input[type="submit"] {
   text-align: right;
 }
 
-/* #rowCell {
-} */
-
-.csForm {
-  height: 1000px;
-  display: grid;
-  width: 90%;
-  margin-left: 25px;
+.SearchBar{
+  justify-content: center;
+  display: flex;
+  /* display: block; */
+  /* display: table-cell; */
+  margin-top: 20px;
+  /* display: inline-flex; */
 }
-
-#createButt {
-  margin-left: 25%;
-}
-
-.resetButt {
-  margin-right: 50px;
-  width: 150px;
-  height: 41px;
-}
-
-.resetButt:hover {
-  background-color: rgb(111, 111, 192);
-}
-
-.cancelCLick {
-  text-decoration: underline;
-}
-
-.cancelCLick:hover {
-  text-decoration: none;
+.Search{
+  /* background-color: #F4B941; */
+  width: 18%;
+  border: 1.5px solid #18457A;
 }

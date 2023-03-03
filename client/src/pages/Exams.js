@@ -1,33 +1,40 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,lazy } from "react";
 import ItemAndInfo from "../medIndexs";
+
 import NavBarSide from "../NavBarSide/navbarside";
-import Header from "../components/Header";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import { FaSearch } from "react-icons/fa";
+
 import ScrollUpButton from "../components/ScrollUpButton";
 
 // list of all the exams
 export default function Exams() {
   const { user, setUser, setMessages } = useOutletContext();
-  console.log(user);
   const navigate = useNavigate(); // will use for redirecting and protecting route
   const [exams, setExams] = useState([]);
   const [examName, examNames] = useState("");
   const [inputs, setInputs] = useState("");
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
-  function filterData() {
-    const examSample = [...exams];
-    // console.log(exams);
-    // const filteredExams = examSample.filter(
-    //   (exam) =>
-    //     typeof exam.nameCop === "string" &&
-    //     exam.nameCop.toLowerCase() === inputs.toLowerCase()
-    // );
+// function to filter exams - HS
+  function filterCards(e){ 
+    let cards=window.document.querySelectorAll('.card')
+    let filter = e.currentTarget.value.toUpperCase();
+    let patientId = window.document.querySelectorAll('.specifInfo')
+    let age = window.document.querySelectorAll('.specifInfo1')
+    let sex = window.document.querySelectorAll('.specifInfo2')
+    for (let i = 0; i < cards.length; i++) {
+      let patientVal=patientId[i].innerText.toUpperCase().indexOf(filter)>-1
+      let ageVal=age[i].innerText.toUpperCase().indexOf(filter)>-1
+      let sexVal=sex[i].innerText.toUpperCase().indexOf(filter)>-1
 
-    // console.log(filteredExams);
-    // return filteredExams;
+      if (patientVal ||ageVal||sexVal) {
+        cards[i].style.display = "";
+      } else {
+          cards[i].style.display = "none";
+      }
+    }
   }
 
   useEffect(() => {
@@ -47,29 +54,18 @@ export default function Exams() {
 
   console.log("logged in: ", user);
   return (
+ 
     <div>
-      <NavBarSide />
-
-      <form className="example" action="action_page.php">
-        <input
-          type="text"
-          placeholder="Search.."
-          name="search"
-          onChange={((e) => setInputs(e.target.value), console.log(inputs))}
-          // onChange={(e) => filterData(e.target.value)}
-        />
-        {/* <button type="submit" onClick={setExams(filterData())}>
-          <FaSearch />
-          <i className="fa-fasearch>" />
-        </button> */}
-      </form>
-
       <div className="centerPage">
-        <ScrollUpButton />
+        <NavBarSide />
+        <ScrollUpButton/>
+        <div className="SearchBar">
+          <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>
+        </div>
         <div id="shopping">
           {exams.map((exam) => {
             return (
-              <div key={exam._id}>
+              <div key={exam._id} className="card">
                 <Link to={`/exams/${exam._id}`}>
                   <ItemAndInfo
                     nameCop={exam.patientId}
