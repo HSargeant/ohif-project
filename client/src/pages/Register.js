@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext,redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API_BASE } from "../constants";
 import NavBarSide from "../NavBarSide/navbarside";
@@ -37,18 +37,17 @@ export default function Register() {
       credentials: "include",
     });
     const data = await response.json();
-    if (data.messages) {
+    if (data?.messages?.errors?.length) {
       setMessages(data.messages);
-      setErrorMsg(data.messages.errors[0].msg);
+      setErrorMsg(data.messages.errors[0]?.msg);
     }
-    if (data.user) {
+    if (data.user?.email) {
       setUser(data.user);
       navigate("/exams");
     }
   };
 
 
-  console.log(errorMsg, user);
   return (
     <>
       <NavBarSide />
