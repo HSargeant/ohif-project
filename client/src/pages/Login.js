@@ -110,7 +110,7 @@ export default function Login() {
               variant="outlined"
             />
             <Box sx={{ py: 2 }}>
-              <Button
+              <Button style={{ backgroundColor:"#0D2E5E"}}
                 color="primary"
                 fullWidth
                 size="large"
@@ -130,7 +130,9 @@ export default function Login() {
                      variant="subtitle2"
                      underline="hover"
                      sx={{
-                       cursor: 'pointer'
+                       cursor: 'pointer',
+                       color:"#F4B941",
+                       fontWeight:"bold"
                      }}
                 >
                   Register
