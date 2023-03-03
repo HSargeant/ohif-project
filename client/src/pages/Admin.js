@@ -54,14 +54,13 @@ export default function Admin() {
 
   console.log("logged in: ", user);
   return (
-
+    // theres some issue on this page with the api sending "TypeError: Cannot read properties of undefined (reading 'id')"
     <div>
-
       <div className="centerPage">
         <NavBarSide />
          <ScrollUpButton/>
-      <div style={{justifyContent:"center",display:"flex"}}>
-      <input id="search" type="text"  placeholder="filter Exams" onKeyUp={filterCards}/>
+      <div className="SearchBar">
+        <input id="search" className="Search" type="text"  placeholder="filter Exams" onKeyUp={filterCards}/>
 
       </div>
         <div id="shopping">

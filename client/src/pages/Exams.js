@@ -52,7 +52,7 @@ export default function Exams() {
 
   console.log("logged in: ", user);
   return (
-
+ 
     <div>
       <div className="centerPage">
         <NavBarSide />
