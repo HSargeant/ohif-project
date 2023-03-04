@@ -1,23 +1,26 @@
+/* Whole body of side menu  */
 .contain-side {
-  background-color: #5a91c5;
+  background-color: #0C2B59;
   width: 300px;
   height: 100vh;
   position: fixed;
-  color: oldlace;
+  color: oldlace; /*impacting "Hack Diversit"y text*/
   z-index: 1;
   transition: 0.4s;
+  
 }
 
 .contain-side-NX {
   width: 85px;
   position: fixed;
   z-index: 1;
+  background-color: pink;
 }
 
 .nav-up,
 .nav-head,
-menu,
-items-menu {
+.menu,
+.items-menu {
   display: grid;
 }
 
@@ -42,19 +45,20 @@ items-menu {
 }
 
 .hamburger {
+  top: 0;
   position: absolute;
-  left: 13%;
-
+  left: 12%;
   background: none;
   border: none;
   cursor: pointer;
-  margin: auto -35px;
+  /* margin: auto -35px; */
   background-color: #A7BED4;
   border: 2px solid aliceblue;
   padding: 20px;
   border-radius: 90px;
   height: 71px;
   width: 74px;
+  background-color: black;
   
 }
 
@@ -101,36 +105,44 @@ items-menu {
   transform: translate(0px, 8px) rotate(-360deg);
 }
 
-menu {
+.menu {
   grid-template-rows: repeat(7, 1fr);
+  background-color: orange;
 }
 
-items-menu {
-  height: 57px;
+/* Menu items when hamburger is open */
+.items-menu {
+  /* height: 57px;
   width: 1;
   display: flex;
-  color: aliceblue;
+  color: rgb(6, 16, 26);
   text-decoration: none;
   text-transform: uppercase;
   margin: auto 20px;
   border-radius: 10px;
-  position: relative;
+  position: relative; */
+  background-color: aquamarine;
 }
 
-items-menu-NX {
-  margin: auto;
-  width: 4.5em;
+/* Menu items wheen hamburger element is closed */
+.items-menu-NX {
+  /* margin: auto;
+  width: 4.5em; */
+  background-color: red;
 }
 
+/* TODO: shouldnt hover until the hamburger is open */
 items-menu:hover {
-  background-color: gray;
+  background-color: #F4B941;
 }
+/* 3/4 currently doesnt exist */
+/* .item-menu img {
+  /* width: 30px;
+  padding: 0 20px; 
+  background-color: purple;
+} */
 
-item-menu img {
-  width: 30px;
-  padding: 0 20px;
-}
-
+/* hiding of the menu elements in the hamburger */
 .tooltip {
   display: none;
   position: absolute;
@@ -144,6 +156,14 @@ item-menu img {
   white-space: nowrap;
   border: 2px solid aliceblue;
   background-color: gray;
+}
+
+.sidebar1 {
+  display: flex;
+ /* margin: 5%; */
+color:red;
+background-color: aqua;
+  /* left: 0; */
 }
 
 @media (max-width: 100px) {
@@ -161,3 +181,4 @@ item-menu img {
     display: none;
   }
 }
+

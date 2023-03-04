@@ -61,7 +61,9 @@ export default function NavBarSide() {
             >
               <img src="#" alt="" srcSet="" />
               {expansion && <p>{text}</p>}
-              {!expansion && <div className="tooltip">{text}</div>}
+              {/* can we rename this? */}
+              {!expansion && <div className="tooltip">{text}</div>} 
+
             </Link>
           ))}
         </div>

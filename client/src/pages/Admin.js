@@ -57,7 +57,7 @@ export default function Admin() {
     // theres some issue on this page with the api sending "TypeError: Cannot read properties of undefined (reading 'id')"
     <div>
       <div className="centerPage">
-        <NavBarSide />
+        {/* <NavBarSide /> */}
          <ScrollUpButton/>
       <div className="SearchBar">
         <input id="search" className="Search" type="text"  placeholder="filter Exams" onKeyUp={filterCards}/>

@@ -54,7 +54,7 @@ export default function Exams() {
  
     <div>
       <div className="centerPage">
-        <NavBarSide />
+        {/* <NavBarSide /> */}
         <ScrollUpButton/>
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>

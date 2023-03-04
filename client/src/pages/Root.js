@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { API_BASE } from "../constants";
 import Header from "../components/Header";
+import Navbarside from "../NavBarSide/navbarside";
 export default function Root() {
   const [user, setUser] = useState();
   const [messages, setMessages] = useState({});
@@ -15,6 +16,9 @@ export default function Root() {
   return (
     <>
       {user ? <Header />:""}
+      <div className="sidebar1">
+        {user ? <Navbarside />:""}
+      </div>
       <Outlet context={{ user, setUser, setMessages }} />
       {/*  */}
     </>
