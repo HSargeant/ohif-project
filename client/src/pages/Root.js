@@ -14,11 +14,8 @@ export default function Root() {
   }, []);
   return (
     <>
-      <Header />
-      {/* Do not touch. Outlet context is used to render the child routes. we will use this to keep track of the logged in user across the application  */}
-      {/* <Outlet  /> */}
+      {user ? <Header />:""}
       <Outlet context={{ user, setUser, setMessages }} />
-
       {/*  */}
     </>
   );

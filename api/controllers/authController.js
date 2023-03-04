@@ -77,8 +77,8 @@ module.exports = {
       password: req.body.password,
     });
   
-    User.findOne(
-      { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    const x = User.findOne(
+      { $or: [{ email: req.body.email }] },
       (err, existingUser) => {
         if (err) {
           return next(err);
@@ -89,6 +89,7 @@ module.exports = {
           });
           return res.json({ messages: req.flash() });
         }
+        // console.log("user---------:",x)
         user.save((err) => {
           if (err) {
             return next(err);
