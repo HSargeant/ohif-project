@@ -51,7 +51,11 @@ export default function Exams() {
   }, [setExams]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   console.log(exams);
+=======
+  console.log(exams)
+>>>>>>> parent of 54a8d2d (Merge pull request #50 from HSargeant/HS-routes)
 =======
   console.log(exams)
 >>>>>>> parent of 54a8d2d (Merge pull request #50 from HSargeant/HS-routes)
