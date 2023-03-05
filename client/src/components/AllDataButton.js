@@ -9,7 +9,7 @@ const AllDataButton = () => {
     const navigate = useNavigate()
     const handleClick=()=>navigate("/exams")
     return (
-        <Tooltip title="Back to All Datta" placement="right">
+        <Tooltip title="Back to All Data" placement="right">
             <IconButton type="submit" onClick={handleClick}>  
                 <IconContext.Provider value={{ className:"backButton"}}>
                     <BiArrowBack/>
