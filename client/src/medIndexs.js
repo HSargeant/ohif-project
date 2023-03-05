@@ -10,6 +10,10 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop }) {
         <p className="specifInfo1">{"Age: " + ageCop}</p>
         <p className="specifInfo2">{"Sex: " +sexCop}</p>
       </div>
+<<<<<<< HEAD
+=======
+      
+>>>>>>> parent of 54a8d2d (Merge pull request #50 from HSargeant/HS-routes)
     </div>
   );
 }

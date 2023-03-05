@@ -50,7 +50,11 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
+<<<<<<< HEAD
   console.log(exams);
+=======
+  console.log(exams)
+>>>>>>> parent of 54a8d2d (Merge pull request #50 from HSargeant/HS-routes)
 
   console.log("logged in: ", user);
   return (
