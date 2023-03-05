@@ -3,6 +3,7 @@ import { API_BASE } from "../constants";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useOutletContext,useParams } from "react-router-dom";
 
+
 export default function EditExam(){
     const { user, setMessages } = useOutletContext();
     const navigate = useNavigate()
@@ -21,7 +22,6 @@ export default function EditExam(){
     const [keyFindings,setKeyfindings] = useState("")
 
     useEffect(()=>{
-
         const getData = async ()=>{ 
             const res = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
             const data = await res.json()
@@ -48,7 +48,7 @@ export default function EditExam(){
         try{
             const form = event.currentTarget;
             let x = new FormData(form)
-            const response = await fetch(API_BASE + "/api/exams/edit/", {
+            const response = await fetch(API_BASE + "/api/exams/edit", {
                 method: 'put',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

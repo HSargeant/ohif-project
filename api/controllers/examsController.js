@@ -9,7 +9,7 @@ const cloudinary = require("../middleware/cloudinary");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      const exams = await Exam.find({ user: req.user.id }).sort({ createdAt: "desc" }).lean();
+      const exams = await Exam.find({ user: req.user.id }).lean();
       res.json(exams);
     } catch (err) {
       console.log(err);
@@ -18,8 +18,7 @@ module.exports = {
   getFeed: async (req, res) => {
     console.log('getting feed')
     try {
-      // const exams = await Exam.find().sort({ createdAt: "desc" }).populate("user").lean();
-      const exams = await Exam.find().sort({ createdAt: "desc" }).lean();
+      const exams = await Exam.find().sort({ createdAt: "desc" }).populate("user").lean();
       res.json(exams);
     } catch (err) {
       console.log(err);

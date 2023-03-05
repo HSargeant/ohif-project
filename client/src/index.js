@@ -20,7 +20,6 @@ import Exams from './pages/Exams';
 import Exam from './pages/Exam';
 import EditExam from "./pages/EditExam.js"
 import AddExam from './pages/AddExam';
-import ProtectedRoute from './components/ProtectedRoute';
 // Hi everyone
 const router = createBrowserRouter([
   {
@@ -28,46 +27,42 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        index: true,
+        element: <Login /> //users will land at the login page
+      },
       // {
-        //   path: "login",
-        //   element: <Login />,
-        // },
-        {
-          path: "/logout",
-          element: <Logout />,
-        },
-        {
-          index: true,
-          element: <Login /> //users will land at the login page
-        },
+      //   path: "login",
+      //   element: <Login />,
+      // },
+      {
+        path: "/logout",
+        element: <Logout />,
+      },
       {
         path: "/register",
         element: <Register />,
       },
       {
         path: "/admin",
-        element: <ProtectedRoute><Admin /></ProtectedRoute>,
+        element: <Admin />,
       },
       {
         path: "/exams",
-        element: <ProtectedRoute><Exams /></ProtectedRoute>,
+        element: <Exams />,
       },
       {
         path: "/exams/:id",
-        element: <ProtectedRoute><Exam /></ProtectedRoute>,
+        element: <Exam />,
       },
       {
         path: "/exams/new",
-        element: <ProtectedRoute><AddExam /></ProtectedRoute>
+        element: <AddExam />
       },
       {
         path: "/exams/edit/:id",
-        element: <ProtectedRoute><EditExam /></ProtectedRoute>
-      },
-      // {
-      //   path:"",
-      //   element:<ProtectedRoute/>
-      // }
+        element: <EditExam />
+      }
     ]
   },
 ]);
