@@ -8,7 +8,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -40,25 +40,38 @@ a {
 
 .ExamForm {
   align-content: center;
-  width: fit-content;
-  margin: 1% 10% 2% 12%;
+  /* width: fit-content; */
+  margin: 1% 10% 2% 25%;
   padding: 2%;
-  padding-left: 4%;
+  padding-left: 3%;
+  padding-right: 0%;
   border: 20px;
   border-radius: 50px;
-  outline: 3px solid black;
+  /* outline: 3px solid black; */
   height: auto;
   display: inline-block;
   text-align: left;
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  width: 50%;
+}
+
+.ExamForm input {
+  border-bottom: 2px solid rgb(104, 126, 155);
+}
+
+.ExamForm label {
+  font-weight: 300;
 }
 
 input[name="patientId"],
-input[name="examId"]
-{
-  width: 35%;
+input[name="examId"] {
+  width: 32%;
   height: 32px;
 }
 
+.row1,
 .row2,
 .row3,
 .row4,
@@ -68,7 +81,8 @@ input[name="examId"]
 }
 
 .row2 {
-  width: 90%;
+  width: 100%;
+  display: contents;
 }
 
 .UpBottonDiv {
@@ -108,8 +122,9 @@ input {
   margin: 2%;
 }
 
-input[type=submit] {
-  background-color: rgb(105, 131, 209);
+input[type="submit"] {
+  /* background-color: rgb(105, 131, 209); */
+  background-color: rgb(240, 129, 95);
   color: white;
   padding: 2%;
   width: 25vw;
@@ -122,6 +137,37 @@ input[type=submit] {
   text-align: right;
 }
 
+/* #rowCell {
+} */
+
+.csForm {
+  height: 1000px;
+  display: grid;
+  width: 90%;
+  margin-left: 25px;
+}
+
+#createButt {
+  margin-left: 25%;
+}
+
+.resetButt {
+  margin-right: 50px;
+  width: 150px;
+  height: 41px;
+}
+
+.resetButt:hover {
+  background-color: rgb(111, 111, 192);
+}
+
+.cancelCLick {
+  text-decoration: underline;
+}
+
+.cancelCLick:hover {
+  text-decoration: none;
+}
 .SearchBar{
   justify-content: center;
   display: flex;

@@ -51,7 +51,6 @@ export default function Exams() {
   // console.log(exams)
   console.log("logged in: ", user);
   return (
- 
     <div>
       <div className="centerPage">
         <NavBarSide />
@@ -59,7 +58,7 @@ export default function Exams() {
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>
         </div>
-    
+  
         <div id="shopping">
           {exams.map((exam) => {
             return (
