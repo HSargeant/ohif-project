@@ -137,10 +137,8 @@ export default function AddExam() {
             <label> X-ray Image </label>
             <input accept="image/*" type="file" name="file" />
           </div>
-          <div className="SubmitButton">
-              <input id="createButt" type="submit" value="Create Exam" />
-          </div>
-          
+
+          <input id="createButt" type="submit" value="Create Exam" />
         </form>
       </div>
     </div>
