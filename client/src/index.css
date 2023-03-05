@@ -111,7 +111,8 @@ a {
   /* width: fit-content; */
   margin: 1% 10% 2% 25%;
   padding: 2%;
-  padding-left: 4%;
+  padding-left: 3%;
+  padding-right: 0%;
   border: 20px;
   border-radius: 50px;
   /* outline: 3px solid black; */
@@ -134,7 +135,7 @@ a {
 
 input[name="patientId"],
 input[name="examId"] {
-  width: 35%;
+  width: 32%;
   height: 32px;
 }
 
