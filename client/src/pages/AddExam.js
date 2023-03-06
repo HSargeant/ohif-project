@@ -32,9 +32,8 @@ export default function AddExam() {
 
   return (
     <div>
-      {/* <NavBarSide /> */}
-      <h1 style={{textAlign:"center", marginTop:"3%"}}> Create a New Exam </h1>
       <div className="ExamForm">
+        <h1 style={{textAlign:"center"}}> Create a New Exam </h1>
         <form
           className="csForm"
           action="/api/exams/new"

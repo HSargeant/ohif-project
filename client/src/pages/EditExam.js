@@ -79,7 +79,8 @@ export default function EditExam(){
     };
     return (
         <>
-        <div className="ExamForm">
+        <div className="ExamForm" style={{margin: "5% 10% 2% 25%"}}>
+            <h1 style={{textAlign:"center"}}> Editing Exam </h1>
             <form action="/api/exams/edit" onSubmit={handleSubmit}>
                 <div className="formFunction">
                     <input type="reset" placeholder="RESET" />
