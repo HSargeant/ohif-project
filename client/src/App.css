@@ -125,9 +125,13 @@ nav ul li a:hover::after {
 }
 /* Style Header background */
 #topsec {
+  position: fixed;
+  top: 0;
+  width: 100%;
+   z-index: 1;
   background-color: #0C2B59; /*#4C9DB9;#A7BED4; turquoise:3B788A /* Header background color*/
   padding-bottom: 8px;
-  border-bottom: 2px solid white;
+  /* border-bottom: 2px solid white; */
 }
 /* styling header links*/
 #sidemenu {

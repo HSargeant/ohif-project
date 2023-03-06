@@ -92,6 +92,7 @@ input[name="examId"] {
   bottom: 0;
   margin-bottom: 10px;
   z-index: 1;
+  height: 44px;
 }
 .UpBotton{
   color: #0C2B59;
@@ -173,7 +174,7 @@ input[type="submit"] {
   display: flex;
   /* display: block; */
   /* display: table-cell; */
-  margin-top: 20px;
+  margin-top: 90px;
   /* display: inline-flex; */
 }
 .Search{
