@@ -1,21 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #E7F3FF;
+  background-color: white;
+  /* #ebf2f8; */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-/* Info box details */
-.XRayImage {
-  width: 100%;
-  height: auto;
 }
 
 a {
@@ -39,34 +33,46 @@ a {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-
 }
-
 .ButtonBundle:hover {
   background-color: #8b89eb;
 }
 
 .ExamForm {
   align-content: center;
-  width: fit-content;
-  margin: 1% 10% 2% 12%;
+  /* width: fit-content; */
+  margin: 3% 10% 2% 25%;
+  background-color: #8b89eb;
   padding: 2%;
-  padding-left: 4%;
+  padding-left: 3%;
+  padding-right: 0%;
   border: 20px;
   border-radius: 50px;
-  outline: 3px solid black;
+  /* outline: 3px solid black; */
   height: auto;
   display: inline-block;
   text-align: left;
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  width: 50%;
+}
+
+.ExamForm input {
+  border-bottom: 2px solid rgb(104, 126, 155);
+}
+
+.ExamForm label {
+  font-weight: 300;
 }
 
 input[name="patientId"],
-input[name="examId"]
-{
-  width: 35%;
+input[name="examId"] {
+  width: 32%;
   height: 32px;
 }
 
+.row1,
 .row2,
 .row3,
 .row4,
@@ -76,7 +82,8 @@ input[name="examId"]
 }
 
 .row2 {
-  width: 90%;
+  width: 100%;
+  display: contents;
 }
 
 .UpBottonDiv {
@@ -85,10 +92,12 @@ input[name="examId"]
   margin-right: 4%;
   bottom: 0;
   margin-bottom: 10px;
+  z-index: 1;
+  height: 44px;
 }
 .UpBotton{
-  color: #3B788A;
-  border: 4px solid #3B788A;
+  color: #0C2B59;
+  border: 4px solid #0C2B59;
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -99,9 +108,9 @@ input[name="examId"]
   margin-right: 12px;
 }
 .UpBotton:hover {
-  color: #8b89eb;
+  color: #F4B941;
   cursor: pointer;
-  border: 4px solid #8b89eb;
+  border: 4px solid #F4B941;
 }
 textarea {
   width: 350px;
@@ -115,8 +124,9 @@ input {
   margin: 2%;
 }
 
-input[type=submit] {
-  background-color: rgb(105, 131, 209);
+input[type="submit"] {
+  /* background-color: rgb(105, 131, 209); */
+  background-color: rgb(240, 129, 95);
   color: white;
   padding: 2%;
   width: 25vw;
@@ -127,4 +137,49 @@ input[type=submit] {
 .formFunction {
   display: block;
   text-align: right;
+}
+
+/* #rowCell {
+} */
+
+.csForm {
+  height: 1000px;
+  display: grid;
+  width: 90%;
+  margin-left: 25px;
+}
+
+#createButt {
+  margin-left: 25%;
+}
+
+.resetButt {
+  margin-right: 50px;
+  width: 150px;
+  height: 41px;
+}
+
+.resetButt:hover {
+  background-color: rgb(111, 111, 192);
+}
+
+.cancelCLick {
+  text-decoration: underline;
+}
+
+.cancelCLick:hover {
+  text-decoration: none;
+}
+.SearchBar{
+  justify-content: center;
+  display: flex;
+  /* display: block; */
+  /* display: table-cell; */
+  margin-top: 90px;
+  /* display: inline-flex; */
+}
+.Search{
+  /* background-color: #F4B941; */
+  width: 18%;
+  border: 1.5px solid #18457A;
 }

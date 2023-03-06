@@ -3,19 +3,19 @@ import { Link, useNavigate} from "react-router-dom";
 
 import { FontAwesome } from "react-icons/fa";
 import {IconContext} from "react-icons";
-import {IconButton} from "@mui/material";
+import {IconButton, Tooltip} from "@mui/material";
 
 const AllDataButton = () => {
     const navigate = useNavigate()
     const handleClick=()=>navigate("/exams")
     return (
-        <div type="submit" onClick={handleClick} style={{cursor:"pointer"}}>
-            <IconContext.Provider value={{ className:"backButton"}}>
-            <div>
-                <BiArrowBack/>
-            </div>
-            </IconContext.Provider>
-        </div>
+        <Tooltip title="Back to All Data" placement="right">
+            <IconButton type="submit" onClick={handleClick}>  
+                <IconContext.Provider value={{ className:"backButton"}}>
+                    <BiArrowBack/>
+                </IconContext.Provider>
+            </IconButton>
+        </Tooltip>
     );
 }
 export default AllDataButton

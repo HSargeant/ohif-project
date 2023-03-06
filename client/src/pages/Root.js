@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { API_BASE } from "../constants";
 import Header from "../components/Header";
+import Navbarside from "../components/NavBarSide/navbarside";
 export default function Root() {
   const [user, setUser] = useState();
   const [messages, setMessages] = useState({});
@@ -14,11 +15,11 @@ export default function Root() {
   }, []);
   return (
     <>
-      <Header />
-      {/* Do not touch. Outlet context is used to render the child routes. we will use this to keep track of the logged in user across the application  */}
-      {/* <Outlet  /> */}
+      {user ? <Header />:""}
+      <div className="sidebar1">
+        {user ? <Navbarside />:""}
+      </div>
       <Outlet context={{ user, setUser, setMessages }} />
-
       {/*  */}
     </>
   );

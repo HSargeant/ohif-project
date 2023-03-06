@@ -3,7 +3,6 @@ import { API_BASE } from "../constants";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useOutletContext,useParams } from "react-router-dom";
 
-
 export default function EditExam(){
     const { user, setMessages } = useOutletContext();
     const navigate = useNavigate()
@@ -22,6 +21,7 @@ export default function EditExam(){
     const [keyFindings,setKeyfindings] = useState("")
 
     useEffect(()=>{
+
         const getData = async ()=>{ 
             const res = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
             const data = await res.json()
@@ -48,7 +48,7 @@ export default function EditExam(){
         try{
             const form = event.currentTarget;
             let x = new FormData(form)
-            const response = await fetch(API_BASE + "/api/exams/edit", {
+            const response = await fetch(API_BASE + "/api/exams/edit/", {
                 method: 'put',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -79,11 +79,12 @@ export default function EditExam(){
     };
     return (
         <>
-        <div className="ExamForm">
+        <div className="ExamForm" style={{margin: "5% 10% 2% 25%"}}>
+            <h1 style={{textAlign:"center"}}> Editing Exam </h1>
             <form action="/api/exams/edit" onSubmit={handleSubmit}>
                 <div className="formFunction">
                     <input type="reset" placeholder="RESET" />
-                    <a href="/"> CANCEL </a>
+                    <a onClick={() => navigate(-1)} style={{cursor:"pointer"}} type="button">CANCEL</a>
                 </div>
 
                 <label> Patient ID</label>

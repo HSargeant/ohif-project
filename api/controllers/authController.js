@@ -7,6 +7,7 @@ module.exports = {
     res.json({ user: req.user || null });
   },
   postLogin: (req, res, next) => {
+    // console.log(req)
     const validationErrors = [];
     if (!validator.isEmail(req.body.email))
       validationErrors.push({ msg: "Please enter a valid email address." });
@@ -77,8 +78,8 @@ module.exports = {
       password: req.body.password,
     });
   
-    User.findOne(
-      { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    const x = User.findOne(
+      { $or: [{ email: req.body.email }] },
       (err, existingUser) => {
         if (err) {
           return next(err);

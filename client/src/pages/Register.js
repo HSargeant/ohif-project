@@ -1,7 +1,7 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext,redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API_BASE } from "../constants";
-import NavBarSide from "../NavBarSide/navbarside";
+import NavBarSide from "../components/NavBarSide/navbarside";
 import {
   Box,
   Button,
@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
-import ErrorIcon from '@mui/icons-material/Error';
+// import ErrorIcon from '@mui/icons-material/Error';
 
 export default function Register() {
   const { setUser, messages, setMessages, user } = useOutletContext();
@@ -37,47 +37,65 @@ export default function Register() {
       credentials: "include",
     });
     const data = await response.json();
-    if (data.messages) {
+    if (data?.messages?.errors?.length) {
       setMessages(data.messages);
-      setErrorMsg(data.messages.errors[0].msg);
+      setErrorMsg(data.messages.errors[0]?.msg);
     }
-    if (data.user) {
+    if (data.user?.email) {
       setUser(data.user);
       navigate("/exams");
     }
   };
 
 
-  console.log(errorMsg, user);
   return (
     <>
-      <NavBarSide />
       <Box
         component="main"
         sx={{
           alignItems: 'center',
           display: 'flex',
           flexGrow: 1,
-          minHeight: '100%'
+          minHeight: '100%',
+          marginTop:"25px"
         }}
       >
         <Container maxWidth="sm">
+    
+                <a href={API_BASE+"/auth/google"} style={{width:'100%'}}>
+                <Button
+                  color="error"
+                  fullWidth
+                  size="large"
+                  startIcon={<GoogleIcon />}
+                  variant="contained"
+                >
+                  Continue with Google
+                </Button>
+                </a>
+                <Box
+              sx={{
+                pb: 1,
+                pt: 3
+              }}
+            >
+              <Typography
+                align="center"
+                color="textSecondary"
+                variant="body1"
+              >
+                or creat an account
+              </Typography>
+            </Box>
           <form action="/signup" method="POST" onSubmit={handleSubmit}>
-            <Box sx={{ my: 3 }}>
+            <Box sx={{ my: 1 }}>
               <Typography
                 color="textPrimary"
-                variant="h4"
+                gutterBottom
+                variant="h5"
               >
                 Create a new account
               </Typography>
-              <Typography
-                color="textSecondary"
-                gutterBottom
-                variant="body2"
-              >
-                Use your email to create a new account
-              </Typography>
-			  
             </Box>
             <TextField
             required={true}
@@ -149,7 +167,7 @@ export default function Register() {
             </Box>
             {errorMsg ? <div> {errorMsg}</div>:""}
             <Box sx={{ py: 2 }}>
-              <Button
+              <Button style={{ backgroundColor:"#0D2E5E"}}
                 color="primary"
                 fullWidth
                 size="large"
@@ -167,7 +185,7 @@ export default function Register() {
               {' '}
          
                 <Link
-                href="/login"
+                href="/"
                   variant="subtitle2"
                   underline="hover"
                 >

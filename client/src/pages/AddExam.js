@@ -2,19 +2,16 @@
 
 import { API_BASE } from "../constants";
 import { useState } from "react";
-import { Link, useNavigate, useOutletContext,useLocation} from "react-router-dom";
-import NavBarSide from "../NavBarSide/navbarside";
+import { Link, useNavigate, useOutletContext,useLocation,Navigate} from "react-router-dom";
+import NavBarSide from "../components/NavBarSide/navbarside";
 export default function AddExam() {
-  const { user, setMessages } = useOutletContext();
-  const navigate = useNavigate();
-  const location =useLocation()
-
-  let handleSubmit = async (event) => {
+    const navigate = useNavigate();
+    const location =useLocation()
+    const { user, setMessages } = useOutletContext();
+    let handleSubmit = async (event) => {
     try {
       event.preventDefault();
       const form = event.currentTarget;
-      console.log(new FormData(form));
-
       const response = await fetch(API_BASE + form.getAttribute("action"), {
         method: form.method,
         body: new FormData(form),
@@ -28,12 +25,13 @@ export default function AddExam() {
     navigate(-1);
   };
   // console.log(message);
+
   return (
     <div>
-      <NavBarSide />
-      <h1 style={{textAlign:"center", marginTop:"3%"}}> Create a New Exam </h1>
       <div className="ExamForm">
+        <h1 style={{textAlign:"center"}}> Create a New Exam </h1>
         <form
+          className="csForm"
           action="/api/exams/new"
           encType="multipart/form-data"
           method="POST"
@@ -41,37 +39,48 @@ export default function AddExam() {
         >
           <div className="formFunction">
             <input type="reset" placeholder="RESET" />
+
             {location.key !== "default" && (
     <button onClick={() => navigate(-1)} type="button">Back</button>
   )}
           </div>
 
-          <label> Patient ID</label>
-          <input type="text" placeholder="Patient ID..." name="patientId" />
-
-          <label> Exam ID</label>
-          <input type="text" placeholder="Exam ID..." name="examId" />
+          <div className="row1">
+            {/* <div id="rowCell"> */}
+            <label> Patient ID</label>
+            <input type="text" placeholder="Patient ID..." name="patientId" />
+            {/* </div> */}
+            {/* <div id="rowCell"> */}
+            <label> Exam ID</label>
+            <input type="text" placeholder="Exam ID..." name="examId" />
+            {/* </div> */}
+          </div>
 
           <div className="row2">
-            <label> Patient's Age</label>
-            <input
-              type="number"
-              placeholder="Age"
-              min="0"
-              max="112"
-              name="age"
-            />
+            <div id="rowCell">
+              <label> Patient's Age</label>
+              <input
+                type="number"
+                placeholder="Age"
+                min="0"
+                max="112"
+                name="age"
+              />
 
-            <label> Patient's Sex </label>
-            <select name="sex">
-              <option disabled selected>
-                Male or Female
-              </option>
-              <option value="M">M</option>
-              <option value="F">F</option>
-            </select>
-            <label> Patient's ZipCode </label>
-            <input type="text" placeholder="zip code" name="zipCode" />
+              <label> Patient's Sex </label>
+              <select name="sex">
+                <option disabled selected>
+                  Male or Female
+                </option>
+                <option value="M">M</option>
+                <option value="F">F</option>
+              </select>
+            </div>
+
+            <div id="rowCell">
+              <label> Patient's ZipCode </label>
+              <input type="text" placeholder="zip code" name="zipCode" />
+            </div>
           </div>
 
           <div className="row3">
@@ -89,7 +98,7 @@ export default function AddExam() {
           </div>
 
           <div>
-                <label> icu </label>
+            <label> icu </label>
             <select name="icu">
               <option disabled selected>
                 Y/N
@@ -109,7 +118,7 @@ export default function AddExam() {
               <option value="Y">Y</option>
               <option value="N">N</option>
             </select>
-            </div>
+          </div>
 
           <div className="row4">
             <label> Key Findings </label>
@@ -120,15 +129,13 @@ export default function AddExam() {
           </div>
 
           <div className="row5">
-            
             <label> X-ray Image </label>
             <input accept="image/*" type="file" name="file" />
           </div>
 
-          <input type="submit" value="Create Exam" />
+          <input id="createButt" type="submit" value="Create Exam" />
         </form>
       </div>
-      );
     </div>
   );
 }

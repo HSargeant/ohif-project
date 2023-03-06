@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import PatientInfo from '../components/PatientInfo';
 import KeyFindings from '../components/KeyFindings';
 import AllDataButton from '../components/AllDataButton';
-import NavBarSide from "../NavBarSide/navbarside.js";
+import NavBarSide from "../components/NavBarSide/navbarside.js";
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
@@ -14,14 +14,16 @@ import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom
 import DeleteButton from '../components/DeleteButton';
 
 export default function Exam(){
-  // const { user } = useOutletContext(); // we will use this to when we set up auth to check for which user is logged in
+  const { user } = useOutletContext(); // we will use this to when we set up auth to check for which user is logged in
   const  [exam,setExam] = useState({})
   const examId = useParams().id // used to grab the id of the exam ---- /exams/:id
 	const navigate = useNavigate();
-  useEffect(()=>{ // fetch data from api endpoint in the useEffect hook and storing result in exam variable
+  useEffect(()=>{ 
+    // fetch data from api endpoint in the useEffect hook and storing result in exam variable
     const getData = async ()=>{ 
       const res = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
       const data = await res.json()
+      console.log(data)
       setExam(data)
     }
 		getData()
@@ -33,8 +35,8 @@ export default function Exam(){
       <div className="manipulateDataRow">
         <div className="gridItem"> <AllDataButton /> </div>
         <div className="gridItem"> <h2 className='exam-id' style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2> </div>
-        <div className="gridItem"> <EditButton examId={examId}/> </div>
-        <div className="gridItem"> <DeleteButton examId={examId}/> </div>
+        <div className="gridItem"> {user?._id==exam?.user&&<EditButton examId={examId}/>} </div>
+        <div className="gridItem"> {user?._id==exam?.user&&<DeleteButton examId={examId}/>} </div>
         <div className="gridItem"> </div>
       </div>
       

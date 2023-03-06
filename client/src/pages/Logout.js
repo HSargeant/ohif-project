@@ -15,8 +15,14 @@ export default function Logout() {
 	}, [setUser, navigate]);
 
 	return <main className="container">
-		<div className="row justify-content-around mt-5">
-			<p>Logging out...</p>
+		<div style={{
+			marginTop: "15%",
+			display:"flex",
+			alignItems:"center",
+			alignContent:"center",
+			justifyContent:"center"
+		}} >
+			<p>Logged out...</p>
 		</div>
 	</main>
 }
