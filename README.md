@@ -33,4 +33,6 @@ if you want to add test exams to the project...
   - CLOUD_API_SECRET = `your cloudinary api secret`
   - GOOGLE_CLIENT_ID="your google client id for google auth"
   - GOOGLE_CLIENT_SECRET="your google client secret for google auth"
-You should then be able to visit `localhost:9000` in your browser and see the server running.
+  
+  
+You should then be able to visit `localhost:8000` in your browser and see the server running.
