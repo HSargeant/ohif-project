@@ -7,6 +7,7 @@ module.exports = {
     res.json({ user: req.user || null });
   },
   postLogin: (req, res, next) => {
+    // console.log(req)
     const validationErrors = [];
     if (!validator.isEmail(req.body.email))
       validationErrors.push({ msg: "Please enter a valid email address." });
@@ -89,7 +90,6 @@ module.exports = {
           });
           return res.json({ messages: req.flash() });
         }
-        // console.log("user---------:",x)
         user.save((err) => {
           if (err) {
             return next(err);

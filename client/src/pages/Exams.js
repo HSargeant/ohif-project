@@ -1,9 +1,10 @@
 import { useEffect, useState,lazy } from "react";
 import ItemAndInfo from "../medIndexs";
-import NavBarSide from "../NavBarSide/navbarside";
+import NavBarSide from "../components/NavBarSide/navbarside";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import ScrollUpButton from "../components/ScrollUpButton";
+import CircularProgress from '@mui/material/CircularProgress';
 
 // list of all the exams
 export default function Exams() {
@@ -48,38 +49,41 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
+  // console.log(exams)
   console.log("logged in: ", user);
-  return (
+  return !loading ? (
     <div>
       <div className="centerPage">
         <ScrollUpButton/>
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>
         </div>
-  
         <div id="shopping">
           {exams.map((exam) => {
             return (
               <div key={exam._id} className="card">
-                {/* <Link to={`/exams/${exam._id}`}> */}
-                  <ItemAndInfo
-                    nameCop={exam.patientId}
-                    ageCop={exam.age}
-                    sexCop={exam.sex}
-                    imageCop={
-                      exam.cloudinaryId
-                        ? exam.imageURL
-                        : ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
-                    }
-                    id={exam._id}
-                    examUser={exam.user}
-                  ></ItemAndInfo>
-                {/* </Link> */}
+                <ItemAndInfo
+                  nameCop={exam.patientId}
+                  ageCop={exam.age}
+                  sexCop={exam.sex}
+                  imageCop={
+                    exam.cloudinaryId
+                      ? exam.imageURL
+                      : ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
+                  }
+                  id={exam._id}
+                  examUser={exam.user}
+                ></ItemAndInfo>
               </div>
             );
           })}
         </div>
       </div>
     </div>
-  );
+  ):(<CircularProgress style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%", 
+    }} />
+  )
 }

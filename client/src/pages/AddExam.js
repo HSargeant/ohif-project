@@ -3,19 +3,15 @@
 import { API_BASE } from "../constants";
 import { useState } from "react";
 import { Link, useNavigate, useOutletContext,useLocation,Navigate} from "react-router-dom";
-import NavBarSide from "../NavBarSide/navbarside";
+import NavBarSide from "../components/NavBarSide/navbarside";
 export default function AddExam() {
     const navigate = useNavigate();
     const location =useLocation()
     const { user, setMessages } = useOutletContext();
-
-
-  let handleSubmit = async (event) => {
+    let handleSubmit = async (event) => {
     try {
       event.preventDefault();
       const form = event.currentTarget;
-      console.log(new FormData(form));
-
       const response = await fetch(API_BASE + form.getAttribute("action"), {
         method: form.method,
         body: new FormData(form),

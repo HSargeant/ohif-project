@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import PatientInfo from '../components/PatientInfo';
 import KeyFindings from '../components/KeyFindings';
 import AllDataButton from '../components/AllDataButton';
-import NavBarSide from "../NavBarSide/navbarside.js";
+import NavBarSide from "../components/NavBarSide/navbarside.js";
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";

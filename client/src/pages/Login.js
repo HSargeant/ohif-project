@@ -72,7 +72,7 @@ export default function Login() {
                   startIcon={<GoogleIcon />}
                   variant="contained"
                 >
-                  Login with Google
+                  Sign in with Google
                 </Button>
                 </a>
               </Grid>
