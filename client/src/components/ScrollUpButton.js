@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
+import {MdKeyboardArrowUp} from "react-icons/md"
+import {IconButton,Tooltip} from "@mui/material"
+import { IconContext } from "react-icons";
 
 export default function ScrollUpButton() {
     const [visible, setVisible] = useState(false);
-  
+
     const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
+    const scrolled = window.document.documentElement.scrollTop;
     if (scrolled > 300){
-        setVisible(true)
+        setVisible(true);
     } 
     else if (scrolled <= 300){
-        setVisible(false)
+        setVisible(false);
     }
     };
   
@@ -22,18 +25,16 @@ export default function ScrollUpButton() {
   
     window.addEventListener('scroll', toggleVisible);
     return (
-        <div className="UpBottonDiv">
-            <button className="UpBotton" onClick={scrollToTop} style={{width:"50px",height:"30px"}}> up </button>
-            {/* <IconButton type="submit">  
-            <IconContext.Provider value={{ color: "black"}}>
-                <FaTrash />
-                </IconContext.Provider>
-            </IconButton> */}
-        </div>
-  );
+        <>
+            {visible && <div className="UpBottonDiv">
+                <Tooltip title="Back to Top">
+                    <IconButton onClick={scrollToTop} aria-label="Back To Top" >  
+                        <IconContext.Provider value={{ className:'UpBotton'}}>
+                            <MdKeyboardArrowUp  />
+                        </IconContext.Provider>
+                    </IconButton> 
+                </Tooltip>
+            </div>}
+        </>
+    );
 }
-
-// <Button>
-//  <FaArrowCircleUp onClick={scrollToTop} 
-//  style={{display: visible ? 'inline' : 'none'}} />
-// </Button>

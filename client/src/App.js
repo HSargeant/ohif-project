@@ -40,7 +40,7 @@ function App() {
       </div>
       <header className="App-header">
         <nav id="topsec">
-          {/* <img src="images/exaLog.png" class="logo"> */}
+          {/* <img src="images/exaLog.png" className="logo"> */}
           <ul id="sidemenu">
             <li>
               <a href="#">Admin</a>
@@ -52,7 +52,7 @@ function App() {
               <a href="#">Add New Exam</a>
             </li>
             <li>
-              <a href="#">Create and Account</a>
+              <a href="#">Create an Account</a>
             </li>
             <li>
               <a href="#">Log out</a>

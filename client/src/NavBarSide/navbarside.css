@@ -48,7 +48,6 @@ items-menu {
   background: none;
   border: none;
   cursor: pointer;
-
   margin: auto -35px;
   background-color: #A7BED4;
   border: 2px solid aliceblue;
@@ -160,13 +159,5 @@ item-menu img {
 
   .contain-side {
     display: none;
-    /* position: absolute;
-    z-index: 1; */
   }
 }
-
-/* @media only screen and (max-width: 900px) {
-  .contain-side {
-    /* position: absolute; */
-/* }
-} */
