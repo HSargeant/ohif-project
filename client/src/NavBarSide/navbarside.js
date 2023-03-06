@@ -7,7 +7,7 @@ export default function NavBarSide() {
   const [frozen, setFreeze] = useState(false);
   const menuItems = [
     {
-      text: "Home",
+      text: "Admin",
       icon: "#",
       link: "/admin",
     },
