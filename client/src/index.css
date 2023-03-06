@@ -153,6 +153,10 @@ input[name="examId"] {
 
 .row1 {
   display: inline-flex;
+  border-top: 2px solid;
+  /* padding-top: 20px; */
+  align-items: center;
+  /* border-top-width: 20px; */
 }
 
 .row2 {
