@@ -11,7 +11,6 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examU
       {/* <Link to={`/exams/${id}`} style={{none}}> */}
       <div className="contain" onClick={handleClick} style={{cursor:"pointer"}}>
         <img src={imageCop} alt={nameCop} id="pics" />
-        {/* <p>{nameCop}</p> */}
       </div>
       
       <div style={{display:"inline-block",cursor:"pointer"}}  onClick={handleClick}>
@@ -24,9 +23,7 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examU
       <div style={{display:"flex", flexDirection:"row",alignSelf:"flex-start",justifyContent:"space-between "}}>
         {user?._id==examUser&&<EditButton fromExamsPage={true} examId={id}/>}
         {user?._id==examUser&&<DeleteButton fromExamsPage={true} examId={id} />}
-
       </div>
-      
     </div>
   );
 }

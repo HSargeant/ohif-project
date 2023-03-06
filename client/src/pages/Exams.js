@@ -54,7 +54,6 @@ export default function Exams() {
   return !loading ? (
     <div>
       <div className="centerPage">
-        <NavBarSide />
         <ScrollUpButton/>
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>

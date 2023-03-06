@@ -50,9 +50,10 @@ export default function Admin() {
   console.log(exams)
   console.log("logged in: ", user);
   return !loading ? (
+        // theres some issue on this page with the api sending "TypeError: Cannot read properties of undefined (reading 'id')"
         <div>
       <div className="centerPage">
-        <NavBarSide />
+        {/* <NavBarSide /> */}
         <ScrollUpButton/>
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>

@@ -7,7 +7,7 @@ export default function NavBarSide() {
   const [frozen, setFreeze] = useState(false);
   const menuItems = [
     {
-      text: "Home",
+      text: "Admin",
       icon: "#",
       link: "/admin",
     },
@@ -42,7 +42,7 @@ export default function NavBarSide() {
               <h2>Hack Diversity</h2>
             </div>
           )}
-          <button
+            <button
             className={
               expansion ? "hamburger hamburger-in" : "hamburger hamburger-out"
             }
@@ -52,6 +52,7 @@ export default function NavBarSide() {
             <span></span>
             <span></span>
           </button>
+          
         </div>
         <div className="menu">
           {menuItems.map(({ text, icon, link }) => (
@@ -61,7 +62,9 @@ export default function NavBarSide() {
             >
               <img src="#" alt="" srcSet="" />
               {expansion && <p>{text}</p>}
-              {!expansion && <div className="tooltip">{text}</div>}
+              {/* can we rename this? */}
+              {!expansion && <div className="tooltip">{text}</div>} 
+
             </Link>
           ))}
         </div>
