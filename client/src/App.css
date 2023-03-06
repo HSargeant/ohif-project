@@ -54,6 +54,7 @@
   width: 150%;
   height: 150%;
 }
+
 .contain {
   position: relative;
 }
@@ -198,9 +199,11 @@ form.example button {
   cursor: pointer;
   border-radius: 10px;
 }
+
 form.example button:hover {
   background: #0b7dda;
 }
+
 /* Clear floats */
 form.example::after {
   content: "";

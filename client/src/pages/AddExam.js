@@ -94,6 +94,9 @@ export default function AddExam() {
 
             <label> BMI</label>
             <input type="text" placeholder="BMI..." name="bmi" />
+          </div>
+
+          <div className="row4">
             <label> Brixia Score</label>
             <input
               type="text"
@@ -101,7 +104,6 @@ export default function AddExam() {
               name="brixiaScores"
             />
           </div>
-
           <div>
             <label> icu </label>
             <select name="icu">

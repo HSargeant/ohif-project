@@ -114,22 +114,28 @@ a {
   padding-left: 4%;
   border: 20px;
   border-radius: 50px;
-  /* outline: 3px solid black; */
+  outline: 5px solid rgb(15, 45, 109);
   height: auto;
   display: inline-block;
   text-align: left;
   background-color: white;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
-  width: 50%;
+  width: 800px;
 }
 
 .ExamForm input {
   border-bottom: 2px solid rgb(104, 126, 155);
+  background-color: rgb(201, 211, 211);
+}
+
+.ExamForm select {
+  background-color: rgb(201, 211, 211);
 }
 
 .ExamForm label {
   font-weight: 300;
+  /* font-size: ; */
 }
 
 input[name="patientId"],
@@ -138,8 +144,6 @@ input[name="examId"] {
   height: 32px;
 }
 
-.row1,
-.row2,
 .row3,
 .row4,
 .row5 {
@@ -147,9 +151,19 @@ input[name="examId"] {
   display: block;
 }
 
+.row1 {
+  display: inline-flex;
+}
+
 .row2 {
   width: 100%;
   display: contents;
+}
+
+.row3 {
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .UpBottonDiv {
@@ -190,6 +204,10 @@ input[type="submit"] {
   padding: 2%;
   width: 25vw;
   text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+  background-color: cornflowerblue;
   box-shadow: 0 0 15px 4px rgba(61, 81, 142, 0.24);
 }
 
@@ -228,4 +246,10 @@ input[type="submit"] {
 
 .cancelCLick:hover {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .ExamForm {
+    width: fit-content;
+  }
 }
