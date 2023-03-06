@@ -4,17 +4,16 @@
   width: 300px;
   height: 100vh;
   position: fixed;
-  color: oldlace; /*impacting "Hack Diversit"y text*/
+  color: white; /*impacting "Hack Diversit"y text*/
   z-index: 1;
-  transition: 0.4s;
-  
+  transition: 0.1s;
 }
 
 .contain-side-NX {
-  width: 85px;
+  width: 5px;
   position: fixed;
   z-index: 1;
-  background-color: pink;
+  height: 10px;
 }
 
 .nav-up,
@@ -35,8 +34,12 @@
   height: 75px;
 }
 
+/* Hack diversity title in menu */
 .comp-brand {
   display: flex;
+  color: white;
+  padding-left: 40px;
+  font-size: larger;
 }
 
 .nav-brand img {
@@ -44,35 +47,33 @@
   padding: 0 10px;
 }
 
+/* Styling the hamburger circle */
 .hamburger {
-  top: 0;
   position: absolute;
-  left: 12%;
-  background: none;
-  border: none;
+  left: 4%;
   cursor: pointer;
-  /* margin: auto -35px; */
-  background-color: #A7BED4;
-  border: 2px solid aliceblue;
-  padding: 20px;
+  margin: 4px 0 0 0;
+  background-color: #0D2E5E;
+  border: 3px solid aliceblue;
+  padding: 14px 20px 20px 20px;
   border-radius: 90px;
   height: 71px;
   width: 74px;
-  background-color: black;
-  
+  z-index: 1;
 }
 
+/* Lines in the icon */
 .hamburger span {
   display: block;
   margin-top: 5px;
   background-color: aliceblue;
   border-radius: 15px;
-  height: 4px;
+  height: 3.5px;
   width: 30px;
-
   transition: 0.4s;
 }
 
+/* Icon Animation */
 .hamburger:hover span {
   margin: auto;
 }
@@ -104,66 +105,45 @@
   width: 25px;
   transform: translate(0px, 8px) rotate(-360deg);
 }
+/* ^ End of Icon Animation ^ */
 
 .menu {
   grid-template-rows: repeat(7, 1fr);
-  background-color: orange;
+  padding-left: 5px;
 }
 
 /* Menu items when hamburger is open */
 .items-menu {
-  /* height: 57px;
-  width: 1;
-  display: flex;
-  color: rgb(6, 16, 26);
-  text-decoration: none;
+  color: white;
   text-transform: uppercase;
-  margin: auto 20px;
-  border-radius: 10px;
-  position: relative; */
-  background-color: aquamarine;
+  text-align: left;
 }
 
-/* Menu items wheen hamburger element is closed */
-.items-menu-NX {
-  /* margin: auto;
-  width: 4.5em; */
-  background-color: red;
-}
+/* Menu items when hamburger element is closed : .items-menu-NX*/
 
-/* TODO: shouldnt hover until the hamburger is open */
-items-menu:hover {
+.items-menu:hover {
   background-color: #F4B941;
+  width: 90%;
+  margin: auto;
+  border-radius: 15px;
+  text-align: center;
 }
-/* 3/4 currently doesnt exist */
-/* .item-menu img {
-  /* width: 30px;
-  padding: 0 20px; 
-  background-color: purple;
-} */
 
-/* hiding of the menu elements in the hamburger */
+/* Hiding of the menu elements in the hamburger */
 .tooltip {
   display: none;
   position: absolute;
   left: 99%;
   bottom: 80%;
-
   width: auto;
   padding: 4px 8px;
-
   border-radius: 15px 15px 15px 0;
   white-space: nowrap;
   border: 2px solid aliceblue;
-  background-color: gray;
 }
 
 .sidebar1 {
   display: flex;
- /* margin: 5%; */
-color:red;
-background-color: aqua;
-  /* left: 0; */
 }
 
 @media (max-width: 100px) {

@@ -42,7 +42,7 @@ export default function NavBarSide() {
               <h2>Hack Diversity</h2>
             </div>
           )}
-          <button
+            <button
             className={
               expansion ? "hamburger hamburger-in" : "hamburger hamburger-out"
             }
@@ -52,6 +52,7 @@ export default function NavBarSide() {
             <span></span>
             <span></span>
           </button>
+          
         </div>
         <div className="menu">
           {menuItems.map(({ text, icon, link }) => (
