@@ -15,7 +15,7 @@ const navigate = useNavigate()
 			method: form.method,
 			credentials: "include"
 		});
-		navigate(-1);
+		navigate("/exams");
 	};
 
     return (

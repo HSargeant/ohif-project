@@ -1,20 +1,18 @@
 import { useEffect, useState,lazy } from "react";
 import ItemAndInfo from "../medIndexs";
 
-import NavBarSide from "../NavBarSide/navbarside";
-// import Header from "../components/Header";
+import NavBarSide from "../components/NavBarSide/navbarside";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 // import {FaSearch} from "react-icons/fa"
 import ScrollUpButton from "../components/ScrollUpButton";
+import CircularProgress from '@mui/material/CircularProgress';
 
 // list of all the exams
 export default function Admin() {
   const { user, setUser, setMessages } = useOutletContext();
   const navigate = useNavigate(); // will use for redirecting and protecting route
   const [exams, setExams] = useState([]);
-  const [examName, examNames] = useState("");
-  const [inputs, setInputs] = useState("");
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
 // function to filter exams - HS
@@ -43,7 +41,6 @@ export default function Admin() {
         credentials: "include",
       });
       const data = await response.json();
-      console.log(data);
       setExams(data);
       setLoading(false);
     };
@@ -51,23 +48,19 @@ export default function Admin() {
   }, [setExams]);
 
   console.log(exams)
-
   console.log("logged in: ", user);
-  return (
-    // theres some issue on this page with the api sending "TypeError: Cannot read properties of undefined (reading 'id')"
-    <div>
+  return !loading ? (
+        <div>
       <div className="centerPage">
         <NavBarSide />
-         <ScrollUpButton/>
-      <div className="SearchBar">
-        <input id="search" className="Search" type="text"  placeholder="filter Exams" onKeyUp={filterCards}/>
-
-      </div>
+        <ScrollUpButton/>
+        <div className="SearchBar">
+          <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>
+        </div>
         <div id="shopping">
           {exams.map((exam) => {
             return (
               <div key={exam._id} className="card">
-                <Link to={`/exams/${exam._id}`}>
                   <ItemAndInfo
                     nameCop={exam.patientId}
                     ageCop={exam.age}
@@ -77,13 +70,18 @@ export default function Admin() {
                         ? exam.imageURL
                         : ` https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${exam.imageURL}`
                     }
+                    id={exam._id}
+                    examUser={exam.user}
                   ></ItemAndInfo>
-                </Link>
               </div>
             );
           })}
         </div>
       </div>
     </div>
-  );
+    ):(<CircularProgress style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%", 
+    }} />)
 }

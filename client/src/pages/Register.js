@@ -1,7 +1,7 @@
 import { useNavigate, useOutletContext,redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API_BASE } from "../constants";
-import NavBarSide from "../NavBarSide/navbarside";
+import NavBarSide from "../components/NavBarSide/navbarside";
 import {
   Box,
   Button,
@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
-import ErrorIcon from '@mui/icons-material/Error';
+// import ErrorIcon from '@mui/icons-material/Error';
 
 export default function Register() {
   const { setUser, messages, setMessages, user } = useOutletContext();
@@ -57,26 +57,46 @@ export default function Register() {
           alignItems: 'center',
           display: 'flex',
           flexGrow: 1,
-          minHeight: '100%'
+          minHeight: '100%',
+          marginTop:"25px"
         }}
       >
         <Container maxWidth="sm">
+    
+                <a href={API_BASE+"/auth/google"} style={{width:'100%'}}>
+                <Button
+                  color="error"
+                  fullWidth
+                  size="large"
+                  startIcon={<GoogleIcon />}
+                  variant="contained"
+                >
+                  Continue with Google
+                </Button>
+                </a>
+                <Box
+              sx={{
+                pb: 1,
+                pt: 3
+              }}
+            >
+              <Typography
+                align="center"
+                color="textSecondary"
+                variant="body1"
+              >
+                or creat an account
+              </Typography>
+            </Box>
           <form action="/signup" method="POST" onSubmit={handleSubmit}>
-            <Box sx={{ my: 3 }}>
+            <Box sx={{ my: 1 }}>
               <Typography
                 color="textPrimary"
-                variant="h4"
+                gutterBottom
+                variant="h5"
               >
                 Create a new account
               </Typography>
-              <Typography
-                color="textSecondary"
-                gutterBottom
-                variant="body2"
-              >
-                Use your email to create a new account
-              </Typography>
-			  
             </Box>
             <TextField
             required={true}
