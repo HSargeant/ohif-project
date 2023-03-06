@@ -48,12 +48,10 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
-  // console.log(exams)
   console.log("logged in: ", user);
   return (
     <div>
       <div className="centerPage">
-        {/* <NavBarSide /> */}
         <ScrollUpButton/>
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>

@@ -41,7 +41,8 @@ a {
 .ExamForm {
   align-content: center;
   /* width: fit-content; */
-  margin: 1% 10% 2% 25%;
+  margin: 10% 10% 2% 25%;
+  background-color: #8b89eb;
   padding: 2%;
   padding-left: 3%;
   padding-right: 0%;
