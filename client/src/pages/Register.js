@@ -50,7 +50,6 @@ export default function Register() {
 
   return (
     <>
-      <NavBarSide />
       <Box
         component="main"
         sx={{
