@@ -3,6 +3,9 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* a {
+  padding-right: 90px;
+} */
 .App {
   text-align: center;
 }
@@ -164,7 +167,6 @@ nav ul li a:hover::after {
 * {
   box-sizing: border-box;
 }
-
 
 /* Style the search field */
 form.example input[type="text"] {
