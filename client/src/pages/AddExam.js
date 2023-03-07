@@ -41,7 +41,7 @@ export default function AddExam() {
             <input type="reset" placeholder="RESET" />
 
             {location.key !== "default" && (
-    <button onClick={() => navigate(-1)} type="button">Back</button>
+    <button onClick={() => navigate(-1)} type="button">Cancel</button>
   )}
           </div>
 
