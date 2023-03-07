@@ -10,12 +10,27 @@ const navigate = useNavigate()
 
   const handleDelete = async (event) => {
 		event.preventDefault();
-		const form = event.currentTarget;
-		await fetch(form.getAttribute('action'), {
-			method: form.method,
-			credentials: "include"
-		});
-		navigate("/exams");
+    const confirm = window.confirm("Are you sure you want to delete this record?")
+		if(confirm){
+      try{
+        const form = event.currentTarget;
+        await fetch(form.getAttribute('action'), {
+          method: form.method,
+          credentials: "include"
+        });
+        if(fromExamsPage){
+          navigate(0)
+        }else navigate("/exams")
+
+      }catch(err){
+        console.log(err)
+        if(fromExamsPage){
+          navigate(0)
+
+        }else navigate("/exams")
+      }
+    }else return
+
 	};
 
     return (
