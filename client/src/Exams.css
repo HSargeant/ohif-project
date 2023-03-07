@@ -160,4 +160,7 @@
             padding-left: 5%;
             height: 100%;
         }
+        .manipulateDataRow{
+            margin-top: 3px;
+        }
     }
