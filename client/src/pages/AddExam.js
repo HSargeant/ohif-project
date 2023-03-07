@@ -228,7 +228,7 @@ export default function AddExam(props){
                 <Grid container spacing={3}>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >
                     <TextField
@@ -244,7 +244,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >
                     <TextField
@@ -259,7 +259,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >
                     <TextField
@@ -275,7 +275,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >
                     <TextField
@@ -291,7 +291,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >
                     <TextField
@@ -310,7 +310,7 @@ export default function AddExam(props){
                         <option key="F" value="F">F</option>
                     </TextField>
                     </Grid>
-                    <Grid item md={6} xs={12}>
+                    <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
                             label="ICU"
@@ -326,7 +326,7 @@ export default function AddExam(props){
                             <option value="N">N</option>
                         </TextField>
                     </Grid>
-                    <Grid item md={6} xs={12}>
+                    <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
                             label="Weight"
@@ -338,7 +338,7 @@ export default function AddExam(props){
                             variant="outlined"
                         />
                     </Grid>
-                    <Grid item md={6} xs={12}>
+                    <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
                             label="ICU Admits"
@@ -351,7 +351,7 @@ export default function AddExam(props){
                             variant="outlined">
                         </TextField>
                     </Grid>
-                    <Grid item md={6} xs={12}>
+                    <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
                             label="BMI"
@@ -363,7 +363,7 @@ export default function AddExam(props){
                             variant="outlined"
                         />
                     </Grid>
-                    <Grid item md={6} xs={12}>
+                    <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
                             label="Mortality"
@@ -383,7 +383,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >
                     <TextField
@@ -399,7 +399,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >                       
                     <TextField
@@ -417,7 +417,7 @@ export default function AddExam(props){
                     </Grid>
                     <Grid
                     item
-                    md={6}
+                    sm={6}
                     xs={12}
                     >   
                         <Button
