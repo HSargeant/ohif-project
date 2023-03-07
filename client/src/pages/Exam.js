@@ -31,7 +31,6 @@ export default function Exam(){
 
   return(
     <>
-      <NavBarSide />
       <div className="manipulateDataRow">
         <div className="gridItem"> <AllDataButton /> </div>
         <div className="gridItem"> <h2 className='exam-id' style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2> </div>
@@ -46,9 +45,9 @@ export default function Exam(){
         </div>
 
         <div className="RightContent">
-        <PatientInfo exam={exam}/>
-        <KeyFindings keyFindings={exam.keyFindings||"No releveant findings"} />
-        </div>
+        <div className='gridItem2'> <PatientInfo exam={exam}/> </div>
+        <div className='gridItem2'> </div><KeyFindings keyFindings={exam.keyFindings||"No releveant findings"} /> </div>
+     
       </div>
     </>
   )
