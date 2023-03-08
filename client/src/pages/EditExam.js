@@ -265,7 +265,7 @@ export default function EditExam(props){
             <Card>
                 <CardHeader
                 subheader=""
-                title="Add a New Exam"
+                title="Edit Exam"
                 />
                 <Divider />
                 <CardContent>
@@ -390,7 +390,6 @@ export default function EditExam(props){
                             name="icuAdmits"
                             onChange={(e)=>setIcuadmits(e.target.value)}
                             required
-                            number
                             type="number"
                             value={icuAdmits}
                             variant="outlined">
@@ -415,7 +414,6 @@ export default function EditExam(props){
                             name="mortality"
                             onChange={(e)=>setMortality(e.target.value)}
                             required
-                            number
                             select
                             SelectProps={{ native: true }}
                             value={mortality}
@@ -490,7 +488,7 @@ export default function EditExam(props){
                 >
                 {location.key !== "default" ? (
                   <Button
-                  style={{backgroundColor:"red",marginRight:"20px"}}
+                  style={{backgroundColor:"darkred",marginRight:"20px"}}
                   variant="contained"
                   type="button"
                   onClick={() => navigate(-1)}
@@ -500,7 +498,7 @@ export default function EditExam(props){
                   </Button>
                 ):(
                   <Button
-                    style={{backgroundColor:"black",marginRight:"20px"}}
+                    style={{backgroundColor:"darkred",marginRight:"20px"}}
                     variant="contained"
                     type="button"
                     onClick={() => navigate("/exams")}
