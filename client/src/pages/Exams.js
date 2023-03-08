@@ -1,6 +1,6 @@
-import { useEffect, useState,lazy } from "react";
-import ItemAndInfo from "../medIndexs";
-import NavBarSide from "../components/NavBarSide/navbarside";
+import { useEffect, useState } from "react";
+import ItemAndInfo from "../components/medIndexs";
+// import NavBarSide from "../components/NavBarSide/navbarside";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import ScrollUpButton from "../components/ScrollUpButton";

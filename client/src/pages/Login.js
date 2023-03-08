@@ -1,16 +1,28 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
-import { Box, Button, Container, Grid, TextField, Typography,Link } from '@mui/material';
+import { Box, Button, Container, Grid, TextField, Typography,Link,InputAdornment,IconButton } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
+import { useState,useEffect } from "react";
+import {MdVisibility,MdVisibilityOff} from "react-icons/md"
 
 export default function Login() {
   const { user,setUser, setMessages } = useOutletContext();
+  const [showPassword, setShowPassword] = useState(false);
   console.log(user)
 	const navigate = useNavigate();
-	if(user) {
-		 navigate("/exams")
-		 return
-	}
+  useEffect(()=>{
+    if(user) {
+       navigate("/exams")
+       return
+    }
+
+  })
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const form = event.currentTarget;
@@ -106,8 +118,20 @@ export default function Login() {
               label="Password"
               margin="normal"
               name="password"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               variant="outlined"
+              InputProps={{
+                endAdornment: <InputAdornment position="end">
+                  <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                </IconButton>
+
+                </InputAdornment>,
+              }}
             />
             <Box sx={{ py: 2 }}>
               <Button style={{ backgroundColor:"#0D2E5E"}}

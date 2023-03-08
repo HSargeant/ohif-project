@@ -227,20 +227,21 @@ export default function AddExam(props){
                 <CardContent>
                 <Grid container spacing={3}>
                     <Grid
-                    item
-                    sm={6}
-                    xs={12}
+                      item
+                      sm={6}
+                      xs={12}
                     >
-                    <TextField
-                        fullWidth
-                        // helperText="Please specify the first name"
-                        label="Patient Id"
-                        name="patientId"
-                        onChange={handleChange}
-                        required
-                        value={values.patientId}
-                        variant="outlined"
-                    />
+                      <TextField
+                          fullWidth
+                          
+                          // helperText="Please specify the first name"
+                          label="Patient Id"
+                          name="patientId"
+                          onChange={handleChange}
+                          required
+                          value={values.patientId}
+                          variant="outlined"
+                      />
                     </Grid>
                     <Grid
                     item
@@ -249,6 +250,7 @@ export default function AddExam(props){
                     >
                     <TextField
                         fullWidth
+                        
                         label="Exam Id"
                         name="examId"
                         onChange={handleChange}
@@ -264,6 +266,7 @@ export default function AddExam(props){
                     >
                     <TextField
                         fullWidth
+                        
                         label="Age"
                         name="age"
                         onChange={handleChange}
@@ -280,6 +283,7 @@ export default function AddExam(props){
                     >
                     <TextField
                         fullWidth
+                        
                         // helperText="Please specify the first name"
                         label="Brixia Scores"
                         name="brixiaScores"
@@ -296,6 +300,7 @@ export default function AddExam(props){
                     >
                     <TextField
                         fullWidth
+                        
                         label="Sex"
                         name="sex"
                         onChange={handleChange}
@@ -313,6 +318,7 @@ export default function AddExam(props){
                     <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
+                            
                             label="ICU"
                             name="icu"
                             onChange={handleChange}
@@ -329,6 +335,7 @@ export default function AddExam(props){
                     <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
+                            
                             label="Weight"
                             name="weight"
                             onChange={handleChange}
@@ -341,11 +348,11 @@ export default function AddExam(props){
                     <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
+                            
                             label="ICU Admits"
                             name="icuAdmits"
                             onChange={handleChange}
                             required
-                            number
                             type="number"
                             value={values.icuAdmits}
                             variant="outlined">
@@ -354,6 +361,7 @@ export default function AddExam(props){
                     <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
+                            
                             label="BMI"
                             name="bmi"
                             type="number"
@@ -366,11 +374,11 @@ export default function AddExam(props){
                     <Grid item sm={6} xs={12}>
                         <TextField
                             fullWidth
+                            
                             label="Mortality"
                             name="mortality"
                             onChange={handleChange}
                             required
-                            number
                             select
                             SelectProps={{ native: true }}
                             value={values.mortality||"Mortality?"}
@@ -388,6 +396,7 @@ export default function AddExam(props){
                     >
                     <TextField
                         fullWidth
+                        
                         // helperText="Please specify the first name"
                         label="Zip Code"
                         name="zipCode"
@@ -404,6 +413,7 @@ export default function AddExam(props){
                     >                       
                     <TextField
                         fullWidth
+                        
                         // helperText="Please specify the first name"
                         label="Key Findings"
                         name="keyFindings"
@@ -446,7 +456,7 @@ export default function AddExam(props){
                 >
                 {location.key !== "default" ? (
                   <Button
-                  style={{backgroundColor:"red",marginRight:"20px"}}
+                  style={{backgroundColor:"darkred",marginRight:"20px"}}
                   variant="contained"
                   type="button"
                   onClick={() => navigate(-1)}

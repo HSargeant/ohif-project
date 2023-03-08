@@ -1,5 +1,5 @@
 import { useEffect, useState,lazy } from "react";
-import ItemAndInfo from "../medIndexs";
+import ItemAndInfo from "../components/medIndexs";
 
 import NavBarSide from "../components/NavBarSide/navbarside";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
