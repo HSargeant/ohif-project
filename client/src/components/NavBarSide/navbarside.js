@@ -24,12 +24,12 @@ export default function NavBarSide() {
       link: "/exams/new",
       key:"3"
     },
-    {
-      text: "Create an Account",
-      icon: "#",
-      link: "/register",
-      key:"4"
-    },
+    // {
+    //   text: "Create an Account",
+    //   icon: "#",
+    //   link: "/register",
+    //   key:"4"
+    // },
     {
       text: "Log Out",
       icon: "#",

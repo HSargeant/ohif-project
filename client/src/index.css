@@ -98,6 +98,7 @@ input[name="examId"] {
 .UpBotton{
   color: #0C2B59;
   border: 4px solid #0C2B59;
+  background-color: white;
   border-radius: 50%;
   height: 50px;
   width: 50px;
