@@ -33,7 +33,7 @@ export default function Exam(){
     <>
       <div className="manipulateDataRow">
         <div className="gridItem"> <AllDataButton /> </div>
-        <div className="gridItem"> <h2 className='exam-id' style={{marginTop:'10px', marginBottom:'10px'}}> Exam ID: {exam.examId} </h2> </div>
+        <div className="gridItem"> <h2 className='patient-id' style={{marginTop:'10px', marginBottom:'10px'}}> Patient ID: {exam.patientId} </h2> </div>
         <div className="gridItem"> {user?._id==exam?.user&&<EditButton examId={examId}/>} </div>
         <div className="gridItem"> {user?._id==exam?.user&&<DeleteButton examId={examId}/>} </div>
         <div className="gridItem"> </div>
