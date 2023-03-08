@@ -50,7 +50,7 @@ export default function Admin() {
   console.log(exams)
   console.log("logged in: ", user);
   return !loading ? (
-        <div>
+    <div>
       <div className="centerPage">
         {/* <NavBarSide /> */}
         <ScrollUpButton/>

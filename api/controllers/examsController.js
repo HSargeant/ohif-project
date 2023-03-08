@@ -16,7 +16,6 @@ module.exports = {
     }
   },
   getFeed: async (req, res) => {
-    console.log('getting feed')
     try {
       // const exams = await Exam.find().sort({ createdAt: "desc" }).populate("user").lean();
       const exams = await Exam.find().sort({ createdAt: "desc" }).lean();
@@ -92,12 +91,11 @@ module.exports = {
       }, {
         new: true,
         runValidators: true
-    })
+      })
       res.json(exam)
       console.log("edit successful")
-}catch(err){
-  console.log(err)
-  
+    }catch(err){
+      console.log(err)
     }
   },
   deleteExam: async (req, res) => {
