@@ -30,7 +30,7 @@ app.use(express.json());
 connectDB();
 app.set("view engine", "ejs");
 //Static Folder
-app.use(express.static("client/build"));
+app.use(express.static("../client/build"));
 
 // Setup Sessions - stored in MongoDB
 app.use(session({
@@ -54,9 +54,9 @@ app.use(methodOverride("_method"));
 app.use("/", mainRoutes);
 app.use("/api/exams", ExamRoutes);
 
-// app.use('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '/client/build/index.html'));
-// });
+app.use('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 // app.get("/api",(req,res)=>{
 //   res.send("API WORKING")
 // })

@@ -27,8 +27,17 @@ export default function ScrollUpButton() {
     return (
         <>
             {visible && <div className="UpBottonDiv">
-                <Tooltip title="Back to Top">
-                    <IconButton onClick={scrollToTop} aria-label="Back To Top" >  
+                <Tooltip title="Back to Top" placement="top">
+                    <IconButton onClick={scrollToTop} aria-label="Back To Top" 
+                    disableElevation
+                    disableRipple
+                    sx={{
+
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent"
+                      }
+                    }}
+                    >  
                         <IconContext.Provider value={{ className:'UpBotton'}}>
                             <MdKeyboardArrowUp  />
                         </IconContext.Provider>

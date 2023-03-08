@@ -10,26 +10,31 @@ export default function NavBarSide() {
       text: "Admin",
       icon: "#",
       link: "/admin",
+      key:"1"
     },
     {
       text: "All Exams",
       icon: "#",
       link: "/exams",
+      key:"2"
     },
     {
       text: "Add New Exam",
       icon: "#",
       link: "/exams/new",
+      key:"3"
     },
-    {
-      text: "Create an Account",
-      icon: "#",
-      link: "/register",
-    },
+    // {
+    //   text: "Create an Account",
+    //   icon: "#",
+    //   link: "/register",
+    //   key:"4"
+    // },
     {
       text: "Log Out",
       icon: "#",
       link: "/logout",
+      key:"5"
     },
   ];
   return (
@@ -55,10 +60,11 @@ export default function NavBarSide() {
           
         </div>
         <div className="menu">
-          {menuItems.map(({ text, icon, link }) => (
+          {menuItems.map(({ text, icon, link,key }) => (
             <Link
               to={link}
               className={expansion ? "items-menu" : "items-menu items-menu-NX"}
+              key={key}
             >
               <img src="#" alt="" srcSet="" />
               {expansion && <p>{text}</p>}

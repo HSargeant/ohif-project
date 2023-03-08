@@ -1,7 +1,7 @@
 import { useNavigate, useOutletContext,redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState,useEffect } from "react";
+import {MdVisibility,MdVisibilityOff} from "react-icons/md"
 import { API_BASE } from "../constants";
-import NavBarSide from "../components/NavBarSide/navbarside";
 import {
   Box,
   Button,
@@ -9,6 +9,8 @@ import {
   Link,
   TextField,
   Typography,
+  InputAdornment,
+  IconButton 
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 // import ErrorIcon from '@mui/icons-material/Error';
@@ -22,8 +24,13 @@ export default function Register() {
       navigate("/exams");
       return;
     }
-  }, []);
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -84,7 +91,7 @@ export default function Register() {
                 color="textSecondary"
                 variant="body1"
               >
-                or creat an account
+                or create an account
               </Typography>
             </Box>
           <form action="/signup" method="POST" onSubmit={handleSubmit}>
@@ -136,24 +143,50 @@ export default function Register() {
                 We'll never share your email address.
               </Typography>
             <TextField
-            required={true}
+              required={true}
               fullWidth
               label="Password"
               margin="normal"
               name="password"
-              type="password"
-			  id="password"
+			        id="password"
               variant="outlined"
+
+              type={showPassword ? 'text' : 'password'}
+              InputProps={{
+                endAdornment: <InputAdornment position="end">
+                  <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                </IconButton>
+
+                </InputAdornment>,
+              }}
             />
             <TextField
-            required={true}
+              required={true}
               fullWidth
               label="Confirm Password"
               margin="normal"
-			  id="confirmPassword"
+			        id="confirmPassword"
               name="confirmPassword"
-              type="password"
               variant="outlined"
+
+              type={showPassword ? 'text' : 'password'}
+              InputProps={{
+                endAdornment: <InputAdornment position="end">
+                  <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                </IconButton>
+
+                </InputAdornment>,
+              }}
             />
             <Box
               sx={{
