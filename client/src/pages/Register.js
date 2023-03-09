@@ -84,7 +84,7 @@ export default function Register() {
                 color="textSecondary"
                 variant="body1"
               >
-                or creat an account
+                or create an account
               </Typography>
             </Box>
           <form action="/signup" method="POST" onSubmit={handleSubmit}>
