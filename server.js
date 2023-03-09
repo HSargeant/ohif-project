@@ -12,7 +12,7 @@ const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const connectDB = require("./config/database");
-require('dotenv').config({path: '../.env'})
+require('dotenv').config({path: './.env'})
 
 
 // Passport config
@@ -28,9 +28,9 @@ app.use(express.json());
 
 //Connect To Database
 connectDB();
-app.set("view engine", "ejs");
+
 //Static Folder
-app.use(express.static("../client/build"));
+app.use(express.static("client/build"));
 
 // Setup Sessions - stored in MongoDB
 app.use(session({
@@ -55,11 +55,8 @@ app.use("/", mainRoutes);
 app.use("/api/exams", ExamRoutes);
 
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
-// app.get("/api",(req,res)=>{
-//   res.send("API WORKING")
-// })
 
 app.listen(process.env.PORT||PORT, ()=>{
   console.log(`running on port ${PORT}`)
