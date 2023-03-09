@@ -110,10 +110,12 @@ export default function EditExam(props){
           onSubmit={handleSubmit}
         >
             <Card>
+                <div class="cardHeader">
                 <CardHeader
                 subheader=""
                 title="Edit Exam"
                 />
+                </div>
                 <Divider />
                 <CardContent>
                 <Grid container spacing={3}>
