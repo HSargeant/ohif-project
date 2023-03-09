@@ -26,7 +26,9 @@ module.exports = function (passport) {
 
 
   // google
-  let url="http://localhost:8000/auth/google/callback"
+  
+  let url=process.env.NODE_ENV=="production" ? "https://ohif-project-production.up.railway.app/auth/google/callback":"http://localhost:8000/auth/google/callback"
+  
   passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
