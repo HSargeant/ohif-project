@@ -1,8 +1,6 @@
-import { useEffect, useState,lazy } from "react";
+import { useEffect, useState } from "react";
 import ItemAndInfo from "../components/medIndexs";
-
-import NavBarSide from "../components/NavBarSide/navbarside";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import {useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 // import {FaSearch} from "react-icons/fa"
 import ScrollUpButton from "../components/ScrollUpButton";
@@ -10,8 +8,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 // list of all the exams
 export default function Admin() {
-  const { user, setUser, setMessages } = useOutletContext();
-  const navigate = useNavigate(); // will use for redirecting and protecting route
+  const { user } = useOutletContext();
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
@@ -49,7 +46,16 @@ export default function Admin() {
 
   console.log(exams)
   console.log("logged in: ", user);
-  return !loading ? (
+
+
+
+  return !loading ? !exams?.length ? (
+    <div style={{
+      margin:"200px 0 0",
+      textAlign:"center",
+    }}><p style={{fontSize:"1.5em"}}>You Have Not Added An Exam</p></div>
+
+  ) : (
     <div>
       <div className="centerPage">
         {/* <NavBarSide /> */}
@@ -72,6 +78,8 @@ export default function Admin() {
                     }
                     id={exam._id}
                     examUser={exam.user}
+                    setExams={setExams}
+                    exams={exams}
                   ></ItemAndInfo>
               </div>
             );

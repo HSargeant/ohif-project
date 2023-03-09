@@ -1,8 +1,8 @@
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
-import { Link,useNavigate,useOutletContext} from "react-router-dom";
+import {useNavigate,useOutletContext} from "react-router-dom";
 
-export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examUser }) {
+export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examUser,setExams,exams }) {
   const {user} = useOutletContext()
   const navigate = useNavigate()
   const handleClick=()=>navigate(`/exams/${id}`)
@@ -23,7 +23,7 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examU
       {/* </Link> */}
       <div style={{display:"flex", flexDirection:"row",alignSelf:"flex-start",justifyContent:"space-between "}}>
         {user?._id==examUser&&<EditButton fromExamsPage={true} examId={id}/>}
-        {user?._id==examUser&&<DeleteButton fromExamsPage={true} examId={id} />}
+        {user?._id==examUser&&<DeleteButton fromExamsPage={true} examId={id} setExams={setExams} exams={exams} />}
       </div>
     </div>
   );
