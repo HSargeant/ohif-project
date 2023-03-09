@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { API_BASE } from "../constants";
 import Header from "../components/Header";
 import Navbarside from "../components/NavBarSide/navbarside";

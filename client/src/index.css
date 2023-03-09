@@ -181,6 +181,33 @@ input[type="submit"] {
 }
 .Search{
   /* background-color: #F4B941; */
-  width: 18%;
+  width: 300px;
   border: 1.5px solid #18457A;
+}
+
+.cardHeader{
+  background-color: #F4B941;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Welcome{
+  /* background-color: #F4B941; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.registerHeader{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
 }

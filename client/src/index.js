@@ -3,17 +3,12 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import './index.css';
-import App from './App';
-
 import Root from './pages/Root';
 import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Index from './pages/Index';
 import Admin from './pages/Admin';
 import Logout from './pages/Logout';
 import Exams from './pages/Exams';
