@@ -86,10 +86,12 @@ export default function AddExam(props){
           onSubmit={handleSubmit}
         >
             <Card>
+                <div className="cardHeader">
                 <CardHeader
                 subheader=""
                 title="Add a New Exam"
                 />
+                </div>
                 <Divider />
                 <CardContent>
                 <Grid container spacing={3}>

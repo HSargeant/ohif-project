@@ -57,7 +57,9 @@ export default function Login() {
                 color="textPrimary"
                 variant="h4"
               >
+              <div className="Welcome">
                 Welcome<br/>
+              </div>
               </Typography>
               <Typography
                 color="textSecondary"
