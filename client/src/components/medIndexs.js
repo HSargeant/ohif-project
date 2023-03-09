@@ -22,8 +22,8 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examU
       </div>
       {/* </Link> */}
       <div style={{display:"flex", flexDirection:"row",alignSelf:"flex-start",justifyContent:"space-between "}}>
-        {user?._id==examUser&&<EditButton fromExamsPage={true} examId={id}/>}
-        {user?._id==examUser&&<DeleteButton fromExamsPage={true} examId={id} setExams={setExams} exams={exams} />}
+        {user?._id===examUser&&<EditButton fromExamsPage={true} examId={id}/>}
+        {user?._id===examUser&&<DeleteButton fromExamsPage={true} examId={id} setExams={setExams} exams={exams} />}
       </div>
     </div>
   );

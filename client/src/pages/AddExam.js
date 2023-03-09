@@ -1,6 +1,6 @@
 // // page to add new exam
 
-import { Link, useNavigate, useOutletContext,useLocation } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { useState } from 'react';
 import {
   Box,
@@ -11,8 +11,6 @@ import {
   Divider,
   Grid,
   TextField,
-  Input,
-  Typography
 } from '@mui/material';
 import { API_BASE } from "../constants";
 

@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext,redirect } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { useState,useEffect } from "react";
 import {MdVisibility,MdVisibilityOff} from "react-icons/md"
 import { API_BASE } from "../constants";
@@ -16,7 +16,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 // import ErrorIcon from '@mui/icons-material/Error';
 
 export default function Register() {
-  const { setUser, messages, setMessages, user } = useOutletContext();
+  const { setUser, user } = useOutletContext();
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
@@ -34,10 +34,6 @@ export default function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-    // if(event.target[4].value!==event.target[6].value){
-    //   window.alert("Passwords Do Not Match")
-    //   return
-    // }
     const response = await fetch(API_BASE + form.getAttribute("action"), {
       method: form.method,
       body: new URLSearchParams(new FormData(form)),
@@ -45,7 +41,6 @@ export default function Register() {
     });
     const data = await response.json();
     if (data?.messages?.errors?.length) {
-      setMessages(data.messages);
       setErrorMsg(data.messages.errors[0]?.msg);
     }
     if (data.user?.email) {

@@ -1,4 +1,3 @@
-import xray from './test.jpeg';
 const Image = ({exam}) => {
     return (
         <div>

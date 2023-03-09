@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useOutletContext,useParams,useLocation } from "react-router-dom";
+import { useNavigate,useParams,useLocation } from "react-router-dom";
 import {
   Box,
   Button,
@@ -14,9 +14,7 @@ import { API_BASE } from "../constants";
 
 export default function EditExam(props){
     const location = useLocation()
-    // console.log("location: ",location)
     const navigate = useNavigate()
-    const { user, setMessages } = useOutletContext();
     const examId = useParams().id
     const [bmi,setBmi] = useState("")
     const [age,setAge] = useState("")
