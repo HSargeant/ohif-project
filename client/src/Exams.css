@@ -157,18 +157,18 @@
         }
         .patient-id{
             margin-left: 10%;
-            background-color: aquamarine;
+            text-align: left;
+            font-size: 4vw;
         }
    }
 
     @media only screen and (max-width:650px) {
-        /* TODO: how do you know which exams will and wont have the edit and delete buttons? */
         .patient-id { 
             padding-left: 0%;
             margin-left: 4%;
-            font-size: 5vw;
-            background-color: red;
+            font-size: 4vw;
         }
+       
         .manipulateDataRow{
             margin-top: 14%;
         }
