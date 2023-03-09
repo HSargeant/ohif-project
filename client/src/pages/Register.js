@@ -101,7 +101,9 @@ export default function Register() {
                 gutterBottom
                 variant="h5"
               >
+              <div className="registerHeader">
                 Create a new account
+              </div>
               </Typography>
             </Box>
             <TextField
