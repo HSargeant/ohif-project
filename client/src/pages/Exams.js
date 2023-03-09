@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import ItemAndInfo from "../components/medIndexs";
 // import NavBarSide from "../components/NavBarSide/navbarside";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import ScrollUpButton from "../components/ScrollUpButton";
 import CircularProgress from '@mui/material/CircularProgress';
 
 // list of all the exams
 export default function Exams() {
-  const { user, setUser, setMessages } = useOutletContext();
-  const navigate = useNavigate(); // will use for redirecting and protecting route
+  const { user} = useOutletContext();
   const [exams, setExams] = useState([]);
-  const [examName, examNames] = useState("");
-  const [inputs, setInputs] = useState("");
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
 // function to filter exams - HS
@@ -51,7 +48,13 @@ export default function Exams() {
 
   // console.log(exams)
   console.log("logged in: ", user);
-  return !loading ? (
+  return !loading ? !exams?.length ? (
+    <div style={{
+      margin:"200px 0 0",
+      textAlign:"center",
+    }}><p style={{fontSize:"1.5em"}}>There Are No Exams</p></div>
+
+  ) : (
     <div>
       <div className="centerPage">
         <ScrollUpButton/>
@@ -73,6 +76,8 @@ export default function Exams() {
                   }
                   id={exam._id}
                   examUser={exam.user}
+                  setExams={setExams}
+                  exams={exams}
                 ></ItemAndInfo>
               </div>
             );

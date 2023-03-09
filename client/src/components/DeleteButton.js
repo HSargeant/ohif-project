@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {IconButton, Tooltip} from "@mui/material"
 import { IconContext } from "react-icons";
 
-export default function DeleteButton({examId,fromExamsPage}){
+export default function DeleteButton({examId,fromExamsPage,setExams,exams}){
 
 const navigate = useNavigate()
 
@@ -19,14 +19,14 @@ const navigate = useNavigate()
           credentials: "include"
         });
         if(fromExamsPage){
-          navigate(0)
+          // navigate(0)
+          setExams(exams.filter(exam=>exam._id!==examId))
         }else navigate("/exams")
 
       }catch(err){
         console.log(err)
         if(fromExamsPage){
           navigate(0)
-
         }else navigate("/exams")
       }
     }else return
