@@ -30,15 +30,21 @@ module.exports = {
       const exam = await Exam.findOne({
           _id: req.params.id
       }).lean()
-      if(exam){
+      
         res.json(exam)
-      }else{
+      
+      // if exams was deleted from data base
+      // if(exam){ 
+      //   res.json(exam)
+      // }
+      
+      // else{
 
-      const response= await fetch("https://czi-covid-lypkrzry4q-uc.a.run.app/api/exams")
-      const data= await response.json()
-      const data2 = await data.exams.find(elem=>elem._id==req.params.id)
-      res.json(data2)
-      }
+      // const response= await fetch("https://czi-covid-lypkrzry4q-uc.a.run.app/api/exams")
+      // const data= await response.json()
+      // const data2 = await data.exams.find(elem=>elem._id==req.params.id)
+      // res.json(data2)
+      // }
 
     } catch (err) {
       console.log(err);

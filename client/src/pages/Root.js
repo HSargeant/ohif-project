@@ -5,8 +5,8 @@ import Header from "../components/Header";
 import Navbarside from "../components/NavBarSide/navbarside";
 export default function Root() {
   const [user, setUser] = useState();
-  const [messages, setMessages] = useState({});
-
+  const [messages, setMessages] = useState();
+  console.log(API_BASE + "/api/user")
   // api call to get logged in user
   useEffect(() => {
     fetch(API_BASE + "/api/user", { credentials: "include" })
@@ -19,7 +19,7 @@ export default function Root() {
       <div className="sidebar1">
         {user ? <Navbarside />:""}
       </div>
-      <Outlet context={{ user, setUser, setMessages }} />
+      <Outlet context={{ user, setUser, setMessages,messages }} />
       {/*  */}
     </>
   );
