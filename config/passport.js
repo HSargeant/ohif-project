@@ -26,8 +26,19 @@ module.exports = function (passport) {
 
 
   // google
+  let url
+  switch (process.env.HOST) {
+    case 'RENDER':
+      url="https://team4-techdive.onrender.com/auth/google/callback"
+      break;
+    case 'RAILWAY':
+      url="https://ohif-project-production.up.railway.app/auth/google/callback"
+      break;
+    default:
+      url="http://localhost:8000/auth/google/callback"
+  }
   
-  let url=process.env.NODE_ENV=="production" ? "https://ohif-project-production.up.railway.app/auth/google/callback":"http://localhost:8000/auth/google/callback"
+  // let url=process.env.NODE_ENV=="production" ? "https://ohif-project-production.up.railway.app/auth/google/callback":"http://localhost:8000/auth/google/callback"
   
   passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -58,7 +69,7 @@ module.exports = function (passport) {
       }
    }))
 
-   passport.serializeUser((user, done) => {
+  passport.serializeUser((user, done) => {
     done(null, user.id)
   })
   
