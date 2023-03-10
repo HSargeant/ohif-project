@@ -32,7 +32,7 @@ module.exports = function (passport) {
       url="https://team4-techdive.onrender.com/auth/google/callback"
       break;
     case 'RAILWAY':
-      url="https://ohif-project-production.up.railway.app/auth/google/callback"
+      url="https://reactors-techdive.up.railway.app/auth/google/callback"
       break;
     default:
       url="http://localhost:8000/auth/google/callback"
