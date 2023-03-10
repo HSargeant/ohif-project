@@ -15,9 +15,9 @@ router.get("/logout",ensureAuth, authController.logout)
 router.post("/signup", authController.postSignup)
 // google auth
 router.get('/auth/google',passport.authenticate('google',{scope: ['profile','email']}))
-router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:process.env.DEVELOPMENT||"/"}),(req, res)=>{
+router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/'}),(req, res)=>{
     console.log("redir")
-    res.redirect(process.env.DEVELOPMENT+'/exams')
+    res.redirect('/exams')
 })
 
 
