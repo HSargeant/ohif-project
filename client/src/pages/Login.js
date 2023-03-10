@@ -6,9 +6,9 @@ import { useState,useEffect } from "react";
 import {MdVisibility,MdVisibilityOff} from "react-icons/md"
 
 export default function Login() {
-  const { user,setUser, setMessages } = useOutletContext();
+  const { user,setUser, setMessages,messages } = useOutletContext();
   const [showPassword, setShowPassword] = useState(false);
-  console.log(user)
+  const [seeError,setSeeError] = useState(false)
 	const navigate = useNavigate();
   useEffect(()=>{
     if(user) {
@@ -24,21 +24,37 @@ export default function Login() {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
 	const handleSubmit = async (event) => {
-		event.preventDefault();
-		const form = event.currentTarget;
-		const response = await fetch(API_BASE + form.getAttribute('action'), {
-			method: form.method,
-			body: new URLSearchParams(new FormData(form)),
-			credentials: "include"
-		});
-		const data = await response.json();
-		if (data.messages) setMessages(data.messages);
-		if (data.user) {
-			setUser(data.user);
-			navigate("/exams");
-		}
-	};
 
+		event.preventDefault();
+    try{
+      const form = event.currentTarget;
+      console.log(API_BASE + form.getAttribute('action'))
+      const response = await fetch(API_BASE + form.getAttribute('action'), {
+        method: form.method,
+        body: new URLSearchParams(new FormData(form)),
+        credentials: "include"
+      });
+      const data = await response.json();
+      if (data.messages.errors) {
+        // console.log(data.messages.errors[0].msg)
+        setMessages(data.messages.errors[0].msg);
+        setSeeError(true)
+      }
+      if (data.user) {
+        setUser(data.user);
+        navigate("/exams");
+      }
+    }catch(err){
+      console.error(err)
+    }
+	};
+  const showError=()=>{
+    setTimeout(()=>{
+      setSeeError(false)
+
+    },10000)
+    return (<span style={{fontWeight:"bold",color:"red"}}>{messages}</span>)
+  }
   // login page
 	return (
       <Box
@@ -135,6 +151,7 @@ export default function Login() {
                 </InputAdornment>,
               }}
             />
+            {(messages&&seeError)&&showError()}
             <Box sx={{ py: 2 }}>
               <Button style={{ backgroundColor:"#0D2E5E"}}
                 color="primary"

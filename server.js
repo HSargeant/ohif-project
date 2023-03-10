@@ -14,7 +14,6 @@ const flash = require("express-flash");
 const connectDB = require("./config/database");
 require('dotenv').config({path: './.env'})
 
-
 // Passport config
 require("./config/passport")(passport);
 
