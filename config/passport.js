@@ -29,7 +29,7 @@ module.exports = function (passport) {
   let url
   switch (process.env.HOST) {
     case 'RENDER':
-      url="https://team4-techdive.onrender.com/auth/google/callback"
+      url="https://reactors-techdive.onrender.com/auth/google/callback"
       break;
     case 'RAILWAY':
       url="https://reactors-techdive.up.railway.app/auth/google/callback"
