@@ -186,7 +186,6 @@ input[type="submit"] {
 }
 
 .cardHeader{
-  background-color: #F4B941;
   position: relative;
   display: flex;
   align-items: center;
