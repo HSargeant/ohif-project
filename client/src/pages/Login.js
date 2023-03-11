@@ -24,7 +24,7 @@ export default function Login() {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
 	const handleSubmit = async (event) => {
-
+    setSeeError(false)
 		event.preventDefault();
     try{
       const form = event.currentTarget;
@@ -48,11 +48,16 @@ export default function Login() {
     }
 	};
   const showError=()=>{
-    setTimeout(()=>{
-      setSeeError(false)
+    // setTimeout(()=>{
+    //   setSeeError(false)
 
-    },10000)
+    // },10000)
     return (<span style={{fontWeight:"bold",color:"red"}}>{messages}</span>)
+  }
+
+  const cancelError=()=>{
+    console.log("ddd")
+    setSeeError(false)
   }
   // login page
 	return (
@@ -129,6 +134,7 @@ export default function Login() {
               type="email"
               variant="outlined"
               className="form-label"
+              onChange={cancelError}
             />
             <TextField
               fullWidth
@@ -137,6 +143,7 @@ export default function Login() {
               name="password"
               type={showPassword ? 'text' : 'password'}
               variant="outlined"
+              onChange={cancelError}
               InputProps={{
                 endAdornment: <InputAdornment position="end">
                   <IconButton

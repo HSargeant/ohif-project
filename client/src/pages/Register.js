@@ -48,7 +48,9 @@ export default function Register() {
       navigate("/exams");
     }
   };
-
+  const cancelError=()=>{
+    setErrorMsg("")
+  }
 
   return (
     <>
@@ -120,6 +122,7 @@ export default function Register() {
               name="lastName"
               variant="outlined"
 			  type="text"
+        onChange={cancelError}
             />
             <TextField
             required={true}
@@ -131,6 +134,7 @@ export default function Register() {
 			  id="exampleInputEmail1"
               variant="outlined"
 			  aria-describedby="emailHelp"
+        onChange={cancelError}
             />
 			<Typography
                 color="textSecondary"
@@ -147,6 +151,7 @@ export default function Register() {
               name="password"
 			        id="password"
               variant="outlined"
+              onChange={cancelError}
 
               type={showPassword ? 'text' : 'password'}
               InputProps={{
@@ -170,6 +175,7 @@ export default function Register() {
 			        id="confirmPassword"
               name="confirmPassword"
               variant="outlined"
+              onChange={cancelError}
 
               type={showPassword ? 'text' : 'password'}
               InputProps={{
@@ -195,7 +201,7 @@ export default function Register() {
 
               
             </Box>
-            {errorMsg ? <div> {errorMsg}</div>:""}
+            {errorMsg ? <div style={{fontWeight:"bold",color:"red"}}> {errorMsg}</div>:""}
             <Box sx={{ py: 2 }}>
               <Button style={{ backgroundColor:"#0D2E5E"}}
                 color="primary"
