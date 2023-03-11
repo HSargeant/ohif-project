@@ -78,7 +78,6 @@ export default function EditExam(props){
                 credentials: "include"
               })
             const record = await response.json();
-            console.log(record)
             navigate(-1)
         }catch(err){
             console.log("Error:" ,err)

@@ -47,7 +47,6 @@ export default function Exams() {
   }, [setExams]);
 
   // console.log(exams)
-  console.log("logged in: ", user);
   return !loading ? !exams?.length ? (
     <div style={{
       margin:"200px 0 0",

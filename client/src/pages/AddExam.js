@@ -16,7 +16,6 @@ import { API_BASE } from "../constants";
 
 export default function AddExam(props){
   const location = useLocation()
-  // console.log("location: ",location)
   const navigate = useNavigate()
   const [values, setValues] = useState({
     brixiaScores: '',
@@ -41,7 +40,6 @@ export default function AddExam(props){
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log("sent")
         try {
           const form = event.currentTarget;
           const response = await fetch(API_BASE + form.getAttribute("action"), {
@@ -58,7 +56,6 @@ export default function AddExam(props){
       };
       const [file, setFile] = useState(null);
       const handleFileChange = (event) => {
-        console.log(event.target.files[0].name)
         setFile(event.target.files[0].name);
       };
 

@@ -20,7 +20,6 @@ export default function Exam(){
     const getData = async ()=>{ 
       const res = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
       const data = await res.json()
-      console.log(data)
       setExam(data)
     }
 		getData()

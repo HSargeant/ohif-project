@@ -44,8 +44,6 @@ export default function Admin() {
     getData();
   }, [setExams]);
 
-  console.log(exams)
-  console.log("logged in: ", user);
 
 
 
