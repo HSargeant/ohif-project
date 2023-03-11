@@ -36,3 +36,12 @@ if you want to add test exams to the project...
   
   
 You should then be able to visit `localhost:8000` in your browser and see the server running.
+
+## Authors
+
+- [Henderson Sargeant](https://github.com/HSargeant "HSargeant Github")
+- [Harnaljia Fenelon](https://github.com/Harnaljia "Harnaljia Github")
+- [Kristophe Yen](https://github.com/KYen24 "KYen24 Github")
+- [Lanre Adeojo](https://github.com/lanreadeojo "lanreadeojo Github")
+- [Mucteba Bozkurt](https://github.com/mucteba10 "mucteba10 Github")
+
