@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import ItemAndInfo from "../components/medIndexs";
-// import NavBarSide from "../components/NavBarSide/navbarside";
-import { useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
 import ScrollUpButton from "../components/ScrollUpButton";
 import CircularProgress from '@mui/material/CircularProgress';
 
 // list of all the exams
 export default function Exams() {
-  const { user} = useOutletContext();
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(true); // can use this state variable to load spinner while data is loading.
 
@@ -46,8 +43,6 @@ export default function Exams() {
     getData();
   }, [setExams]);
 
-  // console.log(exams)
-  console.log("logged in: ", user);
   return !loading ? !exams?.length ? (
     <div style={{
       margin:"200px 0 0",

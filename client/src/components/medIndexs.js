@@ -9,7 +9,7 @@ export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examU
 
   return (
     <div className="infoplace">
-      {/* <Link to={`/exams/${id}`} style={{none}}> */}
+      {/* <Link to={`/exams/${id}`}  */}
       <div className="contain" onClick={handleClick} style={{cursor:"pointer"}}>
         <img src={imageCop} alt={nameCop} id="pics" loading="lazy"/>
       </div>

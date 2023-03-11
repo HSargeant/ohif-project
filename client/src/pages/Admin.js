@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ItemAndInfo from "../components/medIndexs";
 import {useOutletContext } from "react-router-dom";
 import { API_BASE } from "../constants";
-// import {FaSearch} from "react-icons/fa"
 import ScrollUpButton from "../components/ScrollUpButton";
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -43,12 +42,6 @@ export default function Admin() {
     };
     getData();
   }, [setExams]);
-
-  console.log(exams)
-  console.log("logged in: ", user);
-
-
-
   return !loading ? !exams?.length ? (
     <div style={{
       margin:"200px 0 0",
@@ -58,7 +51,6 @@ export default function Admin() {
   ) : (
     <div>
       <div className="centerPage">
-        {/* <NavBarSide /> */}
         <ScrollUpButton/>
         <div className="SearchBar">
           <input id="search" type="text"  placeholder="Filter Exams" className="Search" onKeyUp={filterCards}/>

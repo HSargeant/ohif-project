@@ -1,7 +1,5 @@
 import { BiArrowBack } from "react-icons/bi"; 
-import { Link, useNavigate} from "react-router-dom";
-
-import { FontAwesome } from "react-icons/fa";
+import { useNavigate} from "react-router-dom";
 import {IconContext} from "react-icons";
 import {IconButton, Tooltip} from "@mui/material";
 

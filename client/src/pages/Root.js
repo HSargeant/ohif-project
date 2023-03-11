@@ -6,7 +6,6 @@ import Navbarside from "../components/NavBarSide/navbarside";
 export default function Root() {
   const [user, setUser] = useState();
   const [messages, setMessages] = useState();
-  console.log(API_BASE + "/api/user")
   // api call to get logged in user
   useEffect(() => {
     fetch(API_BASE + "/api/user", { credentials: "include" })

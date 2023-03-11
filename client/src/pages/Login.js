@@ -28,7 +28,6 @@ export default function Login() {
 		event.preventDefault();
     try{
       const form = event.currentTarget;
-      console.log(API_BASE + form.getAttribute('action'))
       const response = await fetch(API_BASE + form.getAttribute('action'), {
         method: form.method,
         body: new URLSearchParams(new FormData(form)),
