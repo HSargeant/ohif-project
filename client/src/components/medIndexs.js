@@ -2,10 +2,16 @@ import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 import {useNavigate,useOutletContext} from "react-router-dom";
 
-export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examUser,setExams,exams }) {
+export default function ItemAndInfo({ nameCop, imageCop, ageCop, sexCop,id,examUser,setExams,exams,fromAdmin }) {
   const {user} = useOutletContext()
   const navigate = useNavigate()
-  const handleClick=()=>navigate(`/exams/${id}`)
+  const handleClick=()=>{
+    if(fromAdmin){
+      return navigate(`/exams/${id}`,{ state: { fromAdmin: fromAdmin }})
+    }else{
+      return navigate(`/exams/${id}`)
+    }
+  }
 
   return (
     <div className="infoplace">
