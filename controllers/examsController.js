@@ -54,7 +54,8 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-      const userID= req.user ? req.user.id : "63e174edb2d3100b58d5a0ad"
+      const userID= req.user.id 
+      
       const exam = await Exam.create({
         age: req.body.age,
         imageURL: result.secure_url,

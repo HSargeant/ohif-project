@@ -78,6 +78,7 @@ export default function Admin() {
                     examUser={exam.user}
                     setExams={setExams}
                     exams={exams}
+                    fromAdmin={true}
                   ></ItemAndInfo>
               </div>
             );
