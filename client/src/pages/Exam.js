@@ -4,15 +4,17 @@ import '../Exams.css'
 import PatientInfo from '../components/PatientInfo';
 import KeyFindings from '../components/KeyFindings';
 import AllDataButton from '../components/AllDataButton';
+import ToAdminButton from '../components/ToAdminButton';
 import Image from '../components/Image.js';
 import { useState, useEffect } from 'react';
 import { API_BASE } from "../constants";
 import EditButton from "../components/EditButton";
-import {useOutletContext, useParams } from "react-router-dom";
+import {useOutletContext, useParams,useLocation} from "react-router-dom";
 import DeleteButton from '../components/DeleteButton';
 
 export default function Exam(){
   const { user } = useOutletContext(); // we will use this to when we set up auth to check for which user is logged in
+  const location = useLocation()
   const  [exam,setExam] = useState({})
   const examId = useParams().id // used to grab the id of the exam ---- /exams/:id
   useEffect(()=>{ 
@@ -20,7 +22,6 @@ export default function Exam(){
     const getData = async ()=>{ 
       const res = await fetch(API_BASE + `/api/exams/${examId}`, { credentials: "include" })
       const data = await res.json()
-      console.log(data)
       setExam(data)
     }
 		getData()
@@ -32,7 +33,7 @@ export default function Exam(){
   return(
     <>
       <div className="manipulateDataRow">
-        <div className="gridItem"> <AllDataButton /> </div>
+        <div className="gridItem"> {location.state?.fromAdmin ? <ToAdminButton/> : <AllDataButton />} </div>
         <div className="gridItem"> <h2 className='patient-id' style={{marginTop:'10px', marginBottom:'10px'}}> Patient ID: {exam.patientId} </h2> </div>
         <div className="gridItem"> {user?._id===exam?.user&&<EditButton examId={examId}/>} </div>
         <div className="gridItem"> {user?._id===exam?.user&&<DeleteButton examId={examId}/>} </div>
