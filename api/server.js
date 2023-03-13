@@ -28,7 +28,6 @@ app.use(express.json());
 
 //Connect To Database
 connectDB();
-app.set("view engine", "ejs");
 //Static Folder
 app.use(express.static("../client/build"));
 
