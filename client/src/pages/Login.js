@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext,Link as RouterLink } from "react-router-dom";
 import { API_BASE } from "../constants";
 import { Box, Button, Container, Grid, TextField, Typography,Link,InputAdornment,IconButton } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -56,7 +56,6 @@ export default function Login() {
   }
 
   const cancelError=()=>{
-    console.log("ddd")
     setSeeError(false)
   }
   // login page
@@ -160,7 +159,6 @@ export default function Login() {
             {(messages&&seeError)&&showError()}
             <Box sx={{ py: 2 }}>
               <Button style={{ backgroundColor:"#0D2E5E"}}
-                color="primary"
                 fullWidth
                 size="large"
                 type="submit"
@@ -175,14 +173,15 @@ export default function Login() {
             >
               Don&apos;t have an account?
               {' '}
-                <Link href="/register"
+                <Link to="/register"
                      variant="subtitle2"
                      underline="hover"
                      sx={{
                        cursor: 'pointer',
-                       color:"#F4B941",
+                       color:"#0D2E5E",
                        fontWeight:"bold"
                      }}
+                     component={RouterLink}
                 >
                   Register
                 </Link>

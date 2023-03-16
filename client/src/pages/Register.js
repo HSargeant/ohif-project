@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext,Link as RouterLink } from "react-router-dom";
 import { useState,useEffect } from "react";
 import {MdVisibility,MdVisibilityOff} from "react-icons/md"
 import { API_BASE } from "../constants";
@@ -221,9 +221,15 @@ export default function Register() {
               {' '}
          
                 <Link
-                href="/"
+                to="/"
                   variant="subtitle2"
                   underline="hover"
+                  component={RouterLink}
+                  sx={{
+                    cursor: 'pointer',
+                    color:"#0D2E5E",
+                    fontWeight:"bold"
+                  }}
                 >
                   Sign In
                 </Link>
